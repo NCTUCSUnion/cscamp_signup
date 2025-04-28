@@ -41,9 +41,10 @@ const navLinks = [
             v-for="link in navLinks" 
             :key="link.name" 
             :to="link.path"
-            class="text-gray-700 hover:text-primary font-bold hover:underline transition-colors font-heading flex items-center h-10"
+            class="text-gray-700 hover:text-primary font-bold transition-colors font-heading flex items-center h-10 nav-link relative"
           >
             {{ link.name }}
+            <span class="hover-line"></span>
           </router-link>
           <a 
             href="#" 
@@ -76,10 +77,11 @@ const navLinks = [
           v-for="link in navLinks" 
           :key="link.name" 
           :to="link.path"
-          class="block text-gray-700 hover:text-primary py-2 font-bold font-heading flex items-center"
+          class="block text-gray-700 hover:text-primary py-2 font-bold font-heading flex items-center nav-link relative"
           @click="closeMenu"
         >
           {{ link.name }}
+          <span class="hover-line"></span>
         </router-link>
         <a 
           href="#" 
@@ -94,29 +96,37 @@ const navLinks = [
 </template>
 
 <style scoped>
-.nav-title {
+.nav-title, .nav-link {
   position: relative;
-  display: inline-block;
   padding-bottom: 2px;
   transition: color 0.3s;
+}
+
+.nav-title {
+  color: #F59E0B;
+
 }
 
 .nav-title:hover {
   color: gray;
 }
 
+.nav-link:hover {
+  color: #F59E0B;
+}
+
 .hover-line {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 2px;
   width: 0;
   height: 1.5px;
-  background-color: gray;
+  background-color: #F59E0B;;
   transform: translateX(-50%);
   transition: width 0.3s ease;
 }
 
-.nav-title:hover .hover-line {
+.nav-title:hover .hover-line, .nav-link:hover .hover-line {
   width: 100%;
 }
 </style> 
