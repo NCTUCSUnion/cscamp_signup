@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: '#3B82F6', // Blue, you can adjust this
-        secondary: '#10B981', // Green, you can adjust this
+        secondary: 'orange', // Green, you can adjust this
         // Add team colors here for the 6 divisions
         admin: '#F59E0B',    // Amber
         event: '#EF4444',    // Red

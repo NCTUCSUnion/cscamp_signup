@@ -1,6 +1,75 @@
 <script setup>
 import Banner from '../components/layout/Banner.vue'
 import campInfo from '../data/camp-info.json'
+import { ref, computed } from 'vue'
+
+// Get current date for timeline highlighting
+const currentDate = ref(new Date())
+
+// Parse dates from timeline for comparison
+const timelineDates = computed(() => {
+  return campInfo.registration.timeline.map((item, index) => {
+    // Extract year, month, day from the date string (assuming format like "2025年5月3日")
+    const dateMatch = item.date.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/)
+    let date = null
+    
+    if (dateMatch) {
+      const year = parseInt(dateMatch[1])
+      const month = parseInt(dateMatch[2]) - 1 // JS months are 0-based
+      const day = parseInt(dateMatch[3])
+      
+      date = new Date(year, month, day)
+      // Reset time part to ensure clean comparison
+      date.setHours(0, 0, 0, 0)
+    }
+    
+    // Use spread first, then override the date property
+    return {
+      ...item,
+      index,
+      date,
+      originalDateString: item.date // Keep the original string for display
+    }
+  })
+})
+
+// Determine current stage
+const currentStageIndex = computed(() => {
+  if (!timelineDates.value.length) return -1
+  
+  // Sort timeline dates in ascending order
+  const sortedTimeline = [...timelineDates.value].sort((a, b) => {
+    if (!a.date) return -1
+    if (!b.date) return 1
+    return a.date - b.date
+  })
+  
+  // Create a new date instead of using the ref value directly
+  const today = new Date()
+  // Reset time part to ensure clean comparison
+  today.setHours(0, 0, 0, 0)
+  
+  // Find the current stage - the latest stage whose date has passed
+  let currentIndex = -1
+
+  for (let i = sortedTimeline.length -1 ; i >= 0; i--) {
+    const timelineItem = sortedTimeline[i];
+    const timelineDate = timelineItem.date;
+    
+    if (timelineDate && timelineDate <= today) {
+      currentIndex = timelineItem.index;
+      return currentIndex;
+    } 
+  }
+
+  return -1
+})
+
+// Function to check if a timeline item is current
+const isCurrentStage = (index) => {
+  // console.log(index, currentStageIndex.value)
+  return index === currentStageIndex.value
+}
 </script>
 
 <template>
@@ -34,21 +103,41 @@ import campInfo from '../data/camp-info.json'
                   index % 2 === 0 ? 'md:justify-end md:pr-8' : 'md:left-1/2 md:translate-x-1/2 md:order-last md:justify-start md:pl-8'
                 ]"
               >
-                <div class="bg-white p-6 rounded-lg shadow-md max-w-sm w-full">
-                  <h3 class="text-xl font-bold text-primary mb-2">{{ item.label }}</h3>
+                <div 
+                  :class="[
+                    'p-6 rounded-lg shadow-md max-w-sm w-full', 
+                    isCurrentStage(index) ? 'bg-secondary bg-opacity-10' : 'bg-gray-100'
+                  ]"
+                >
+                  <h3 
+                    :class="[
+                      'text-xl font-bold mb-2', 
+                      isCurrentStage(index) ? 'text-secondary' : 'text-primary'
+                    ]"
+                  >{{ item.label }}</h3>
                   <div class="text-lg font-semibold">{{ item.date }}</div>
                   <p class="text-gray-600 mt-2">{{ item.description }}</p>
                 </div>
 
                 <!-- Mobile Only - Timeline Node -->
                 <div class="timeline-node-mobile md:hidden absolute top-1/2 -left-6 -translate-y-1/2">
-                  <div class="w-5 h-5 bg-primary rounded-full border-4 border-white"></div>
+                  <div 
+                    :class="[
+                      'w-5 h-5 rounded-full border-4 border-white', 
+                      isCurrentStage(index) ? 'bg-secondary' : 'bg-primary'
+                    ]"
+                  ></div>
                 </div>
               </div>
               
               <!-- Timeline Node - visible on desktop -->
               <div class="timeline-node-desktop absolute top-6 left-1/2 -translate-x-1/2 hidden md:block">
-                <div class="w-5 h-5 bg-primary rounded-full border-4 border-white"></div>
+                <div 
+                  :class="[
+                    'w-5 h-5 rounded-full border-4 border-white', 
+                    isCurrentStage(index) ? 'bg-secondary' : 'bg-primary'
+                  ]"
+                ></div>
               </div>
             </div>
           </div>
@@ -61,7 +150,7 @@ import campInfo from '../data/camp-info.json'
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Left: Fee Details -->
-          <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="bg-gray-100 p-8 rounded-lg shadow-md">
             <h3 class="text-2xl font-bold text-primary mb-6">營隊費用</h3>
             <div class="text-xl font-semibold mb-4">{{ campInfo.registration.fee.amount }}</div>
             
@@ -77,7 +166,7 @@ import campInfo from '../data/camp-info.json'
           </div>
           
           <!-- Right: Refund Policy -->
-          <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="bg-gray-100 p-8 rounded-lg shadow-md">
             <h3 class="text-2xl font-bold text-primary mb-6">退費政策</h3>
             
             <div class="space-y-6">
