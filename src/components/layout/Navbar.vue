@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import campInfo from '../../data/camp-info.json'
 
 const isMenuOpen = ref(false)
+const isTeamDropdownOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -12,14 +13,21 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
+const toggleTeamDropdown = () => {
+  isTeamDropdownOpen.value = !isTeamDropdownOpen.value
+}
+
 // Navigation links
 const navLinks = [
   { name: '首頁', path: '/' },
   { name: '報名資訊', path: '/registration' },
-  { name: '各組介紹', path: '/team' },
+  { name: '各組介紹', path: '/team', hasDropdown: true },
   { name: '課程簡介', path: '/courses' },
   { name: '常見 QA', path: '/faq' },
 ]
+
+// Get teams from camp-info.json
+const teams = campInfo.teams
 </script>
 
 <template>
@@ -32,20 +40,52 @@ const navLinks = [
             2025 交大資訊逐夢營
             <span class="hover-line"></span>
           </span>
-          <span class="text-sm text-gray-600 font-heading">{{ campInfo.slogan }}</span>
+          <span class="text-sm text-gray-400 font-heading font-bold">{{ campInfo.slogan }}</span>
         </router-link>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-6">
-          <router-link 
-            v-for="link in navLinks" 
-            :key="link.name" 
-            :to="link.path"
-            class="text-gray-700 hover:text-primary font-bold transition-colors font-heading flex items-center h-10 nav-link relative"
-          >
-            {{ link.name }}
-            <span class="hover-line"></span>
-          </router-link>
+          <div v-for="link in navLinks" :key="link.name" class="relative group">
+            <!-- Regular nav link -->
+            <template v-if="!link.hasDropdown">
+              <router-link 
+                :to="link.path"
+                class="text-gray-700 hover:text-primary font-bold transition-colors font-heading flex items-center h-10 nav-link relative"
+              >
+                {{ link.name }}
+                <span class="hover-line"></span>
+              </router-link>
+            </template>
+            
+            <!-- Dropdown nav link -->
+            <template v-else>
+              <div class="relative">
+                <router-link 
+                  :to="link.path"
+                  class="text-gray-700 hover:text-primary font-bold transition-colors font-heading flex items-center h-10 nav-link relative"
+                >
+                  {{ link.name }}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 dropdown-arrow transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                  <span class="hover-line"></span>
+                </router-link>
+                
+                <!-- Dropdown menu -->
+                <div class="absolute left-0 mt-0 w-36 bg-white shadow-lg rounded-md overflow-hidden z-50 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-500 ease-in-out">
+                  <router-link 
+                    v-for="team in teams" 
+                    :key="team.id" 
+                    :to="`/team/${team.id}`"
+                    class="block px-4 py-3 text-gray-500 hover:bg-gray-100 transition-colors font-heading font-bold border-b border-gray-100 last:border-b-0"
+                  >
+                    {{ team.name }}
+                  </router-link>
+                </div>
+              </div>
+            </template>
+          </div>
+          
           <a 
             href="#" 
             class="btn-primary font-heading flex items-center justify-center"
@@ -73,8 +113,9 @@ const navLinks = [
         v-show="isMenuOpen"
         class="md:hidden mt-4 pb-4 space-y-3"
       >
+        <!-- Regular links -->
         <router-link 
-          v-for="link in navLinks" 
+          v-for="link in navLinks.filter(l => !l.hasDropdown)" 
           :key="link.name" 
           :to="link.path"
           class="block text-gray-700 hover:text-primary py-2 font-bold font-heading flex items-center nav-link relative"
@@ -83,6 +124,33 @@ const navLinks = [
           {{ link.name }}
           <span class="hover-line"></span>
         </router-link>
+        
+        <!-- Team dropdown for mobile -->
+        <div class="relative">
+          <div 
+            class="flex justify-between items-center text-gray-700 hover:text-primary py-2 font-bold font-heading cursor-pointer"
+            @click="toggleTeamDropdown"
+          >
+            <span>各組介紹</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform dropdown-arrow-mobile" :class="{'rotate-180': isTeamDropdownOpen}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          
+          <!-- Mobile Team Dropdown -->
+          <div v-show="isTeamDropdownOpen" class="pl-4 mt-2 border-l-2 border-gray-200 space-y-2">
+            <router-link 
+              v-for="team in teams" 
+              :key="team.id" 
+              :to="`/team/${team.id}`"
+              class="block text-gray-500 hover:text-primary py-2 font-heading font-bold"
+              @click="closeMenu"
+            >
+              {{ team.name }}
+            </router-link>
+          </div>
+        </div>
+        
         <a 
           href="#" 
           class="block btn-primary text-center mt-4 font-heading flex items-center justify-center py-2"
@@ -104,7 +172,6 @@ const navLinks = [
 
 .nav-title {
   color: #F59E0B;
-
 }
 
 .nav-title:hover {
@@ -123,10 +190,45 @@ const navLinks = [
   height: 1.5px;
   background-color: #F59E0B;;
   transform: translateX(-50%);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .nav-title:hover .hover-line, .nav-link:hover .hover-line {
   width: 100%;
+}
+
+/* Dropdown menu animation */
+.group:hover .absolute {
+  display: block;
+}
+
+/* Keep parent link in hover state when hovering dropdown */
+.group:hover .nav-link {
+  color: #F59E0B;
+}
+
+.group:hover .hover-line {
+  width: 100%;
+}
+
+/* Dropdown arrow animation */
+.dropdown-arrow {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.group:hover .dropdown-arrow {
+  transform: translateY(5px);
+  opacity: 0;
+}
+
+/* Mobile dropdown arrow animation (when not expanded) */
+.dropdown-arrow-mobile {
+  transition: all 0.5s ease;
+}
+
+div:hover .dropdown-arrow-mobile:not(.rotate-180) {
+  transform: translateY(5px);
+  opacity: 0;
 }
 </style> 
