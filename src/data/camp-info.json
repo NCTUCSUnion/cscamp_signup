@@ -1,0 +1,393 @@
+{
+  "campName": "交大資訊逐夢營",
+  "year": "2025",
+  "slogan": "我讀資升級",
+  "mainInfo": {
+    "date": "2025/07/01 ～ 2025/07/05",
+    "location": "國立陽明交通大學 工程三館",
+    "audience": "高中生（含應屆畢業生）",
+    "fee": "7,500 元"
+  },
+  "registration": {
+    "timeline": [
+      {
+        "label": "報名開始",
+        "date": "2025年5月3日",
+        "description": "開放線上報名表單填寫"
+      },
+      {
+        "label": "報名截止",
+        "date": "2025年5月25日",
+        "description": "報名表單關閉"
+      },
+      {
+        "label": "錄取公告",
+        "date": "2025年5月27日",
+        "description": "將於網站及Facebook粉專公告錄取名單"
+      },
+      {
+        "label": "繳費期限",
+        "date": "2025年5月30日",
+        "description": "請於期限內完成繳費，逾期視同放棄"
+      }
+    ],
+    "fee": {
+      "amount": "7,500 元",
+      "includes": [
+        "五天四夜住宿",
+        "三餐及宵夜",
+        "教材講義",
+        "紀念品",
+        "活動照片"
+      ],
+      "refundPolicy": [
+        {
+          "deadline": "2025年6月15日前",
+          "percentage": 100,
+          "condition": "全額退款（不含手續費）"
+        },
+        {
+          "deadline": "2025年6月25日前",
+          "percentage": 50,
+          "condition": "退還50%費用"
+        },
+        {
+          "deadline": "2025年6月25日後",
+          "percentage": 0,
+          "condition": "不予退款"
+        }
+      ]
+    },
+    "formUrl": "https://forms.google.com/cscamp2025"
+  },
+  "teams": [
+    {
+      "id": "admin",
+      "name": "行政組",
+      "color": "admin",
+      "description": "負責營隊整體行政事務，預算控管，以及對外聯繫。",
+      "responsibilities": [
+        "規劃營隊整體流程與時程",
+        "控管預算與財務",
+        "處理報名與繳費相關事宜",
+        "與校方及廠商聯繫"
+      ],
+      "members": [
+        {
+          "name": "戚維凌",
+          "position": "總召",
+          "photo": "/images/members/戚維凌.jpg",
+          "introFile": "/contents/members/戚維凌.txt"
+        },
+        {
+          "name": "田松翰",
+          "position": "執秘＆總務",
+          "photo": "/images/members/田松翰.jpg",
+          "introFile": "/contents/members/田松翰.txt"
+        }
+      ]
+    },
+    {
+      "id": "event",
+      "name": "活動組",
+      "color": "event",
+      "description": "策劃並執行營期中的各項活動，讓學員度過充實有趣的一週。",
+      "responsibilities": [
+        "設計破冰與團康活動",
+        "規劃小隊競賽",
+        "安排晚會節目",
+        "帶領學員參與各項活動"
+      ],
+      "members": [
+        {
+          "name": "李馨亞",
+          "position": "組長",
+          "photo": "/images/members/李馨亞.png",
+          "introFile": "/contents/members/李馨亞.txt"
+        },
+        {
+          "name": "林哲全",
+          "position": "組員",
+          "photo": "/images/members/林哲全.jpg",
+          "introFile": "/contents/members/林哲全.txt"
+        },
+        {
+          "name": "許士宏",
+          "position": "組員",
+          "photo": "/images/members/許士宏.jpg",
+          "introFile": "/contents/members/許士宏.txt"
+        },
+        {
+          "name": "郭宥欣",
+          "position": "組員",
+          "photo": "/images/members/郭宥欣.jpg",
+          "introFile": "/contents/members/郭宥欣.txt"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "美宣組",
+      "color": "design",
+      "description": "負責營隊視覺設計，打造營隊獨特形象與氛圍。",
+      "responsibilities": [
+        "設計營隊主視覺與標誌",
+        "製作宣傳海報與文宣",
+        "設計營服與紀念品",
+        "佈置營隊場地"
+      ],
+      "members": [
+        {
+          "name": "李泓劭",
+          "position": "組長",
+          "photo": "/images/members/李泓劭.jpg",
+          "introFile": "/contents/members/李泓劭.txt"
+        },
+        {
+          "name": "楊博宇",
+          "position": "組員",
+          "photo": "/images/members/楊博宇.jpg",
+          "introFile": "/contents/members/楊博宇.txt"
+        }
+      ]
+    },
+    {
+      "id": "life",
+      "name": "生活組",
+      "color": "life",
+      "description": "照顧學員日常生活，確保學員在營期中的健康與安全。",
+      "responsibilities": [
+        "安排住宿與餐飲",
+        "管理學員生活作息",
+        "處理緊急醫療事件",
+        "協助解決學員生活問題"
+      ],
+      "members": [
+        {
+          "name": "王皓平",
+          "position": "組長",
+          "photo": "/images/members/王皓平.jpg",
+          "introFile": "/contents/members/王皓平.txt"
+        },
+        {
+          "name": "葉家蓁",
+          "position": "組員",
+          "photo": "/images/members/葉家蓁.jpg",
+          "introFile": "/contents/members/葉家蓁.txt"
+        },
+        {
+          "name": "邱振源",
+          "position": "組員",
+          "photo": "/images/members/邱振源.jpg",
+          "introFile": "/contents/members/邱振源.txt"
+        }
+      ]
+    },
+    {
+      "id": "study",
+      "name": "進修組",
+      "color": "study",
+      "description": "規劃營隊課程內容，協助講師授課，確保學習品質。",
+      "responsibilities": [
+        "設計程式教學課程",
+        "邀請業界與學界講師",
+        "準備課程教材與設備",
+        "安排助教協助學員學習"
+      ],
+      "members": [
+        {
+          "name": "周廷威",
+          "position": "組長",
+          "photo": "/images/members/周廷威.png",
+          "introFile": "/contents/members/周廷威.txt"
+        },
+        {
+          "name": "曾士珍",
+          "position": "組員",
+          "photo": "/images/members/曾士珍.jpg",
+          "introFile": "/contents/members/曾士珍.txt"
+        },
+        {
+          "name": "蔡尚融",
+          "position": "組員",
+          "photo": "/images/members/蔡尚融.jpg",
+          "introFile": "/contents/members/蔡尚融.txt"
+        }
+      ]
+    },
+    {
+      "id": "facilities",
+      "name": "場器組",
+      "color": "facilities",
+      "description": "負責營隊場地與設備準備，提供活動所需的硬體支援。",
+      "responsibilities": [
+        "準備教室與活動場地",
+        "設置音響與投影設備",
+        "維護電腦與網路環境",
+        "協助其他組別的器材需求"
+      ],
+      "members": [
+        {
+          "name": "吳宇藤",
+          "position": "組長",
+          "photo": "/images/members/吳宇藤.jpeg",
+          "introFile": "/contents/members/吳宇藤.txt"
+        },
+        {
+          "name": "林郁晁",
+          "position": "組員",
+          "photo": "/images/members/林郁晁.jpg",
+          "introFile": "/contents/members/林郁晁.txt"
+        },
+        {
+          "name": "楊晟弘",
+          "position": "組員",
+          "photo": "/images/members/楊晟弘.jpg",
+          "introFile": "/contents/members/楊晟弘.txt"
+        },
+        {
+          "name": "陳箴",
+          "position": "組員",
+          "photo": "/images/members/陳箴.jpg",
+          "introFile": "/contents/members/陳箴.txt"
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "title": "程式設計基礎",
+      "description": "從零開始學習程式設計概念，包含變數、條件判斷、迴圈等基礎知識。",
+      "lecturer": "張教授",
+      "time": "Day 1, 9:00-12:00"
+    },
+    {
+      "title": "Python 實務入門",
+      "description": "透過 Python 語言學習程式設計，實作簡單的小遊戲與資料處理。",
+      "lecturer": "林講師",
+      "time": "Day 1, 14:00-17:00"
+    },
+    {
+      "title": "網頁前端開發",
+      "description": "學習 HTML、CSS 與 JavaScript 基礎，打造個人網頁。",
+      "lecturer": "王助理教授",
+      "time": "Day 2, 9:00-12:00"
+    },
+    {
+      "title": "資料結構與演算法",
+      "description": "理解基礎資料結構與演算法概念，增強程式設計能力。",
+      "lecturer": "李教授",
+      "time": "Day 2, 14:00-17:00"
+    },
+    {
+      "title": "人工智慧與機器學習入門",
+      "description": "認識 AI 與機器學習基本原理，並實作簡單的圖像識別。",
+      "lecturer": "陳博士",
+      "time": "Day 3, 9:00-12:00"
+    },
+    {
+      "title": "團隊專題實作",
+      "description": "分組開發小型專案，運用所學知識解決實際問題。",
+      "lecturer": "各組助教",
+      "time": "Day 3-5, 14:00-17:00"
+    },
+    {
+      "title": "業界講座：軟體工程師職涯分享",
+      "description": "邀請業界工程師分享職涯經驗與學習建議。",
+      "lecturer": "Google 資深工程師",
+      "time": "Day 4, 9:00-12:00"
+    },
+    {
+      "title": "專題成果發表",
+      "description": "各組展示專題成果，互相交流學習。",
+      "lecturer": "全體學員",
+      "time": "Day 6, 9:00-12:00"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "參加營隊需要有程式設計基礎嗎？",
+      "answer": "不需要！我們的課程從零基礎開始，歡迎對程式設計有興趣的高中生參加。我們會有助教團隊協助學習，不用擔心跟不上進度。"
+    },
+    {
+      "question": "需要自備電腦嗎？",
+      "answer": "建議自備筆記型電腦，以便課後自主練習。若無法自備，請在報名表上註明，我們會協助安排電腦使用。"
+    },
+    {
+      "question": "住宿環境如何？",
+      "answer": "學員會住在交大學生宿舍，每間寢室 4 人一間，有冷氣與獨立衛浴。我們會依照性別分配寢室，並有輔導員負責管理。"
+    },
+    {
+      "question": "有素食或特殊飲食選項嗎？",
+      "answer": "有！請在報名表上註明您的飲食需求，我們會盡量安排。如有嚴重過敏狀況，也請特別告知。"
+    },
+    {
+      "question": "如何報名？何時會知道是否錄取？",
+      "answer": "請透過網站上的報名連結填寫 Google 表單。我們會在 5 月 31 日公告錄取名單，並以 email 通知錄取者繳費資訊。"
+    },
+    {
+      "question": "報名人數有限制嗎？",
+      "answer": "是的，為確保教學品質，本營隊限額 60 人。若報名人數超過，將依報名表內容進行審核錄取。"
+    },
+    {
+      "question": "營隊有哪些安全措施？",
+      "answer": "我們有完整的安全計畫，包含 24 小時輔導員值班、醫療站設置、緊急聯絡人系統等。活動期間會投保平安險，並有應變機制處理緊急狀況。"
+    },
+    {
+      "question": "有提供接駁車嗎？",
+      "answer": "報到當天會在新竹高鐵站提供接駁車服務，詳細時間將在行前通知說明。營隊結束當天也會提供送回高鐵站的接駁服務。"
+    },
+    {
+      "question": "可以申請營隊證明嗎？",
+      "answer": "可以！全程參與的學員將獲得完訓證書，可作為課外活動證明使用。"
+    },
+    {
+      "question": "費用可以分期付款嗎？",
+      "answer": "原則上需一次繳清費用。若有經濟困難，可以 email 聯繫我們說明情況，將視個案協助處理。"
+    },
+    {
+      "question": "有沒有提供獎學金或補助？",
+      "answer": "我們有少量名額的清寒獎學金，請在報名時附上相關證明文件申請。審核通過者可獲得學費減免。"
+    },
+    {
+      "question": "營隊期間可以請假或提早離營嗎？",
+      "answer": "為維持營隊活動品質，建議全程參與。若有特殊狀況需請假或提早離營，請提前告知並填寫請假單，由家長簽名確認。"
+    }
+  ],
+  "images": {
+    "slideshow": [
+      "/images/slideshow/slide-1.png",
+      "/images/slideshow/slide-2.png",
+      "/images/slideshow/slide-3.png",
+      "/images/slideshow/slide-4.png",
+      "/images/slideshow/slide-5.png",
+      "/images/slideshow/slide-6.png"
+    ],
+    "teams": {
+      "admin": [
+        "/images/teams/admin-1.png",
+        "/images/teams/admin-2.png"
+      ],
+      "event": [
+        "/images/teams/event-1.png",
+        "/images/teams/event-2.png"
+      ],
+      "design": [
+        "/images/teams/design-1.png",
+        "/images/teams/design-2.png"
+      ],
+      "life": [
+        "/images/teams/life-1.png",
+        "/images/teams/life-2.png"
+      ],
+      "study": [
+        "/images/teams/study-1.png",
+        "/images/teams/study-2.png"
+      ],
+      "facilities": [
+        "/images/teams/facilities-1.png",
+        "/images/teams/facilities-2.png"
+      ]
+    }
+  }
+}

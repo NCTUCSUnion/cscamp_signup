@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rectangle -->
+  <rect width="60" height="60" rx="8" fill="#3B82F6"/>
+  
+  <!-- "CS" text -->
+  <text x="15" y="40" font-family="Arial" font-weight="bold" font-size="30" fill="white">CS</text>
+  
+  <!-- "Camp" text -->
+  <text x="70" y="35" font-family="Arial" font-weight="bold" font-size="25" fill="#3B82F6">交大資訊</text>
+  <text x="70" y="55" font-family="Arial" font-weight="bold" font-size="20" fill="#3B82F6">逐夢營</text>
+</svg> 
