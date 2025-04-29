@@ -36,9 +36,9 @@
       "includes": [
         "五天四夜住宿",
         "三餐及宵夜",
-        "教材講義",
-        "紀念品",
-        "活動照片"
+        "完整教材講義",
+        "資訊逐夢營紀念品",
+        "五天份活動照片"
       ],
       "refundPolicy": [
         {
@@ -361,7 +361,9 @@
       "/images/slideshow/slide-3.png",
       "/images/slideshow/slide-4.png",
       "/images/slideshow/slide-5.png",
-      "/images/slideshow/slide-6.png"
+      "/images/slideshow/slide-6.png",
+      "/images/slideshow/slide-7.png",
+      "/images/slideshow/slide-8.png"
     ],
     "teams": {
       "admin": [

@@ -127,7 +127,7 @@ onMounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Registration Card -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/registration-card.png');"></div>
+            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/registration-card.jpeg');"></div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">報名資訊</h3>
               <p class="text-gray-600 mb-4">了解報名流程、費用說明與重要時程。</p>

@@ -10,12 +10,12 @@ export default {
         primary: '#3B82F6', // Blue, you can adjust this
         secondary: 'orange', // Green, you can adjust this
         // Add team colors here for the 6 divisions
-        admin: '#F59E0B',    // Amber
-        event: '#EF4444',    // Red
-        design: '#8B5CF6',   // Purple
-        life: '#EC4899',     // Pink
-        study: '#3B82F6',    // Blue
-        facilities: '#10B981' // Green
+        admin: '#62b6cb',    // Amber
+        event: '#3a6ea5',    // Red
+        design: '#5fa8d3',   // Purple
+        life: '#ff8811',     // Pink
+        study: '#f9c74f',    // Blue
+        facilities: '#f07167' // Green
       },
       fontFamily: {
         sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],

@@ -85,7 +85,6 @@ const getTextColor = computed(() => {
         <!-- Right: Team Photos -->
         <div>
           <div v-if="teamImages.length > 0">
-            <h3 class="text-xl font-semibold mb-6">歷屆組員照片</h3>
             <ImageSlider 
               :images="teamImages"
               height="h-80 md:h-96"
