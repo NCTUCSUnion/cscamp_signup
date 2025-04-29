@@ -77,7 +77,7 @@ const teams = campInfo.teams
                     v-for="team in teams" 
                     :key="team.id" 
                     :to="`/team/${team.id}`"
-                    class="block px-4 py-3 text-gray-500 hover:bg-gray-100 transition-colors font-heading font-bold border-b border-gray-100 last:border-b-0"
+                    class="block px-4 py-3 text-gray-500 hover:bg-gray-100 hover:text-primary transition-colors font-heading font-bold border-b border-gray-100 last:border-b-0"
                   >
                     {{ team.name }}
                   </router-link>
@@ -118,7 +118,7 @@ const teams = campInfo.teams
           v-for="link in navLinks.filter(l => !l.hasDropdown)" 
           :key="link.name" 
           :to="link.path"
-          class="block text-gray-700 hover:text-primary py-2 font-bold font-heading flex items-center nav-link relative"
+          class="block hover:text-primary py-2 font-bold font-heading flex items-center nav-link relative"
           @click="closeMenu"
         >
           {{ link.name }}
@@ -171,7 +171,7 @@ const teams = campInfo.teams
 }
 
 .nav-title {
-  color: #F59E0B;
+  color: var(--color-primary, theme('colors.primary'));
 }
 
 .nav-title:hover {
@@ -179,7 +179,7 @@ const teams = campInfo.teams
 }
 
 .nav-link:hover {
-  color: #F59E0B;
+  color: var(--color-primary, theme('colors.primary'));
 }
 
 .hover-line {
@@ -188,7 +188,7 @@ const teams = campInfo.teams
   bottom: 2px;
   width: 0;
   height: 1.5px;
-  background-color: #F59E0B;;
+  background-color: var(--color-primary, theme('colors.primary'));
   transform: translateX(-50%);
   transition: width 0.2s ease;
 }
@@ -204,7 +204,7 @@ const teams = campInfo.teams
 
 /* Keep parent link in hover state when hovering dropdown */
 .group:hover .nav-link {
-  color: #F59E0B;
+  color: var(--color-primary, theme('colors.primary'));
 }
 
 .group:hover .hover-line {
