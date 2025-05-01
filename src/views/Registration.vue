@@ -35,14 +35,8 @@ const timelineDates = computed(() => {
 
 // Find registration deadline date
 const registrationDeadline = computed(() => {
-  const deadlineItem = timelineDates.value.find(item => item.label === "報名截止")
-  if (deadlineItem && deadlineItem.date) {
-    const deadline = new Date(deadlineItem.date)
-    deadline.setHours(23, 59, 59, 999) // Set to end of day
-    return deadline
-  }
   // Fallback: use a future date
-  return new Date(2025, 4, 25, 23, 59, 59, 999) // May 25, 2025, 23:59:59.999
+  return new Date(2025, 4, 26, 22, 0, 0, 0) // May 25, 2025, 23:59:59.999
 })
 
 // Calculate remaining time until registration deadline
