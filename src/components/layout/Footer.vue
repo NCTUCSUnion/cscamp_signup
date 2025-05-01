@@ -44,9 +44,6 @@ const currentYear = new Date().getFullYear()
           <h4 class="text-lg font-bold mb-4">相關連結</h4>
           <ul class="space-y-2">
             <li>
-              <a href="/privacy-policy" class="hover:text-primary transition-colors">隱私權政策</a>
-            </li>
-            <li>
               <a href="https://www.cs.nycu.edu.tw/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
                 國立陽明交通大學資訊工程學系
               </a>

@@ -69,9 +69,6 @@ const toggleItem = (index) => {
               v-show="openItems[index]"
               class="px-6 pb-6 pt-2 border-t border-gray-200"
             >
-              <div class="text-lg mb-4">
-                <span class="font-medium">講師：</span>{{ course.lecturer }}
-              </div>
               <p>{{ course.description }}</p>
             </div>
           </div>
@@ -116,9 +113,9 @@ const toggleItem = (index) => {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <h4 class="text-xl font-semibold mb-2">業界經驗分享</h4>
+            <h4 class="text-xl font-semibold mb-2">了解最新科技</h4>
             <p class="text-gray-600">
-              邀請業界工程師分享實務經驗，幫助學員了解程式設計在實際工作中的應用。
+              課程精心設計圍繞 Python 程式設計與 Multi-agent LLM 技術，引領學員探索 AI 領域最新發展，親身體驗未來科技的無限可能。
             </p>
           </div>
         </div>

@@ -5,8 +5,8 @@
   "mainInfo": {
     "date": "2025/07/01 ～ 2025/07/05",
     "location": "國立陽明交通大學 工程三館",
-    "audience": "高中生（含應屆畢業生）",
-    "fee": "7,500 元"
+    "audience": "高中生（含升高一及升大一）",
+    "fee": "單人報名 / 8,000 元、團體報名 / 7,700 元、清寒補助身份報名免費"
   },
   "registration": {
     "timeline": [
@@ -17,22 +17,17 @@
       },
       {
         "label": "報名截止",
-        "date": "2025年5月25日",
+        "date": "2025年5月26日",
         "description": "報名表單關閉"
       },
       {
         "label": "錄取公告",
-        "date": "2025年5月27日",
+        "date": "2025年5月28日",
         "description": "將於網站及Facebook粉專公告錄取名單"
-      },
-      {
-        "label": "繳費期限",
-        "date": "2025年5月30日",
-        "description": "請於期限內完成繳費，逾期視同放棄"
       }
     ],
     "fee": {
-      "amount": "7,500 元",
+      "amount": "單人報名 / 8,000 元、團體報名 / 7,700 元、清寒補助身份報名免費",
       "includes": [
         "五天四夜住宿",
         "三餐及宵夜",
@@ -58,7 +53,7 @@
         }
       ]
     },
-    "formUrl": "https://forms.google.com/cscamp2025"
+    "formUrl": "https://forms.gle/XQW8x9MB258HQm5v8"
   },
   "teams": [
     {
@@ -84,6 +79,42 @@
           "position": "執秘＆總務",
           "photo": "/images/members/田松翰.jpg",
           "introFile": "/contents/members/田松翰.txt"
+        },
+        {
+          "name": "丁宇洋",
+          "position": "值星",
+          "photo": "/images/members/丁宇洋.png",
+          "introFile": "/contents/members/丁宇洋.txt"
+        },
+        {
+          "name": "古聖聰",
+          "position": "機動",
+          "photo": "/images/members/古聖聰.png",
+          "introFile": "/contents/members/古聖聰.txt"
+        },
+        {
+          "name": "林宇柔",
+          "position": "機動",
+          "photo": "/images/members/林宇柔.jpg",
+          "introFile": "/contents/members/林宇柔.txt"
+        },
+        {
+          "name": "詹秉諺",
+          "position": "機動",
+          "photo": "/images/members/詹秉諺.jpg",
+          "introFile": "/contents/members/詹秉諺.txt"
+        },
+        {
+          "name": "郭冠德",
+          "position": "機動",
+          "photo": "/images/members/郭冠德.jpg",
+          "introFile": "/contents/members/郭冠德.txt"
+        },
+        {
+          "name": "郭晉維",
+          "position": "機動",
+          "photo": "/images/members/郭晉維.jpg",
+          "introFile": "/contents/members/郭晉維.txt"
         }
       ]
     },
@@ -100,8 +131,14 @@
       ],
       "members": [
         {
-          "name": "李馨亞",
+          "name": "林庭寪",
           "position": "組長",
+          "photo": "/images/members/林庭寪.jpg",
+          "introFile": "/contents/members/林庭寪.txt"
+        },
+        {
+          "name": "李馨亞",
+          "position": "組員",
           "photo": "/images/members/李馨亞.png",
           "introFile": "/contents/members/李馨亞.txt"
         },
@@ -122,6 +159,71 @@
           "position": "組員",
           "photo": "/images/members/郭宥欣.jpg",
           "introFile": "/contents/members/郭宥欣.txt"
+        },
+        {
+          "name": "吳容亨",
+          "position": "組員",
+          "photo": "/images/members/吳容亨.jpg",
+          "introFile": "/contents/members/吳容亨.txt"
+        },
+        {
+          "name": "張晉睿",
+          "position": "組員",
+          "photo": "/images/members/張晉睿.jpg",
+          "introFile": "/contents/members/張晉睿.txt"
+        },
+        {
+          "name": "楊子賝",
+          "position": "組員",
+          "photo": "/images/members/楊子賝.jpg",
+          "introFile": "/contents/members/楊子賝.txt"
+        },
+        {
+          "name": "簡佑安",
+          "position": "組員",
+          "photo": "/images/members/簡佑安.jpg",
+          "introFile": "/contents/members/簡佑安.txt"
+        },
+        {
+          "name": "蔡凱旭",
+          "position": "組員",
+          "photo": "/images/members/蔡凱旭.jpg",
+          "introFile": "/contents/members/蔡凱旭.txt"
+        },
+        {
+          "name": "許珮筠",
+          "position": "組員",
+          "photo": "/images/members/許珮筠.jpg",
+          "introFile": "/contents/members/許珮筠.txt"
+        },
+        {
+          "name": "邱英紘",
+          "position": "組員",
+          "photo": "/images/members/邱英紘.jpg",
+          "introFile": "/contents/members/邱英紘.txt"
+        },
+        {
+          "name": "鄭栩安",
+          "position": "組員",
+          "introFile": "/contents/members/鄭栩安.txt"
+        },
+        {
+          "name": "鄭皓予",
+          "position": "組員",
+          "photo": "/images/members/鄭皓予.jpg",
+          "introFile": "/contents/members/鄭皓予.txt"
+        },
+        {
+          "name": "陳泓宇",
+          "position": "組員",
+          "photo": "/images/members/陳泓宇.jpg",
+          "introFile": "/contents/members/陳泓宇.txt"
+        },
+        {
+          "name": "陳炤宇",
+          "position": "組員",
+          "photo": "/images/members/陳炤宇.jpg",
+          "introFile": "/contents/members/陳炤宇.txt"
         }
       ]
     },
@@ -138,16 +240,60 @@
       ],
       "members": [
         {
-          "name": "李泓劭",
+          "name": "楊佳翰",
           "position": "組長",
-          "photo": "/images/members/李泓劭.jpg",
-          "introFile": "/contents/members/李泓劭.txt"
+          "photo": "/images/members/楊佳翰.jpg",
+          "introFile": "/contents/members/楊佳翰.txt"
+        },
+        {
+          "name": "李欣螢",
+          "position": "組長",
+          "photo": "/images/members/李欣螢.jpg",
+          "introFile": "/contents/members/李欣螢.txt"
+        },
+        {
+          "name": "李泓劭",
+          "position": "組員",
+          "photo": "/images/members/李泓劭.jpg"
         },
         {
           "name": "楊博宇",
           "position": "組員",
           "photo": "/images/members/楊博宇.jpg",
           "introFile": "/contents/members/楊博宇.txt"
+        },
+        {
+          "name": "李智璿",
+          "position": "組員",
+          "photo": "/images/members/李智璿.jpg",
+          "introFile": "/contents/members/李智璿.txt"
+        },
+        {
+          "name": "蔡昀佑",
+          "position": "組員",
+          "photo": "/images/members/蔡昀佑.jpg"
+        },
+        {
+          "name": "蔣忻勳",
+          "position": "組員",
+          "photo": "/images/members/蔣忻勳.jpg",
+          "introFile": "/contents/members/蔣忻勳.txt"
+        },
+        {
+          "name": "陳宥臻",
+          "position": "組員",
+          "photo": "/images/members/陳宥臻.jpg"
+        },
+        {
+          "name": "馬晨瑜",
+          "position": "組員",
+          "photo": "/images/members/馬晨瑜.jpg"
+        },
+        {
+          "name": "黃冠佾",
+          "position": "組員",
+          "photo": "/images/members/黃冠佾.jpg",
+          "introFile": "/contents/members/黃冠佾.txt"
         }
       ]
     },
@@ -171,7 +317,7 @@
         },
         {
           "name": "葉家蓁",
-          "position": "組員",
+          "position": "組長",
           "photo": "/images/members/葉家蓁.jpg",
           "introFile": "/contents/members/葉家蓁.txt"
         },
@@ -180,6 +326,35 @@
           "position": "組員",
           "photo": "/images/members/邱振源.jpg",
           "introFile": "/contents/members/邱振源.txt"
+        },
+        {
+          "name": "陳燁",
+          "position": "組員",
+          "photo": "/images/members/陳燁.jpg",
+          "introFile": "/contents/members/陳燁.txt"
+        },
+        {
+          "name": "孫承瑞",
+          "position": "組員",
+          "photo": "/images/members/孫承瑞.jpg",
+          "introFile": "/contents/members/孫承瑞.txt"
+        },
+        {
+          "name": "張珮芸",
+          "position": "組員",
+          "photo": "/images/members/張珮芸.jpg"
+        },
+        {
+          "name": "許愷洌",
+          "position": "組員",
+          "photo": "/images/members/許愷洌.jpg",
+          "introFile": "/contents/members/許愷洌.txt"
+        },
+        {
+          "name": "郭芷杅",
+          "position": "組員",
+          "photo": "/images/members/郭芷杅.jpg",
+          "introFile": "/contents/members/郭芷杅.txt"
         }
       ]
     },
@@ -196,8 +371,14 @@
       ],
       "members": [
         {
-          "name": "周廷威",
+          "name": "朱驛庭",
           "position": "組長",
+          "photo": "/images/members/朱驛庭.jpeg",
+          "introFile": "/contents/members/朱驛庭.txt"
+        },
+        {
+          "name": "周廷威",
+          "position": "組員",
           "photo": "/images/members/周廷威.png",
           "introFile": "/contents/members/周廷威.txt"
         },
@@ -212,6 +393,34 @@
           "position": "組員",
           "photo": "/images/members/蔡尚融.jpg",
           "introFile": "/contents/members/蔡尚融.txt"
+        },
+        {
+          "name": "林彥宇",
+          "position": "組員",
+          "photo": "/images/members/林彥宇.jpg"
+        },
+        {
+          "name": "江品寬",
+          "position": "組員",
+          "photo": "/images/members/江品寬.jpg",
+          "introFile": "/contents/members/江品寬.txt"
+        },
+        {
+          "name": "王韋凱",
+          "position": "組員",
+          "photo": "/images/members/王韋凱.jpg"
+        },
+        {
+          "name": "陳璽安",
+          "position": "組員",
+          "photo": "/images/members/陳璽安.jpg",
+          "introFile": "/contents/members/陳璽安.txt"
+        },
+        {
+          "name": "陳芝瑄",
+          "position": "組員",
+          "photo": "/images/members/陳芝瑄.jpg",
+          "introFile": "/contents/members/陳芝瑄.txt"
         }
       ]
     },
@@ -250,58 +459,55 @@
           "position": "組員",
           "photo": "/images/members/陳箴.jpg",
           "introFile": "/contents/members/陳箴.txt"
+        },
+        {
+          "name": "李羿昕",
+          "position": "組員",
+          "photo": "/images/members/李羿昕.jpg",
+          "introFile": "/contents/members/李羿昕.txt"
+        },
+        {
+          "name": "林書愷",
+          "position": "組員",
+          "photo": "/images/members/林書愷.jpeg",
+          "introFile": "/contents/members/林書愷.txt"
+        },
+        {
+          "name": "王昱力",
+          "position": "組員",
+          "photo": "/images/members/王昱力.jpg",
+          "introFile": "/contents/members/王昱力.txt"
+        },
+        {
+          "name": "蔡師睿",
+          "position": "組員",
+          "photo": "/images/members/蔡師睿.jpg",
+          "introFile": "/contents/members/蔡師睿.txt"
+        },
+        {
+          "name": "許書瑋",
+          "position": "組員",
+          "photo": "/images/members/許書瑋.jpg",
+          "introFile": "/contents/members/許書瑋.txt"
         }
       ]
     }
   ],
   "courses": [
     {
-      "title": "程式設計基礎",
-      "description": "從零開始學習程式設計概念，包含變數、條件判斷、迴圈等基礎知識。",
-      "lecturer": "張教授",
-      "time": "Day 1, 9:00-12:00"
+      "title": "Python 程式設計基礎",
+      "description": "從零開始探索 Python 程式設計世界，掌握變數、條件判斷、迴圈與資料結構等核心概念。透過實作小專案，學員將學習如何將程式設計思維應用於解決實際問題，奠定程式邏輯基礎。",
+      "time": "Day 2"
     },
     {
-      "title": "Python 實務入門",
-      "description": "透過 Python 語言學習程式設計，實作簡單的小遊戲與資料處理。",
-      "lecturer": "林講師",
-      "time": "Day 1, 14:00-17:00"
+      "title": "Python 網頁 API 呼叫、大型語言模型（LLM）基礎入門、MCP",
+      "description": "深入學習 Python 與外部資源互動的能力，包括網頁 API 的呼叫技巧與資料處理。探索大型語言模型（LLM）的基本原理與應用場景，並介紹 MCP (Model Context Protocol) 框架，了解如何有效構建與管理 AI 應用的核心元素。",
+      "time": "Day 3"
     },
     {
-      "title": "網頁前端開發",
-      "description": "學習 HTML、CSS 與 JavaScript 基礎，打造個人網頁。",
-      "lecturer": "王助理教授",
-      "time": "Day 2, 9:00-12:00"
-    },
-    {
-      "title": "資料結構與演算法",
-      "description": "理解基礎資料結構與演算法概念，增強程式設計能力。",
-      "lecturer": "李教授",
-      "time": "Day 2, 14:00-17:00"
-    },
-    {
-      "title": "人工智慧與機器學習入門",
-      "description": "認識 AI 與機器學習基本原理，並實作簡單的圖像識別。",
-      "lecturer": "陳博士",
-      "time": "Day 3, 9:00-12:00"
-    },
-    {
-      "title": "團隊專題實作",
-      "description": "分組開發小型專案，運用所學知識解決實際問題。",
-      "lecturer": "各組助教",
-      "time": "Day 3-5, 14:00-17:00"
-    },
-    {
-      "title": "業界講座：軟體工程師職涯分享",
-      "description": "邀請業界工程師分享職涯經驗與學習建議。",
-      "lecturer": "Google 資深工程師",
-      "time": "Day 4, 9:00-12:00"
-    },
-    {
-      "title": "專題成果發表",
-      "description": "各組展示專題成果，互相交流學習。",
-      "lecturer": "全體學員",
-      "time": "Day 6, 9:00-12:00"
+      "title": "LLM 進階知識、Prompt Engineering、Multi-Agent LLM 競賽",
+      "description": "進一步探索 LLM 的進階應用與限制，掌握 Prompt Engineering 技巧以有效引導 AI 產出理想結果。學習如何設計與實作多代理人（Multi-Agent）系統，並透過團隊競賽形式，將所學知識整合應用於解決複雜問題，體驗 AI 協作的無限可能。",
+      "time": "Day 4"
     }
   ],
   "faqs": [
@@ -311,11 +517,11 @@
     },
     {
       "question": "需要自備電腦嗎？",
-      "answer": "建議自備筆記型電腦，以便課後自主練習。若無法自備，請在報名表上註明，我們會協助安排電腦使用。"
+      "answer": "不需要！我們會提供桌上型電腦供所有學員使用。"
     },
     {
       "question": "住宿環境如何？",
-      "answer": "學員會住在交大學生宿舍，每間寢室 4 人一間，有冷氣與獨立衛浴。我們會依照性別分配寢室，並有輔導員負責管理。"
+      "answer": "學員預計會住在交大學生宿舍，每間寢室 4 人一間，有冷氣及衛浴。我們會依照性別分配寢室，並有工作人員負責管理。"
     },
     {
       "question": "有素食或特殊飲食選項嗎？",
@@ -323,19 +529,19 @@
     },
     {
       "question": "如何報名？何時會知道是否錄取？",
-      "answer": "請透過網站上的報名連結填寫 Google 表單。我們會在 5 月 31 日公告錄取名單，並以 email 通知錄取者繳費資訊。"
+      "answer": "請透過網站上的報名連結填寫 Google 表單。我們會在 5 月 27 日公告錄取名單，並以 Email 通知錄取者繳費資訊。"
     },
     {
       "question": "報名人數有限制嗎？",
-      "answer": "是的，為確保教學品質，本營隊限額 60 人。若報名人數超過，將依報名表內容進行審核錄取。"
+      "answer": "是的，為確保教學品質，本營隊限額 100 人。若報名人數超過，將依報名表內容進行審核錄取。"
     },
     {
       "question": "營隊有哪些安全措施？",
-      "answer": "我們有完整的安全計畫，包含 24 小時輔導員值班、醫療站設置、緊急聯絡人系統等。活動期間會投保平安險，並有應變機制處理緊急狀況。"
+      "answer": "我們有完整的安全計畫，包含 24 小時工作人員值班、緊急聯絡人系統等。活動期間會投保平安險，並有應變機制處理緊急狀況。"
     },
     {
       "question": "有提供接駁車嗎？",
-      "answer": "報到當天會在新竹高鐵站提供接駁車服務，詳細時間將在行前通知說明。營隊結束當天也會提供送回高鐵站的接駁服務。"
+      "answer": "報到當天會在新竹高鐵站及新竹火車站提供接駁車服務，詳細時間將在行前通知說明。營隊結束當天也會提供送回高鐵站及火車站的接駁服務。"
     },
     {
       "question": "可以申請營隊證明嗎？",
@@ -351,7 +557,7 @@
     },
     {
       "question": "營隊期間可以請假或提早離營嗎？",
-      "answer": "為維持營隊活動品質，建議全程參與。若有特殊狀況需請假或提早離營，請提前告知並填寫請假單，由家長簽名確認。"
+      "answer": "為維持營隊活動品質，建議全程參與。若有特殊狀況需請假或提早離營，請提前告知並填寫請假單。"
     }
   ],
   "images": {

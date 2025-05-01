@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define paths
-SOURCE_DIR="/Users/chueating/Desktop/Projects/cscamp_signup/網站自我介紹"
-IMAGES_DIR="/Users/chueating/Desktop/Projects/cscamp_signup/public/images/members"
-CONTENT_DIR="/Users/chueating/Desktop/Projects/cscamp_signup/public/contents/members"
+SOURCE_DIR="/Users/jayinnn/cscamp_signup/網站自我介紹"
+IMAGES_DIR="/Users/jayinnn/cscamp_signup/public/images/members"
+CONTENT_DIR="/Users/jayinnn/cscamp_signup/public/contents/members"
 
 # Create destination directories if they don't exist
 mkdir -p "$IMAGES_DIR"
