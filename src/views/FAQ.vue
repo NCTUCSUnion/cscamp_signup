@@ -70,7 +70,6 @@ const toggleItem = (index) => {
     <Banner 
       title="常見問答" 
       backgroundColor="bg-primary"
-      backgroundImage="/images/faq-banner.jpg"
     />
 
     <div class="container-custom py-16">

@@ -521,18 +521,18 @@
   "courses": [
     {
       "title": "Python 程式設計基礎",
-      "description": "從零開始探索 Python 程式設計世界，掌握變數、條件判斷、迴圈與資料結構等核心概念。透過實作小專案，學員將學習如何將程式設計思維應用於解決實際問題，奠定程式邏輯基礎。",
+      "description": "從零開始探索 Python 程式設計世界，掌握變數、條件判斷、迴圈與資料結構等核心概念。",
+      "time": "Day 1"
+    },
+    {
+      "title": "大型語言模型（LLM）基礎入門、如何結合 Python 和大型語言模型",
+      "description": "深入學習 Python 與大型語言模型如 ChatGPT 的互動能力。探索大型語言模型的基本原理與應用場景，了解如何有效將大型語言模型應用於解決實際問題。",
       "time": "Day 2"
     },
     {
-      "title": "Python 網頁 API 呼叫、大型語言模型（LLM）基礎入門、MCP",
-      "description": "深入學習 Python 與外部資源互動的能力，包括網頁 API 的呼叫技巧與資料處理。探索大型語言模型（LLM）的基本原理與應用場景，並介紹 MCP (Model Context Protocol) 框架，了解如何有效構建與管理 AI 應用的核心元素。",
+      "title": "LLM 進階技巧、多代理人（Multi-Agent）系統競賽",
+      "description": "進一步探索 LLM 的進階應用，掌握 Prompt Engineering 技巧以有效引導 AI 產出理想結果。學習如何設計與實作多代理人（Multi-Agent）系統，並透過團隊競賽形式，將所學知識整合應用於解決複雜問題，體驗 AI 協作的無限可能。",
       "time": "Day 3"
-    },
-    {
-      "title": "LLM 進階知識、Prompt Engineering、Multi-Agent LLM 競賽",
-      "description": "進一步探索 LLM 的進階應用與限制，掌握 Prompt Engineering 技巧以有效引導 AI 產出理想結果。學習如何設計與實作多代理人（Multi-Agent）系統，並透過團隊競賽形式，將所學知識整合應用於解決複雜問題，體驗 AI 協作的無限可能。",
-      "time": "Day 4"
     }
   ],
   "faqs": [
@@ -602,22 +602,22 @@
         "/images/teams/admin-2.webp"
       ],
       "event": [
-        "/images/teams/event-1.png",
-        "/images/teams/event-2.jpg",
-        "/images/teams/event-3.jpg"
+        "/images/teams/event-1.webp",
+        "/images/teams/event-2.webp",
+        "/images/teams/event-3.webp"
       ],
       "design": [
-        "/images/teams/design-1.jpg",
-        "/images/teams/design-2.jpg",
-        "/images/teams/design-3.jpg"
+        "/images/teams/design-1.webp",
+        "/images/teams/design-2.webp",
+        "/images/teams/design-3.webp"
       ],
       "life": [
-        "/images/teams/life-1.jpg",
-        "/images/teams/life-2.jpg"
+        "/images/teams/life-1.webp",
+        "/images/teams/life-2.webp"
       ],
       "study": [
-        "/images/teams/study-1.png",
-        "/images/teams/study-2.jpg"
+        "/images/teams/study-1.webp",
+        "/images/teams/study-2.webp"
       ],
       "facilities": [
         "/images/teams/facilities-1.webp",

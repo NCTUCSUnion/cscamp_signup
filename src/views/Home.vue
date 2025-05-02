@@ -107,7 +107,7 @@ onMounted(() => {
               
               <div class="mt-8 text-center">
                 <router-link 
-                  to="https://forms.gle/XQW8x9MB258HQm5v8" 
+                  to="/registration" 
                   class="btn-primary"
                 >
                   立即報名

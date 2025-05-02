@@ -21,7 +21,6 @@ function getTeamColor(teamId) {
     <Banner 
       title="各組介紹" 
       backgroundColor="bg-primary"
-      backgroundImage="/images/teams-banner.jpg"
     />
 
     <div class="container-custom py-16">

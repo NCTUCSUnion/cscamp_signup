@@ -19,7 +19,6 @@ const toggleItem = (index) => {
     <Banner 
       title="課程簡介" 
       backgroundColor="bg-primary"
-      backgroundImage="/images/courses-banner.jpg"
     />
 
     <div class="container-custom py-16">

@@ -6,7 +6,7 @@ defineProps({
   },
   backgroundImage: {
     type: String,
-    default: '/images/banner-default.jpg'
+    default: '/images/banner-default.webp'
   },
   backgroundColor: {
     type: String,
@@ -23,7 +23,7 @@ defineProps({
     <!-- Background image with overlay -->
     <div 
       v-if="backgroundImage"
-      class="absolute inset-0 bg-cover bg-center opacity-30" 
+      class="absolute inset-0 bg-cover bg-center opacity-60" 
       :style="{ backgroundImage: `url(${backgroundImage})` }"
     ></div>
     

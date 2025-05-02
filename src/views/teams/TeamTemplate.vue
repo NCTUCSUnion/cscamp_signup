@@ -59,7 +59,6 @@ const getTextColor = computed(() => {
     <Banner 
       :title="team.name" 
       :backgroundColor="getBackgroundColor"
-      backgroundImage="/images/teams-banner.jpg"
     />
 
     <div class="container-custom py-16">
