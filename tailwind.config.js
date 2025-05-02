@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         primaryLight: '#A4E65E', // Apple Green 300
-        primary:      '#4E7B22', // Apple Green 500
-        onPrimary:    '#FFFFFF',
+        primary:      '#9ABF80', // Apple Green 500
+        onPrimary:    '#000000',
 
         /* === 輔助 === */
         softblue:  '#C8D2DD',

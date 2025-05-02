@@ -23,7 +23,7 @@ onMounted(() => {
     <div 
       ref="heroRef"
       class="w-full h-screen bg-cover bg-center flex items-center justify-center relative"
-      style="background-image: url('/images/hero-bg.jpg');"
+      style="background-image: url('/images/hero-bg.webp');"
     >
       <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
       <div class="container-custom relative z-10 text-center text-white hero-content">
@@ -127,7 +127,7 @@ onMounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Registration Card -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/registration-card.jpeg');"></div>
+            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/registration-card.webp');"></div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">報名資訊</h3>
               <p class="text-gray-600 mb-4">了解報名流程、費用說明與重要時程。</p>
@@ -145,7 +145,7 @@ onMounted(() => {
           
           <!-- Teams Card -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/teams-card.png');"></div>
+            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/teams-card.webp');"></div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">各組介紹</h3>
               <p class="text-gray-600 mb-4">認識六大組別與他們的職責。</p>
@@ -163,7 +163,7 @@ onMounted(() => {
           
           <!-- Courses Card -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/courses-card.png');"></div>
+            <div class="h-48 bg-cover bg-center" style="background-image: url('/images/courses-card.webp');"></div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">課程簡介</h3>
               <p class="text-gray-600 mb-4">探索我們精心設計的程式教學課程。</p>
