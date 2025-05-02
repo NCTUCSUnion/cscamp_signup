@@ -71,49 +71,49 @@
         {
           "name": "戚維凌",
           "position": "總召",
-          "photo": "/images/members/戚維凌.jpg",
+          "photo": "/images/members/戚維凌.webp",
           "introFile": "/contents/members/戚維凌.txt"
         },
         {
           "name": "田松翰",
           "position": "執秘＆總務",
-          "photo": "/images/members/田松翰.jpg",
+          "photo": "/images/members/田松翰.webp",
           "introFile": "/contents/members/田松翰.txt"
         },
         {
           "name": "丁宇洋",
           "position": "值星",
-          "photo": "/images/members/丁宇洋.png",
+          "photo": "/images/members/丁宇洋.webp",
           "introFile": "/contents/members/丁宇洋.txt"
         },
         {
           "name": "古聖聰",
           "position": "機動",
-          "photo": "/images/members/古聖聰.png",
+          "photo": "/images/members/古聖聰.webp",
           "introFile": "/contents/members/古聖聰.txt"
         },
         {
           "name": "林宇柔",
           "position": "機動",
-          "photo": "/images/members/林宇柔.jpg",
+          "photo": "/images/members/林宇柔.webp",
           "introFile": "/contents/members/林宇柔.txt"
         },
         {
           "name": "詹秉諺",
           "position": "機動",
-          "photo": "/images/members/詹秉諺.jpg",
+          "photo": "/images/members/詹秉諺.webp",
           "introFile": "/contents/members/詹秉諺.txt"
         },
         {
           "name": "郭冠德",
           "position": "機動",
-          "photo": "/images/members/郭冠德.jpg",
+          "photo": "/images/members/郭冠德.webp",
           "introFile": "/contents/members/郭冠德.txt"
         },
         {
           "name": "郭晉維",
           "position": "機動",
-          "photo": "/images/members/郭晉維.jpg",
+          "photo": "/images/members/郭晉維.webp",
           "introFile": "/contents/members/郭晉維.txt"
         }
       ]
@@ -131,75 +131,81 @@
       ],
       "members": [
         {
+          "name": "張維程",
+          "position": "組長",
+          "photo": "/images/members/張維程.webp",
+          "introFile": "/contents/members/張維程.txt"
+        },
+        {
           "name": "林庭寪",
           "position": "組長",
-          "photo": "/images/members/林庭寪.jpg",
+          "photo": "/images/members/林庭寪.webp",
           "introFile": "/contents/members/林庭寪.txt"
         },
         {
           "name": "李馨亞",
           "position": "組員",
-          "photo": "/images/members/李馨亞.png",
+          "photo": "/images/members/李馨亞.webp",
           "introFile": "/contents/members/李馨亞.txt"
         },
         {
           "name": "林哲全",
           "position": "組員",
-          "photo": "/images/members/林哲全.jpg",
+          "photo": "/images/members/林哲全.webp",
           "introFile": "/contents/members/林哲全.txt"
         },
         {
           "name": "許士宏",
           "position": "組員",
-          "photo": "/images/members/許士宏.jpg",
+          "photo": "/images/members/許士宏.webp",
           "introFile": "/contents/members/許士宏.txt"
         },
         {
           "name": "郭宥欣",
           "position": "組員",
-          "photo": "/images/members/郭宥欣.jpg",
+          "photo": "/images/members/郭宥欣.webp",
           "introFile": "/contents/members/郭宥欣.txt"
         },
         {
           "name": "吳容亨",
           "position": "組員",
-          "photo": "/images/members/吳容亨.jpg",
+          "photo": "/images/members/吳容亨.webp",
           "introFile": "/contents/members/吳容亨.txt"
         },
         {
           "name": "張晉睿",
           "position": "組員",
-          "photo": "/images/members/張晉睿.jpg",
+          "photo": "/images/members/張晉睿.webp",
           "introFile": "/contents/members/張晉睿.txt"
         },
         {
           "name": "楊子賝",
           "position": "組員",
-          "photo": "/images/members/楊子賝.jpg",
+          "photo": "/images/members/楊子賝.webp",
           "introFile": "/contents/members/楊子賝.txt"
         },
         {
           "name": "簡佑安",
           "position": "組員",
-          "photo": "/images/members/簡佑安.jpg",
+          "photo": "/images/members/簡佑安.webp",
           "introFile": "/contents/members/簡佑安.txt"
         },
         {
           "name": "蔡凱旭",
           "position": "組員",
-          "photo": "/images/members/蔡凱旭.jpg",
+          "photo": "/images/members/蔡凱旭.webp",
           "introFile": "/contents/members/蔡凱旭.txt"
         },
         {
           "name": "許珮筠",
           "position": "組員",
-          "photo": "/images/members/許珮筠.jpg",
+          "photo": "/images/members/許珮筠.webp",
           "introFile": "/contents/members/許珮筠.txt"
         },
         {
           "name": "邱英紘",
           "position": "組員",
-          "photo": "/images/members/邱英紘.jpg",
+          "photo": "/images/members/邱英紘.webp",
           "introFile": "/contents/members/邱英紘.txt"
         },
         {
@@ -210,19 +216,19 @@
         {
           "name": "鄭皓予",
           "position": "組員",
-          "photo": "/images/members/鄭皓予.jpg",
+          "photo": "/images/members/鄭皓予.webp",
           "introFile": "/contents/members/鄭皓予.txt"
         },
         {
           "name": "陳泓宇",
           "position": "組員",
-          "photo": "/images/members/陳泓宇.jpg",
+          "photo": "/images/members/陳泓宇.webp",
           "introFile": "/contents/members/陳泓宇.txt"
         },
         {
           "name": "陳炤宇",
           "position": "組員",
-          "photo": "/images/members/陳炤宇.jpg",
+          "photo": "/images/members/陳炤宇.webp",
           "introFile": "/contents/members/陳炤宇.txt"
         }
       ]
@@ -242,57 +248,61 @@
         {
           "name": "楊佳翰",
           "position": "組長",
-          "photo": "/images/members/楊佳翰.jpg",
+          "photo": "/images/members/楊佳翰.webp",
           "introFile": "/contents/members/楊佳翰.txt"
         },
         {
           "name": "李欣螢",
           "position": "組長",
-          "photo": "/images/members/李欣螢.jpg",
+          "photo": "/images/members/李欣螢.webp",
           "introFile": "/contents/members/李欣螢.txt"
         },
         {
           "name": "李泓劭",
           "position": "組員",
-          "photo": "/images/members/李泓劭.jpg"
+          "photo": "/images/members/李泓劭.webp",
+          "introFile": "/contents/members/李泓劭.txt"
         },
         {
           "name": "楊博宇",
           "position": "組員",
-          "photo": "/images/members/楊博宇.jpg",
+          "photo": "/images/members/楊博宇.webp",
           "introFile": "/contents/members/楊博宇.txt"
         },
         {
           "name": "李智璿",
           "position": "組員",
-          "photo": "/images/members/李智璿.jpg",
+          "photo": "/images/members/李智璿.webp",
           "introFile": "/contents/members/李智璿.txt"
         },
         {
           "name": "蔡昀佑",
           "position": "組員",
-          "photo": "/images/members/蔡昀佑.jpg"
+          "photo": "/images/members/蔡昀佑.webp",
+          "introFile": "/contents/members/蔡昀佑.txt"
         },
         {
           "name": "蔣忻勳",
           "position": "組員",
-          "photo": "/images/members/蔣忻勳.jpg",
+          "photo": "/images/members/蔣忻勳.webp",
           "introFile": "/contents/members/蔣忻勳.txt"
         },
         {
           "name": "陳宥臻",
           "position": "組員",
-          "photo": "/images/members/陳宥臻.jpg"
+          "photo": "/images/members/陳宥臻.webp",
+          "introFile": "/contents/members/陳宥臻.txt"
         },
         {
           "name": "馬晨瑜",
           "position": "組員",
-          "photo": "/images/members/馬晨瑜.jpg"
+          "photo": "/images/members/馬晨瑜.webp",
+          "introFile": "/contents/members/馬晨瑜.txt"
         },
         {
           "name": "黃冠佾",
           "position": "組員",
-          "photo": "/images/members/黃冠佾.jpg",
+          "photo": "/images/members/黃冠佾.webp",
           "introFile": "/contents/members/黃冠佾.txt"
         }
       ]
@@ -312,48 +322,49 @@
         {
           "name": "王皓平",
           "position": "組長",
-          "photo": "/images/members/王皓平.jpg",
+          "photo": "/images/members/王皓平.webp",
           "introFile": "/contents/members/王皓平.txt"
         },
         {
           "name": "葉家蓁",
           "position": "組長",
-          "photo": "/images/members/葉家蓁.jpg",
+          "photo": "/images/members/葉家蓁.webp",
           "introFile": "/contents/members/葉家蓁.txt"
         },
         {
           "name": "邱振源",
           "position": "組員",
-          "photo": "/images/members/邱振源.jpg",
+          "photo": "/images/members/邱振源.webp",
           "introFile": "/contents/members/邱振源.txt"
         },
         {
           "name": "陳燁",
           "position": "組員",
-          "photo": "/images/members/陳燁.jpg",
+          "photo": "/images/members/陳燁.webp",
           "introFile": "/contents/members/陳燁.txt"
         },
         {
           "name": "孫承瑞",
           "position": "組員",
-          "photo": "/images/members/孫承瑞.jpg",
+          "photo": "/images/members/孫承瑞.webp",
           "introFile": "/contents/members/孫承瑞.txt"
         },
         {
           "name": "張珮芸",
           "position": "組員",
-          "photo": "/images/members/張珮芸.jpg"
+          "photo": "/images/members/張珮芸.webp",
+          "introFile": "/contents/members/張珮芸.txt"
         },
         {
           "name": "許愷洌",
           "position": "組員",
-          "photo": "/images/members/許愷洌.jpg",
+          "photo": "/images/members/許愷洌.webp",
           "introFile": "/contents/members/許愷洌.txt"
         },
         {
           "name": "郭芷杅",
           "position": "組員",
-          "photo": "/images/members/郭芷杅.jpg",
+          "photo": "/images/members/郭芷杅.webp",
           "introFile": "/contents/members/郭芷杅.txt"
         }
       ]
@@ -373,53 +384,61 @@
         {
           "name": "朱驛庭",
           "position": "組長",
-          "photo": "/images/members/朱驛庭.jpeg",
+          "photo": "/images/members/朱驛庭.webp",
           "introFile": "/contents/members/朱驛庭.txt"
+        },
+        {
+          "name": "李杰穎",
+          "position": "組長",
+          "photo": "/images/members/李杰穎.webp",
+          "introFile": "/contents/members/李杰穎.txt"
         },
         {
           "name": "周廷威",
           "position": "組員",
-          "photo": "/images/members/周廷威.png",
+          "photo": "/images/members/周廷威.webp",
           "introFile": "/contents/members/周廷威.txt"
         },
         {
           "name": "曾士珍",
           "position": "組員",
-          "photo": "/images/members/曾士珍.jpg",
+          "photo": "/images/members/曾士珍.webp",
           "introFile": "/contents/members/曾士珍.txt"
         },
         {
           "name": "蔡尚融",
           "position": "組員",
-          "photo": "/images/members/蔡尚融.jpg",
+          "photo": "/images/members/蔡尚融.webp",
           "introFile": "/contents/members/蔡尚融.txt"
         },
         {
           "name": "林彥宇",
           "position": "組員",
-          "photo": "/images/members/林彥宇.jpg"
+          "photo": "/images/members/林彥宇.webp",
+          "introFile": "/contents/members/林彥宇.txt"
         },
         {
           "name": "江品寬",
           "position": "組員",
-          "photo": "/images/members/江品寬.jpg",
+          "photo": "/images/members/江品寬.webp",
           "introFile": "/contents/members/江品寬.txt"
         },
         {
           "name": "王韋凱",
           "position": "組員",
-          "photo": "/images/members/王韋凱.jpg"
+          "photo": "/images/members/王韋凱.webp",
+          "introFile": "/contents/members/王韋凱.txt"
         },
         {
           "name": "陳璽安",
           "position": "組員",
-          "photo": "/images/members/陳璽安.jpg",
+          "photo": "/images/members/陳璽安.webp",
           "introFile": "/contents/members/陳璽安.txt"
         },
         {
           "name": "陳芝瑄",
           "position": "組員",
-          "photo": "/images/members/陳芝瑄.jpg",
+          "photo": "/images/members/陳芝瑄.webp",
           "introFile": "/contents/members/陳芝瑄.txt"
         }
       ]
@@ -437,58 +456,64 @@
       ],
       "members": [
         {
-          "name": "吳宇藤",
+          "name": "王昱力",
           "position": "組長",
-          "photo": "/images/members/吳宇藤.jpeg",
+          "photo": "/images/members/王昱力.webp",
+          "introFile": "/contents/members/王昱力.txt"
+        },
+        {
+          "name": "蔡師睿",
+          "position": "組長",
+          "photo": "/images/members/蔡師睿.webp",
+          "introFile": "/contents/members/蔡師睿.txt"
+        },
+        {
+          "name": "吳宇藤",
+          "position": "組員",
+          "photo": "/images/members/吳宇藤.webp",
           "introFile": "/contents/members/吳宇藤.txt"
         },
         {
           "name": "林郁晁",
           "position": "組員",
-          "photo": "/images/members/林郁晁.jpg",
+          "photo": "/images/members/林郁晁.webp",
           "introFile": "/contents/members/林郁晁.txt"
         },
         {
           "name": "楊晟弘",
           "position": "組員",
-          "photo": "/images/members/楊晟弘.jpg",
+          "photo": "/images/members/楊晟弘.webp",
           "introFile": "/contents/members/楊晟弘.txt"
         },
         {
           "name": "陳箴",
           "position": "組員",
-          "photo": "/images/members/陳箴.jpg",
+          "photo": "/images/members/陳箴.webp",
           "introFile": "/contents/members/陳箴.txt"
         },
         {
           "name": "李羿昕",
           "position": "組員",
-          "photo": "/images/members/李羿昕.jpg",
+          "photo": "/images/members/李羿昕.webp",
           "introFile": "/contents/members/李羿昕.txt"
         },
         {
           "name": "林書愷",
           "position": "組員",
-          "photo": "/images/members/林書愷.jpeg",
+          "photo": "/images/members/林書愷.webp",
           "introFile": "/contents/members/林書愷.txt"
-        },
-        {
-          "name": "王昱力",
-          "position": "組員",
-          "photo": "/images/members/王昱力.jpg",
-          "introFile": "/contents/members/王昱力.txt"
-        },
-        {
-          "name": "蔡師睿",
-          "position": "組員",
-          "photo": "/images/members/蔡師睿.jpg",
-          "introFile": "/contents/members/蔡師睿.txt"
         },
         {
           "name": "許書瑋",
           "position": "組員",
-          "photo": "/images/members/許書瑋.jpg",
+          "photo": "/images/members/許書瑋.webp",
           "introFile": "/contents/members/許書瑋.txt"
+        },
+        {
+          "name": "鄭武謙",
+          "position": "組員",
+          "photo": "/images/members/鄭武謙.webp",
+          "introFile": "/contents/members/鄭武謙.txt"
         }
       ]
     }
@@ -562,19 +587,19 @@
   ],
   "images": {
     "slideshow": [
-      "/images/slideshow/slide-1.png",
-      "/images/slideshow/slide-2.png",
-      "/images/slideshow/slide-3.png",
-      "/images/slideshow/slide-4.png",
-      "/images/slideshow/slide-5.png",
-      "/images/slideshow/slide-6.png",
-      "/images/slideshow/slide-7.png",
-      "/images/slideshow/slide-8.png"
+      "/images/slideshow/slide-1.webp",
+      "/images/slideshow/slide-2.webp",
+      "/images/slideshow/slide-3.webp",
+      "/images/slideshow/slide-4.webp",
+      "/images/slideshow/slide-5.webp",
+      "/images/slideshow/slide-6.webp",
+      "/images/slideshow/slide-7.webp",
+      "/images/slideshow/slide-8.webp"
     ],
     "teams": {
       "admin": [
-        "/images/teams/admin-1.png",
-        "/images/teams/admin-2.png"
+        "/images/teams/admin-1.webp",
+        "/images/teams/admin-2.webp"
       ],
       "event": [
         "/images/teams/event-1.png",
@@ -595,8 +620,8 @@
         "/images/teams/study-2.jpg"
       ],
       "facilities": [
-        "/images/teams/facilities-1.png",
-        "/images/teams/facilities-2.png"
+        "/images/teams/facilities-1.webp",
+        "/images/teams/facilities-2.webp"
       ]
     }
   }
