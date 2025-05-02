@@ -28,7 +28,7 @@ onMounted(() => {
       <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
       <div class="container-custom relative z-10 text-center text-white hero-content">
         <h1 class="text-8xl md:text-8xl font-bold mb-8 tracking-wider">{{ campInfo.campName }}</h1>
-        <h2 class="text-5xl text-gray-300 md:text-5xl mb-10 tracking-wider">{{ campInfo.slogan }}</h2>
+        <h2 class="text-4xl text-gray-300 md:text-5xl mb-10 tracking-wider">{{ campInfo.slogan }}</h2>
         <p class="text-xl text-gray-300 md:text-2xl mb-10">{{ campInfo.mainInfo.date }}</p>
         <a 
           href="https://forms.gle/XQW8x9MB258HQm5v8" 
