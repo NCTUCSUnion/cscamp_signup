@@ -578,19 +578,21 @@
       ],
       "event": [
         "/images/teams/event-1.png",
-        "/images/teams/event-2.png"
+        "/images/teams/event-2.jpg",
+        "/images/teams/event-3.jpg"
       ],
       "design": [
-        "/images/teams/design-1.png",
-        "/images/teams/design-2.png"
+        "/images/teams/design-1.jpg",
+        "/images/teams/design-2.jpg",
+        "/images/teams/design-3.jpg"
       ],
       "life": [
-        "/images/teams/life-1.png",
-        "/images/teams/life-2.png"
+        "/images/teams/life-1.jpg",
+        "/images/teams/life-2.jpg"
       ],
       "study": [
         "/images/teams/study-1.png",
-        "/images/teams/study-2.png"
+        "/images/teams/study-2.jpg"
       ],
       "facilities": [
         "/images/teams/facilities-1.png",
