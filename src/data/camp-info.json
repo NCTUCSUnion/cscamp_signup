@@ -211,6 +211,7 @@
         {
           "name": "鄭栩安",
           "position": "組員",
+          "photo": "/images/members/鄭栩安.webp",
           "introFile": "/contents/members/鄭栩安.txt"
         },
         {
@@ -342,6 +343,12 @@
           "position": "組員",
           "photo": "/images/members/陳燁.webp",
           "introFile": "/contents/members/陳燁.txt"
+        },
+        {
+          "name": "黃佑得",
+          "position": "組員",
+          "photo": "/images/members/黃佑得.webp",
+          "introFile": "/contents/members/黃佑得.txt"
         },
         {
           "name": "孫承瑞",

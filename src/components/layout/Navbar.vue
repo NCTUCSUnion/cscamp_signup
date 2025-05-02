@@ -87,9 +87,8 @@ const teams = campInfo.teams
           </div>
           
           <a 
-            href="#" 
+            href="https://forms.gle/XQW8x9MB258HQm5v8" 
             class="btn-primary font-heading flex items-center justify-center"
-            @click.prevent="$router.push('/registration')"
           >
             立即報名
           </a>
@@ -109,10 +108,11 @@ const teams = campInfo.teams
       </div>
 
       <!-- Mobile Navigation -->
-      <div 
-        v-show="isMenuOpen"
-        class="md:hidden mt-4 pb-4 space-y-3"
-      >
+      <transition name="menu-slide">
+        <div 
+          v-show="isMenuOpen"
+          class="md:hidden mt-4 pb-4 space-y-3"
+        >
         <!-- Regular links -->
         <router-link 
           v-for="link in navLinks.filter(l => !l.hasDropdown)" 
@@ -129,16 +129,38 @@ const teams = campInfo.teams
         <div class="relative">
           <div 
             class="flex justify-between items-center text-gray-700 hover:text-primary py-2 font-bold font-heading cursor-pointer"
-            @click="toggleTeamDropdown"
           >
-            <span>各組介紹</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform dropdown-arrow-mobile" :class="{'rotate-180': isTeamDropdownOpen}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <div 
+              class="flex items-center hover:text-primary font-bold font-heading nav-link relative cursor-pointer"
+              @click="toggleTeamDropdown"
+            >
+              <span>各組介紹</span>
+              <span class="hover-line"></span>
+            </div>
+            <div class="flex">
+              <router-link 
+                to="/team"
+                class="mr-2 text-sm text-gray-500 hover:text-primary"
+                @click="closeMenu"
+              >
+                查看全部
+              </router-link>
+              <svg xmlns="http://www.w3.org/2000/svg" 
+                class="h-4 w-4 transition-transform dropdown-arrow-mobile" 
+                :class="{'rotate-180': isTeamDropdownOpen}" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                @click="toggleTeamDropdown"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
           
           <!-- Mobile Team Dropdown -->
-          <div v-show="isTeamDropdownOpen" class="pl-4 mt-2 border-l-2 border-gray-200 space-y-2">
+          <transition name="dropdown-slide">
+            <div v-show="isTeamDropdownOpen" class="pl-4 mt-2 border-l-2 border-gray-200 space-y-2">
             <router-link 
               v-for="team in teams" 
               :key="team.id" 
@@ -149,16 +171,17 @@ const teams = campInfo.teams
               {{ team.name }}
             </router-link>
           </div>
+          </transition>
         </div>
         
         <a 
-          href="#" 
+          href="https://forms.gle/XQW8x9MB258HQm5v8" 
           class="block btn-primary text-center mt-4 font-heading flex items-center justify-center py-2"
-          @click.prevent="$router.push('/registration'); closeMenu()"
         >
           立即報名
         </a>
       </div>
+      </transition>
     </div>
   </nav>
 </template>
@@ -200,6 +223,33 @@ const teams = campInfo.teams
 /* Dropdown menu animation */
 .group:hover .absolute {
   display: block;
+}
+
+/* Mobile menu animations */
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.menu-slide-enter-from,
+.menu-slide-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* Team dropdown animations */
+.dropdown-slide-enter-active,
+.dropdown-slide-leave-active {
+  transition: all 0.25s ease-out;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.dropdown-slide-enter-from,
+.dropdown-slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
 
 /* Keep parent link in hover state when hovering dropdown */

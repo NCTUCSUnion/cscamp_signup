@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* === 品牌基調 === */
-        primary:   '#1F2937',
-        onPrimary: '#FFFFFF',
-        accent:    '#006A4E',
+        primaryLight: '#A4E65E', // Apple Green 300
+        primary:      '#4E7B22', // Apple Green 500
+        onPrimary:    '#FFFFFF',
+
+        /* === 輔助 === */
         softblue:  '#C8D2DD',
         leaf:      '#D4E157',
 

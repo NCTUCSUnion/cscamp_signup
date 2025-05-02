@@ -6,7 +6,7 @@ defineProps({
   },
   backgroundImage: {
     type: String,
-    default: '/images/banner-default.webp'
+    default: '/images/banner-disable.webp'
   },
   backgroundColor: {
     type: String,

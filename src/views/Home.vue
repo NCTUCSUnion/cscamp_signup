@@ -30,12 +30,12 @@ onMounted(() => {
         <h1 class="text-8xl md:text-8xl font-bold mb-8 tracking-wider">{{ campInfo.campName }}</h1>
         <p class="text-2xl text-gray-300 md:text-2xl mb-2">{{ campInfo.slogan }}</p>
         <p class="text-xl text-gray-300 md:text-2xl mb-10">{{ campInfo.mainInfo.date }}</p>
-        <router-link 
-          to="/registration" 
+        <a 
+          href="https://forms.gle/XQW8x9MB258HQm5v8" 
           class="btn-primary text-xl py-3 px-8"
         >
           立即報名
-        </router-link>
+        </a>
       </div>
     </div>
 
@@ -106,12 +106,12 @@ onMounted(() => {
               </ul>
               
               <div class="mt-8 text-center">
-                <router-link 
-                  to="/registration" 
+                <a 
+                  href="https://forms.gle/XQW8x9MB258HQm5v8" 
                   class="btn-primary"
                 >
                   立即報名
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
