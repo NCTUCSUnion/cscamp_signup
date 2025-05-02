@@ -161,16 +161,7 @@ const toggleItem = (index) => {
       <div class="mt-16 bg-gray-100 p-8 rounded-lg text-center max-w-3xl mx-auto">
         <h3 class="text-xl font-semibold mb-4">還有其他問題？</h3>
         <p class="mb-6">如果以上問答沒有解決您的疑問，歡迎透過以下方式聯絡我們：</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a 
-            href="mailto:cscamp@cs.nctu.edu.tw" 
-            class="inline-flex items-center justify-center bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary/80"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            寄送郵件
-          </a>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">         
           <a 
             href="https://www.facebook.com/nctucsChaseDream" 
             target="_blank" 
@@ -193,6 +184,21 @@ const toggleItem = (index) => {
             </svg>
             Instagram
           </a>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-2">
+          <p class="font-medium">或直接聯絡營隊負責人：</p>
+          <div class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>總召：戚維凌 / 0963156380</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>執秘：田松翰 / 0965424129</span>
+          </div>
         </div>
       </div>
     </div>
