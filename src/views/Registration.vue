@@ -36,7 +36,7 @@ const timelineDates = computed(() => {
 // Find registration deadline date
 const registrationDeadline = computed(() => {
   // Fallback: use a future date
-  return new Date(2025, 4, 26, 22, 0, 0, 0) // May 25, 2025, 23:59:59.999
+  return new Date(2025, 4, 25, 22, 0, 0, 0) // May 25, 2025, 23:59:59.999
 })
 
 // Calculate remaining time until registration deadline
