@@ -57,10 +57,11 @@ const filteredFaqs = computed(() => {
 // Accordion functionality
 const openItems = ref({})
 
-const toggleItem = (index) => {
+// Item change to obj properties
+const toggleItem = (key) => {
   openItems.value = {
     ...openItems.value,
-    [index]: !openItems.value[index]
+    [key]: !openItems.value[key]
   }
 }
 </script>
@@ -123,20 +124,27 @@ const toggleItem = (index) => {
         <div v-else class="space-y-4">
           <div 
             v-for="(faq, index) in filteredFaqs" 
-            :key="index"
-            class="bg-white shadow-md rounded-lg overflow-hidden"
+            :key="faq.question"
+            :class="[
+              'bg-white shadow-md rounded-lg overflow-hidden transition',
+              faq.highlight ? 'ring-2 ring-primary/50 bg-primary/5' : ''
+            ]"
           >
             <!-- Question -->
+            <!-- Add hightlight:true to highlight certain faq -->
             <div 
-              @click="toggleItem(index)"
-              class="p-6 flex justify-between items-center cursor-pointer hover:bg-gray-50"
+              @click="toggleItem(faq.question)"
+              :class="[
+                'p-6 flex justify-between items-center cursor-pointer',
+                faq.highlight ? 'hover:bg-primary/10' : 'hover:bg-gray-50'
+              ]"
             >
               <h3 class="text-lg font-semibold pr-8">{{ faq.question }}</h3>
               <div>
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   class="h-6 w-6 text-primary transition-transform" 
-                  :class="{ 'transform rotate-180': openItems[index] }"
+                  :class="{ 'transform rotate-180': openItems[faq.question] }"
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -148,7 +156,7 @@ const toggleItem = (index) => {
             
             <!-- Answer -->
             <div 
-              v-show="openItems[index]"
+              v-show="openItems[faq.question]"
               class="px-6 pb-6 pt-2 border-t border-gray-200"
             >
               <p>{{ faq.answer }}</p>
