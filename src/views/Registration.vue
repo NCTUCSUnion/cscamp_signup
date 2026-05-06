@@ -3,23 +3,34 @@ import Banner from '../components/layout/Banner.vue'
 import campInfo from '../data/camp-info.json'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+/** "YYYY年M月D日" or "YYYY年M月D日 HH:mm" (local time) */
+function parseCampTimelineDate(dateStr) {
+  const m = dateStr.match(
+    /^(\d{4})年(\d{1,2})月(\d{1,2})日(?:\s+(\d{1,2}):(\d{2}))?$/
+  )
+  if (!m) return null
+  const year = parseInt(m[1], 10)
+  const month = parseInt(m[2], 10) - 1
+  const day = parseInt(m[3], 10)
+  const hour = m[4] !== undefined ? parseInt(m[4], 10) : 0
+  const minute = m[5] !== undefined ? parseInt(m[5], 10) : 0
+  const d = new Date(year, month, day, hour, minute, 0, 0)
+  return Number.isNaN(d.getTime()) ? null : d
+}
+
 // Get current date for timeline highlighting
 const currentDate = ref(new Date())
 
 // Parse dates from timeline for comparison
 const timelineDates = computed(() => {
   return campInfo.registration.timeline.map((item, index) => {
-    // Extract year, month, day from the date string (assuming format like "2025年5月3日")
-    const dateMatch = item.date.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/)
+    // Parse from camp-info.json
+    const parsed = parseCampTimelineDate(item.date)
     let date = null
-    
-    if (dateMatch) {
-      const year = parseInt(dateMatch[1])
-      const month = parseInt(dateMatch[2]) - 1 // JS months are 0-based
-      const day = parseInt(dateMatch[3])
-      
-      date = new Date(year, month, day)
-      // Reset time part to ensure clean comparison
+
+    if (parsed) {
+      date = new Date(parsed)
+      // Day-level comparison for timeline highlighting
       date.setHours(0, 0, 0, 0)
     }
     
@@ -33,10 +44,14 @@ const timelineDates = computed(() => {
   })
 })
 
-// Find registration deadline date
+// Registration countdown deadline: same source as timeline「報名截止」in camp-info.json
 const registrationDeadline = computed(() => {
-  // Fallback: use a future date
-  return new Date(2025, 4, 25, 22, 0, 0, 0) // May 25, 2025, 23:59:59.999
+  const item = campInfo.registration.timeline.find((t) => t.label === '報名截止')
+  if (item) {
+    const d = parseCampTimelineDate(item.date)
+    if (d) return d
+  }
+  return new Date(2026, 4, 30, 22, 0, 0, 0)
 })
 
 // Calculate remaining time until registration deadline
@@ -51,6 +66,19 @@ const remainingTime = ref({
 const isDeadlinePassed = computed(() => {
   const now = new Date()
   return now > registrationDeadline.value
+})
+
+const refundPolicyGroups = computed(() => {
+  const groups = new Map()
+  for (const policy of campInfo.registration.fee.refundPolicy) {
+    const key = policy.deadline
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key).push(policy)
+  }
+  return Array.from(groups.entries()).map(([deadline, policies]) => ({
+    deadline,
+    policies
+  }))
 })
 
 // Update countdown timer
@@ -220,6 +248,12 @@ const isCurrentStage = (index) => {
                 </svg>
                 {{ item }}
               </li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                因應教育部政策不會發放參加證明
+              </li>
             </ul>
           </div>
           
@@ -312,6 +346,49 @@ const isCurrentStage = (index) => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-100 p-8 rounded-lg shadow-md mt-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <h3 class="text-2xl font-bold text-primary">退費說明</h3>
+            <span class="text-sm text-gray-500">依申請時間與原因計算</span>
+          </div>
+
+          <div class="space-y-4">
+            <div
+              v-for="(group, groupIndex) in refundPolicyGroups"
+              :key="groupIndex"
+              class="bg-white rounded-lg border border-gray-200 p-4"
+            >
+              <div class="font-medium text-gray-900 leading-relaxed">
+                {{ group.deadline }}
+              </div>
+
+              <ul class="mt-3 space-y-3">
+                <li
+                  v-for="(policy, index) in group.policies"
+                  :key="index"
+                  class="flex items-start justify-between gap-3"
+                >
+                  <div class="text-gray-700 leading-relaxed">
+                    {{ policy.condition }}
+                  </div>
+                  <span
+                    :class="[
+                      'shrink-0 inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold',
+                      policy.percentage === 0 ? 'bg-gray-100 text-gray-700' : 'bg-primary bg-opacity-10 text-primary'
+                    ]"
+                  >
+                    退還 {{ policy.percentage }}%
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 text-sm text-gray-600">
+            實際退費以主辦單位審核與公告為準。
           </div>
         </div>
       </section>
