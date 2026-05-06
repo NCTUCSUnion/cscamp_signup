@@ -37,7 +37,7 @@ const teams = campInfo.teams
         <!-- Logo -->
         <router-link to="/" class="flex flex-col items-start" @click="closeMenu">
           <span class="nav-title text-xl font-bold text-primary font-heading relative">
-            2025 交大資訊逐夢營
+            2026 交大資訊逐夢營
             <span class="hover-line"></span>
           </span>
           <span class="text-sm text-gray-400 font-heading font-bold">{{ campInfo.slogan }}</span>
@@ -87,7 +87,7 @@ const teams = campInfo.teams
           </div>
           
           <a 
-            href="https://forms.gle/XQW8x9MB258HQm5v8" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform" 
             class="btn-primary font-heading flex items-center justify-center"
           >
             立即報名
@@ -175,7 +175,7 @@ const teams = campInfo.teams
         </div>
         
         <a 
-          href="https://forms.gle/XQW8x9MB258HQm5v8" 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSed3_UidvvDkomMjrIPuIjYHmHWDnQ7HhNuFPTBAwcC2GQ8DA/viewform" 
           class="block btn-primary text-center mt-4 font-heading flex items-center justify-center py-2"
         >
           立即報名
