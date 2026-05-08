@@ -115,6 +115,12 @@
           "introFile": "/contents/members/李杰穎.txt"
         },
         {
+          "name": "林書愷",
+          "position": "機動",
+          "photo": "/images/members/林書愷.jpg",
+          "introFile": "/contents/members/林書愷.txt"
+        },
+        {
           "name": "楊佳翰",
           "position": "機動",
           "photo": "/images/members/楊佳翰.jpg",
@@ -141,16 +147,16 @@
       ],
       "members": [
         {
-          "name": "劉思予",
-          "position": "組長",
-          "photo": "/images/members/劉思予.jpg",
-          "introFile": "/contents/members/劉思予.txt"
-        },
-        {
           "name": "林庭寪",
           "position": "組長",
           "photo": "/images/members/林庭寪.jpg",
           "introFile": "/contents/members/林庭寪.txt"
+        },
+        {
+          "name": "劉思予",
+          "position": "組長",
+          "photo": "/images/members/劉思予.jpeg",
+          "introFile": "/contents/members/劉思予.txt"
         },
         {
           "name": "呂畇廣",
@@ -251,10 +257,28 @@
           "introFile": "/contents/members/邱振源.txt"
         },
         {
+          "name": "卓建均",
+          "position": "組員",
+          "photo": "/images/members/卓建均.jpg",
+          "introFile": "/contents/members/卓建均.txt"
+        },
+        {
+          "name": "呂沂峻",
+          "position": "組員",
+          "photo": "/images/members/呂沂峻.png",
+          "introFile": "/contents/members/呂沂峻.txt"
+        },
+        {
           "name": "李亭寬",
           "position": "組員",
           "photo": "/images/members/李亭寬.jpg",
           "introFile": "/contents/members/李亭寬.txt"
+        },
+        {
+          "name": "李羿昕",
+          "position": "組員",
+          "photo": "/images/members/李羿昕.jpg",
+          "introFile": "/contents/members/李羿昕.txt"
         },
         {
           "name": "林俞希",
@@ -319,6 +343,12 @@
           "introFile": "/contents/members/王睿宇.txt"
         },
         {
+          "name": "何曉嫻",
+          "position": "組員",
+          "photo": "/images/members/何曉嫻.jpg",
+          "introFile": "/contents/members/何曉嫻.txt"
+        },
+        {
           "name": "江品寬",
           "position": "組員",
           "photo": "/images/members/江品寬.jpg",
@@ -329,6 +359,12 @@
           "position": "組員",
           "photo": "/images/members/邱英紘.jpg",
           "introFile": "/contents/members/邱英紘.txt"
+        },
+        {
+          "name": "陳璽安",
+          "position": "組員",
+          "photo": "/images/members/陳璽安.jpg",
+          "introFile": "/contents/members/陳璽安.txt"
         }
       ]
     },
