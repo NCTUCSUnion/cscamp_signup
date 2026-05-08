@@ -84,6 +84,7 @@ const refundPolicyGroups = computed(() => {
 // Update countdown timer
 const updateCountdown = () => {
   const now = new Date()
+  currentDate.value = now  // keep reactive for time-based progress
   const diff = registrationDeadline.value - now
   
   if (diff <= 0) {
@@ -153,9 +154,43 @@ const currentStageIndex = computed(() => {
   return -1
 })
 
+const timelineProgressPct = computed(() => {
+  const items = campInfo.registration.timeline
+  const total = items.length
+  if (total <= 1) return 0
+
+  // Parse all stage dates with full time precision
+  const dates = items.map(item => parseCampTimelineDate(item.date))
+  const now = currentDate.value
+
+  // Before the first stage
+  if (!dates[0] || now < dates[0]) return 0
+
+  // After or on the last stage
+  if (!dates[total - 1] || now >= dates[total - 1]) return 100
+
+  // Find the segment [i, i+1] we're currently in and interpolate
+  for (let i = 0; i < total - 1; i++) {
+    const start = dates[i]
+    const end = dates[i + 1]
+    if (start && end && now >= start && now < end) {
+      const segmentFraction = (now - start) / (end - start)
+      const nodeStart = i / (total - 1)
+      const nodeEnd = (i + 1) / (total - 1)
+      return (nodeStart + segmentFraction * (nodeEnd - nodeStart)) * 100
+    }
+  }
+
+  return 100
+})
+
 // Function to check if a timeline item is current
 const isCurrentStage = (index) => {
   return index === currentStageIndex.value
+}
+
+const isCompletedStage = (index) => {
+  return currentStageIndex.value >= 0 && index <= currentStageIndex.value
 }
 </script>
 
@@ -163,7 +198,6 @@ const isCurrentStage = (index) => {
   <div>
     <Banner 
       title="報名資訊" 
-      backgroundColor="bg-primary"
       backgroundImage="/images/banner-default.webp"
     />
 
@@ -174,7 +208,18 @@ const isCurrentStage = (index) => {
         
         <div class="timeline-container relative">
           <!-- Desktop Timeline Line -->
-          <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-200 -translate-x-1/2 hidden md:block"></div>
+          <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-200 -translate-x-1/2 hidden md:block z-0"></div>
+          <!-- Desktop Timeline Progress -->
+          <div
+            class="absolute top-0 left-1/2 w-1 -translate-x-1/2 hidden md:block timeline-progress z-10"
+            :style="{ height: `${timelineProgressPct}%` }"
+          ></div>
+
+          <!-- Mobile Timeline Progress (overlays ::before) -->
+          <div
+            class="md:hidden absolute left-[20px] top-0 w-[2px] timeline-progress z-10"
+            :style="{ height: `${timelineProgressPct}%` }"
+          ></div>
           
           <!-- Timeline Items -->
           <div class="timeline-items space-y-12">
@@ -211,7 +256,7 @@ const isCurrentStage = (index) => {
                   <div 
                     :class="[
                       'w-5 h-5 rounded-full border-4 border-white', 
-                      isCurrentStage(index) ? 'bg-secondary' : 'bg-primary'
+                    isCompletedStage(index) ? 'bg-secondary' : 'bg-primary'
                     ]"
                   ></div>
                 </div>
@@ -222,7 +267,7 @@ const isCurrentStage = (index) => {
                 <div 
                   :class="[
                     'w-5 h-5 rounded-full border-4 border-white', 
-                    isCurrentStage(index) ? 'bg-secondary' : 'bg-primary'
+                    isCompletedStage(index) ? 'bg-secondary' : 'bg-primary'
                   ]"
                 ></div>
               </div>
@@ -426,6 +471,7 @@ const isCurrentStage = (index) => {
     left: 20px;
     width: 2px;
     background-color: #e5e7eb;
+    z-index: 0;
   }
 
   .timeline-item {
@@ -441,6 +487,11 @@ const isCurrentStage = (index) => {
   .timeline-content {
     position: relative;
   }
+}
+
+.timeline-progress {
+  background: linear-gradient(to bottom, rgba(134, 167, 114, 1), rgba(134, 167, 114, 0.6));
+  border-radius: 9999px;
 }
 
 /* Countdown timer styles */
