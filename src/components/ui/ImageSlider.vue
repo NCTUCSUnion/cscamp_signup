@@ -20,6 +20,10 @@ const props = defineProps({
   autoplayDelay: {
     type: Number,
     default: 5000
+  },
+  rounded: {
+    type: Boolean,
+    default: true
   }
 })
 </script>
@@ -39,7 +43,8 @@ const props = defineProps({
         clickable: true
       }"
       :navigation="true"
-      class="w-full rounded-lg overflow-hidden"
+      class="w-full overflow-hidden"
+      :class="rounded ? 'rounded-lg' : ''"
     >
       <SwiperSlide v-for="(image, index) in images" :key="index">
         <div 

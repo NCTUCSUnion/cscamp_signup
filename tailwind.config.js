@@ -16,12 +16,12 @@ export default {
         leaf:      '#D4E157',
 
         /* === 六大組別 === */
-        admin:      '#334155', // Slate 800
-        event:      '#0B5E3D', // Pine 700
-        design:     '#4F637E', // Blue-Gray 600
-        life:       '#7A8F2B', // Olive 600
-        study:      '#2553D8', // Blue 600
-        facilities: '#505C70', // Slate 600
+        admin:      '#475569', // Slate 600 - 沉穩深灰藍
+        event:      '#C2410C', // Orange 700 - 熱情橘
+        design:     '#9333EA', // Purple 600 - 創意紫
+        life:       '#0D9488', // Teal 600 - 清新青綠
+        study:      '#1D4ED8', // Blue 700 - 知性藍
+        facilities: '#A16207', // Yellow 700 - 工業土黃
       },
 
       fontFamily: {
