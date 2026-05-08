@@ -20,7 +20,6 @@ function getTeamColor(teamId) {
   <div>
     <Banner 
       title="各組介紹" 
-      backgroundColor="bg-primary"
       backgroundImage="/images/banner-default.webp"
     />
 

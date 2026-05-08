@@ -31,7 +31,7 @@ onMounted(() => {
         <h2 class="text-4xl text-gray-300 md:text-5xl mb-10 tracking-wider">{{ campInfo.slogan }}</h2>
         <p class="text-xl text-gray-300 md:text-2xl mb-10">{{ campInfo.mainInfo.date }}</p>
         <a 
-          href="https://forms.gle/XQW8x9MB258HQm5v8" 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform" 
           class="btn-primary text-xl py-3 px-8"
         >
           立即報名

@@ -70,7 +70,6 @@ const toggleItem = (key) => {
   <div>
     <Banner 
       title="常見問答" 
-      backgroundColor="bg-primary"
       backgroundImage="/images/banner-default.webp"
     />
 

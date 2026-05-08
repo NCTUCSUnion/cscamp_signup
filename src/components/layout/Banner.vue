@@ -23,7 +23,7 @@ defineProps({
     <!-- Background image with overlay -->
     <div 
       v-if="backgroundImage"
-      class="absolute inset-0 bg-cover bg-center opacity-60" 
+      class="absolute inset-0 bg-cover bg-center opacity-100 blur-[2px] opacity-80"  
       :style="{ backgroundImage: `url(${backgroundImage})` }"
     ></div>
     

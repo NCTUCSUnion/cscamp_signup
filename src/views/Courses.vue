@@ -18,7 +18,6 @@ const toggleItem = (index) => {
   <div>
     <Banner 
       title="課程簡介" 
-      backgroundColor="bg-primary"
       backgroundImage="/images/banner-default.webp"
     />
 
