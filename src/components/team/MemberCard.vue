@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 const props = defineProps({
   member: {
@@ -15,8 +15,19 @@ const props = defineProps({
 const introText = ref(props.member.intro || '')
 const imageError = ref(false)
 
+const cardBgClass = computed(() => {
+  switch (props.teamColor) {
+    case 'admin': return 'bg-admin-soft'
+    case 'event': return 'bg-event-soft'
+    case 'design': return 'bg-design-soft'
+    case 'life': return 'bg-life-soft'
+    case 'study': return 'bg-study-soft'
+    case 'facilities': return 'bg-facilities-soft'
+    default: return 'bg-white'
+  }
+})
+
 onMounted(async () => {
-  // If there's an introFile property, try to load content from it
   if (props.member.introFile) {
     try {
       const response = await fetch(props.member.introFile)
@@ -35,7 +46,7 @@ const handleImageError = () => {
 </script>
 
 <template>
-  <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
+  <div :class="[cardBgClass, 'rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1']">
     <div class="grid grid-cols-1 md:grid-cols-5 h-full">
       <!-- Left: Member Photo -->
       <div 
