@@ -10,7 +10,7 @@ defineProps({
   },
   backgroundColor: {
     type: String,
-    default: 'bg-primary'
+    default: 'bg-white'
   }
 })
 </script>
@@ -23,8 +23,14 @@ defineProps({
     <!-- Background image with overlay -->
     <div 
       v-if="backgroundImage"
-      class="absolute inset-0 bg-cover bg-center opacity-100 blur-[2px] opacity-80"  
+      class="absolute inset-0 bg-cover bg-center"  
       :style="{ backgroundImage: `url(${backgroundImage})` }"
+    ></div>
+    
+    <!-- Dark overlay for text readability -->
+    <div 
+      v-if="backgroundImage"
+      class="absolute inset-0 bg-black bg-opacity-30"
     ></div>
     
     <!-- Content -->
