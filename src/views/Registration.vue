@@ -164,6 +164,7 @@ const isCurrentStage = (index) => {
     <Banner 
       title="報名資訊" 
       backgroundColor="bg-primary"
+      backgroundImage="/images/banner-default.webp"
     />
 
     <div class="container-custom py-16">

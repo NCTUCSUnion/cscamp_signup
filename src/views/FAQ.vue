@@ -71,6 +71,7 @@ const toggleItem = (key) => {
     <Banner 
       title="常見問答" 
       backgroundColor="bg-primary"
+      backgroundImage="/images/banner-default.webp"
     />
 
     <div class="container-custom py-16">

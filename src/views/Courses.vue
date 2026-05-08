@@ -19,6 +19,7 @@ const toggleItem = (index) => {
     <Banner 
       title="課程簡介" 
       backgroundColor="bg-primary"
+      backgroundImage="/images/banner-default.webp"
     />
 
     <div class="container-custom py-16">
@@ -114,7 +115,7 @@ const toggleItem = (index) => {
             </div>
             <h4 class="text-xl font-semibold mb-2">了解最新科技</h4>
             <p class="text-gray-600">
-              課程精心設計圍繞 Python 程式設計與 Multi-agent LLM 技術，引領學員探索 AI 領域最新發展，親身體驗未來科技的無限可能。
+              課程精心設計圍繞 Python 程式設計與機器學習技術，引領學員探索 AI 領域最新發展，親身體驗未來科技的無限可能。
             </p>
           </div>
         </div>

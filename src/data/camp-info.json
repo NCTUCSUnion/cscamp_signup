@@ -79,52 +79,52 @@
       ],
       "members": [
         {
-          "name": "戚維凌",
+          "name": "朱驛庭",
           "position": "總召",
-          "photo": "/images/members/戚維凌.webp",
+          "photo": "/images/members/朱驛庭.png",
+          "introFile": "/contents/members/朱驛庭.txt"
+        },
+        {
+          "name": "林鈺誠",
+          "position": "總務",
+          "photo": "/images/members/林鈺誠.jpg",
+          "introFile": "/contents/members/林鈺誠.txt"
+        },
+        {
+          "name": "陳宥臻",
+          "position": "執秘",
+          "photo": "/images/members/陳宥臻.jpg",
+          "introFile": "/contents/members/陳宥臻.txt"
+        },
+        {
+          "name": "陳泓宇",
+          "position": "值星",
+          "photo": "/images/members/陳泓宇.jpg",
+          "introFile": "/contents/members/陳泓宇.txt"
+        },
+        {
+          "name": "戚維凌",
+          "position": "機動",
+          "photo": "/images/members/戚維凌.jpg",
           "introFile": "/contents/members/戚維凌.txt"
         },
         {
-          "name": "田松翰",
-          "position": "執秘＆總務",
-          "photo": "/images/members/田松翰.webp",
-          "introFile": "/contents/members/田松翰.txt"
-        },
-        {
-          "name": "丁宇洋",
-          "position": "值星",
-          "photo": "/images/members/丁宇洋.webp",
-          "introFile": "/contents/members/丁宇洋.txt"
-        },
-        {
-          "name": "古聖聰",
+          "name": "李杰穎",
           "position": "機動",
-          "photo": "/images/members/古聖聰.webp",
-          "introFile": "/contents/members/古聖聰.txt"
+          "photo": "/images/members/李杰穎.png",
+          "introFile": "/contents/members/李杰穎.txt"
         },
         {
-          "name": "林宇柔",
+          "name": "楊佳翰",
           "position": "機動",
-          "photo": "/images/members/林宇柔.webp",
-          "introFile": "/contents/members/林宇柔.txt"
+          "photo": "/images/members/楊佳翰.jpg",
+          "introFile": "/contents/members/楊佳翰.txt"
         },
         {
-          "name": "詹秉諺",
+          "name": "王皓平",
           "position": "機動",
-          "photo": "/images/members/詹秉諺.webp",
-          "introFile": "/contents/members/詹秉諺.txt"
-        },
-        {
-          "name": "郭冠德",
-          "position": "機動",
-          "photo": "/images/members/郭冠德.webp",
-          "introFile": "/contents/members/郭冠德.txt"
-        },
-        {
-          "name": "郭晉維",
-          "position": "機動",
-          "photo": "/images/members/郭晉維.webp",
-          "introFile": "/contents/members/郭晉維.txt"
+          "photo": "/images/members/王皓平.jpg",
+          "introFile": "/contents/members/王皓平.txt"
         }
       ]
     },
@@ -141,106 +141,88 @@
       ],
       "members": [
         {
-          "name": "張維程",
+          "name": "劉思予",
           "position": "組長",
-          "photo": "/images/members/張維程.webp",
-          "introFile": "/contents/members/張維程.txt"
+          "photo": "/images/members/劉思予.jpg",
+          "introFile": "/contents/members/劉思予.txt"
         },
         {
           "name": "林庭寪",
           "position": "組長",
-          "photo": "/images/members/林庭寪.webp",
+          "photo": "/images/members/林庭寪.jpg",
           "introFile": "/contents/members/林庭寪.txt"
         },
         {
-          "name": "李馨亞",
+          "name": "呂畇廣",
           "position": "組員",
-          "photo": "/images/members/李馨亞.webp",
-          "introFile": "/contents/members/李馨亞.txt"
+          "photo": "/images/members/呂畇廣.jpg",
+          "introFile": "/contents/members/呂畇廣.txt"
         },
         {
-          "name": "林哲全",
+          "name": "張婷瑀",
           "position": "組員",
-          "photo": "/images/members/林哲全.webp",
-          "introFile": "/contents/members/林哲全.txt"
+          "photo": "/images/members/張婷瑀.jpg",
+          "introFile": "/contents/members/張婷瑀.txt"
         },
         {
-          "name": "許士宏",
+          "name": "張秩嘉",
           "position": "組員",
-          "photo": "/images/members/許士宏.webp",
-          "introFile": "/contents/members/許士宏.txt"
+          "photo": "/images/members/張秩嘉.jpeg",
+          "introFile": "/contents/members/張秩嘉.txt"
         },
         {
-          "name": "郭宥欣",
+          "name": "游子沂",
           "position": "組員",
-          "photo": "/images/members/郭宥欣.webp",
-          "introFile": "/contents/members/郭宥欣.txt"
-        },
-        {
-          "name": "吳容亨",
-          "position": "組員",
-          "photo": "/images/members/吳容亨.webp",
-          "introFile": "/contents/members/吳容亨.txt"
-        },
-        {
-          "name": "張晉睿",
-          "position": "組員",
-          "photo": "/images/members/張晉睿.webp",
-          "introFile": "/contents/members/張晉睿.txt"
-        },
-        {
-          "name": "楊子賝",
-          "position": "組員",
-          "photo": "/images/members/楊子賝.webp",
-          "introFile": "/contents/members/楊子賝.txt"
+          "photo": "/images/members/游子沂.jpg",
+          "introFile": "/contents/members/游子沂.txt"
         },
         {
           "name": "簡佑安",
           "position": "組員",
-          "photo": "/images/members/簡佑安.webp",
+          "photo": "/images/members/簡佑安.jpg",
           "introFile": "/contents/members/簡佑安.txt"
         },
         {
-          "name": "蔡凱旭",
+          "name": "紀艿彣",
           "position": "組員",
-          "photo": "/images/members/蔡凱旭.webp",
-          "introFile": "/contents/members/蔡凱旭.txt"
+          "photo": "/images/members/紀艿彣.jpg",
+          "introFile": "/contents/members/紀艿彣.txt"
         },
         {
-          "name": "許珮筠",
+          "name": "胡享博",
           "position": "組員",
-          "photo": "/images/members/許珮筠.webp",
-          "introFile": "/contents/members/許珮筠.txt"
+          "photo": "/images/members/胡享博.jpg",
+          "introFile": "/contents/members/胡享博.txt"
         },
         {
-          "name": "邱英紘",
+          "name": "葉柏辰",
           "position": "組員",
-          "photo": "/images/members/邱英紘.webp",
-          "introFile": "/contents/members/邱英紘.txt"
+          "photo": "/images/members/葉柏辰.jpg",
+          "introFile": "/contents/members/葉柏辰.txt"
         },
         {
-          "name": "鄭栩安",
+          "name": "蔡欣妤",
           "position": "組員",
-          "photo": "/images/members/鄭栩安.webp",
-          "introFile": "/contents/members/鄭栩安.txt"
+          "photo": "/images/members/蔡欣妤.jpg",
+          "introFile": "/contents/members/蔡欣妤.txt"
+        },
+        {
+          "name": "鄧致丞",
+          "position": "組員",
+          "photo": "/images/members/鄧致丞.jpg",
+          "introFile": "/contents/members/鄧致丞.txt"
         },
         {
           "name": "鄭皓予",
           "position": "組員",
-          "photo": "/images/members/鄭皓予.webp",
+          "photo": "/images/members/鄭皓予.png",
           "introFile": "/contents/members/鄭皓予.txt"
         },
         {
-          "name": "陳泓宇",
+          "name": "黃宥綾",
           "position": "組員",
-          "photo": "/images/members/陳泓宇.webp",
-          "introFile": "/contents/members/陳泓宇.txt"
-        },
-        {
-          "name": "陳炤宇",
-          "position": "組員",
-          "photo": "/images/members/陳炤宇.webp",
-          "introFile": "/contents/members/陳炤宇.txt"
+          "photo": "/images/members/黃宥綾.jpg",
+          "introFile": "/contents/members/黃宥綾.txt"
         }
       ]
     },
@@ -257,63 +239,57 @@
       ],
       "members": [
         {
-          "name": "楊佳翰",
+          "name": "蘇宜盈",
           "position": "組長",
-          "photo": "/images/members/楊佳翰.webp",
-          "introFile": "/contents/members/楊佳翰.txt"
+          "photo": "/images/members/蘇宜盈.jpg",
+          "introFile": "/contents/members/蘇宜盈.txt"
         },
         {
-          "name": "李欣螢",
+          "name": "邱振源",
           "position": "組長",
-          "photo": "/images/members/李欣螢.webp",
-          "introFile": "/contents/members/李欣螢.txt"
+          "photo": "/images/members/邱振源.jpg",
+          "introFile": "/contents/members/邱振源.txt"
         },
         {
-          "name": "李泓劭",
+          "name": "李亭寬",
           "position": "組員",
-          "photo": "/images/members/李泓劭.webp",
-          "introFile": "/contents/members/李泓劭.txt"
+          "photo": "/images/members/李亭寬.jpg",
+          "introFile": "/contents/members/李亭寬.txt"
         },
         {
-          "name": "楊博宇",
+          "name": "林俞希",
           "position": "組員",
-          "photo": "/images/members/楊博宇.webp",
-          "introFile": "/contents/members/楊博宇.txt"
+          "photo": "/images/members/林俞希.png",
+          "introFile": "/contents/members/林俞希.txt"
         },
         {
-          "name": "李智璿",
+          "name": "楊佳淇",
           "position": "組員",
-          "photo": "/images/members/李智璿.webp",
-          "introFile": "/contents/members/李智璿.txt"
+          "photo": "/images/members/楊佳淇.png",
+          "introFile": "/contents/members/楊佳淇.txt"
         },
         {
-          "name": "蔡昀佑",
+          "name": "王成緯",
           "position": "組員",
-          "photo": "/images/members/蔡昀佑.webp",
-          "introFile": "/contents/members/蔡昀佑.txt"
+          "photo": "/images/members/王成緯.jpg",
+          "introFile": "/contents/members/王成緯.txt"
+        },
+        {
+          "name": "白冠宸",
+          "position": "組員",
+          "photo": "/images/members/白冠宸.jpg",
+          "introFile": "/contents/members/白冠宸.txt"
         },
         {
           "name": "蔣忻勳",
           "position": "組員",
-          "photo": "/images/members/蔣忻勳.webp",
+          "photo": "/images/members/蔣忻勳.jpg",
           "introFile": "/contents/members/蔣忻勳.txt"
-        },
-        {
-          "name": "陳宥臻",
-          "position": "組員",
-          "photo": "/images/members/陳宥臻.webp",
-          "introFile": "/contents/members/陳宥臻.txt"
-        },
-        {
-          "name": "馬晨瑜",
-          "position": "組員",
-          "photo": "/images/members/馬晨瑜.webp",
-          "introFile": "/contents/members/馬晨瑜.txt"
         },
         {
           "name": "黃冠佾",
           "position": "組員",
-          "photo": "/images/members/黃冠佾.webp",
+          "photo": "/images/members/黃冠佾.jpg",
           "introFile": "/contents/members/黃冠佾.txt"
         }
       ]
@@ -331,58 +307,28 @@
       ],
       "members": [
         {
-          "name": "王皓平",
-          "position": "組長",
-          "photo": "/images/members/王皓平.webp",
-          "introFile": "/contents/members/王皓平.txt"
-        },
-        {
-          "name": "葉家蓁",
-          "position": "組長",
-          "photo": "/images/members/葉家蓁.webp",
-          "introFile": "/contents/members/葉家蓁.txt"
-        },
-        {
-          "name": "邱振源",
-          "position": "組員",
-          "photo": "/images/members/邱振源.webp",
-          "introFile": "/contents/members/邱振源.txt"
-        },
-        {
           "name": "陳燁",
-          "position": "組員",
-          "photo": "/images/members/陳燁.webp",
+          "position": "組長",
+          "photo": "/images/members/陳燁.jpg",
           "introFile": "/contents/members/陳燁.txt"
         },
         {
-          "name": "黃佑得",
-          "position": "組員",
-          "photo": "/images/members/黃佑得.webp",
-          "introFile": "/contents/members/黃佑得.txt"
+          "name": "王睿宇",
+          "position": "組長",
+          "photo": "/images/members/王睿宇.jpg",
+          "introFile": "/contents/members/王睿宇.txt"
         },
         {
-          "name": "孫承瑞",
+          "name": "江品寬",
           "position": "組員",
-          "photo": "/images/members/孫承瑞.webp",
-          "introFile": "/contents/members/孫承瑞.txt"
+          "photo": "/images/members/江品寬.jpg",
+          "introFile": "/contents/members/江品寬.txt"
         },
         {
-          "name": "張珮芸",
+          "name": "邱英紘",
           "position": "組員",
-          "photo": "/images/members/張珮芸.webp",
-          "introFile": "/contents/members/張珮芸.txt"
-        },
-        {
-          "name": "許愷洌",
-          "position": "組員",
-          "photo": "/images/members/許愷洌.webp",
-          "introFile": "/contents/members/許愷洌.txt"
-        },
-        {
-          "name": "郭芷杅",
-          "position": "組員",
-          "photo": "/images/members/郭芷杅.webp",
-          "introFile": "/contents/members/郭芷杅.txt"
+          "photo": "/images/members/邱英紘.jpg",
+          "introFile": "/contents/members/邱英紘.txt"
         }
       ]
     },
@@ -399,64 +345,58 @@
       ],
       "members": [
         {
-          "name": "朱驛庭",
-          "position": "組長",
-          "photo": "/images/members/朱驛庭.webp",
-          "introFile": "/contents/members/朱驛庭.txt"
-        },
-        {
-          "name": "李杰穎",
-          "position": "組長",
-          "photo": "/images/members/李杰穎.webp",
-          "introFile": "/contents/members/李杰穎.txt"
-        },
-        {
-          "name": "周廷威",
-          "position": "組員",
-          "photo": "/images/members/周廷威.webp",
-          "introFile": "/contents/members/周廷威.txt"
-        },
-        {
-          "name": "曾士珍",
-          "position": "組員",
-          "photo": "/images/members/曾士珍.webp",
-          "introFile": "/contents/members/曾士珍.txt"
-        },
-        {
-          "name": "蔡尚融",
-          "position": "組員",
-          "photo": "/images/members/蔡尚融.webp",
-          "introFile": "/contents/members/蔡尚融.txt"
-        },
-        {
           "name": "林彥宇",
-          "position": "組員",
-          "photo": "/images/members/林彥宇.webp",
+          "position": "組長",
+          "photo": "/images/members/林彥宇.jpg",
           "introFile": "/contents/members/林彥宇.txt"
         },
         {
-          "name": "江品寬",
-          "position": "組員",
-          "photo": "/images/members/江品寬.webp",
-          "introFile": "/contents/members/江品寬.txt"
+          "name": "楊弘奕",
+          "position": "組長",
+          "photo": "/images/members/楊弘奕.png",
+          "introFile": "/contents/members/楊弘奕.txt"
         },
         {
-          "name": "王韋凱",
+          "name": "吳容亨",
           "position": "組員",
-          "photo": "/images/members/王韋凱.webp",
-          "introFile": "/contents/members/王韋凱.txt"
+          "photo": "/images/members/吳容亨.jpg",
+          "introFile": "/contents/members/吳容亨.txt"
         },
         {
-          "name": "陳璽安",
+          "name": "李芃葳",
           "position": "組員",
-          "photo": "/images/members/陳璽安.webp",
-          "introFile": "/contents/members/陳璽安.txt"
+          "photo": "/images/members/李芃葳.jpg",
+          "introFile": "/contents/members/李芃葳.txt"
         },
         {
-          "name": "陳芝瑄",
+          "name": "簡韵旂",
           "position": "組員",
-          "photo": "/images/members/陳芝瑄.webp",
-          "introFile": "/contents/members/陳芝瑄.txt"
+          "photo": "/images/members/簡韵旂.jpg",
+          "introFile": "/contents/members/簡韵旂.txt"
+        },
+        {
+          "name": "胡睿剛",
+          "position": "組員",
+          "photo": "/images/members/胡睿剛.png",
+          "introFile": "/contents/members/胡睿剛.txt"
+        },
+        {
+          "name": "謝淯丞",
+          "position": "組員",
+          "photo": "/images/members/謝淯丞.png",
+          "introFile": "/contents/members/謝淯丞.txt"
+        },
+        {
+          "name": "高振育",
+          "position": "組員",
+          "photo": "/images/members/高振育.png",
+          "introFile": "/contents/members/高振育.txt"
+        },
+        {
+          "name": "黃襄香",
+          "position": "組員",
+          "photo": "/images/members/黃襄香.jpg",
+          "introFile": "/contents/members/黃襄香.txt"
         }
       ]
     },
@@ -473,82 +413,76 @@
       ],
       "members": [
         {
-          "name": "王昱力",
-          "position": "組長",
-          "photo": "/images/members/王昱力.webp",
-          "introFile": "/contents/members/王昱力.txt"
-        },
-        {
-          "name": "蔡師睿",
-          "position": "組長",
-          "photo": "/images/members/蔡師睿.webp",
-          "introFile": "/contents/members/蔡師睿.txt"
-        },
-        {
-          "name": "吳宇藤",
-          "position": "組員",
-          "photo": "/images/members/吳宇藤.webp",
-          "introFile": "/contents/members/吳宇藤.txt"
-        },
-        {
           "name": "林郁晁",
-          "position": "組員",
-          "photo": "/images/members/林郁晁.webp",
+          "position": "組長",
+          "photo": "/images/members/林郁晁.jpg",
           "introFile": "/contents/members/林郁晁.txt"
         },
         {
-          "name": "楊晟弘",
-          "position": "組員",
-          "photo": "/images/members/楊晟弘.webp",
-          "introFile": "/contents/members/楊晟弘.txt"
+          "name": "王韋凱",
+          "position": "組長",
+          "photo": "/images/members/王韋凱.jpg",
+          "introFile": "/contents/members/王韋凱.txt"
         },
         {
-          "name": "陳箴",
+          "name": "林哲全",
           "position": "組員",
-          "photo": "/images/members/陳箴.webp",
-          "introFile": "/contents/members/陳箴.txt"
+          "photo": "/images/members/林哲全.jpeg",
+          "introFile": "/contents/members/林哲全.txt"
         },
         {
-          "name": "李羿昕",
+          "name": "游子毅",
           "position": "組員",
-          "photo": "/images/members/李羿昕.webp",
-          "introFile": "/contents/members/李羿昕.txt"
+          "photo": "/images/members/游子毅.jpg",
+          "introFile": "/contents/members/游子毅.txt"
         },
         {
-          "name": "林書愷",
+          "name": "蔡昀佑",
           "position": "組員",
-          "photo": "/images/members/林書愷.webp",
-          "introFile": "/contents/members/林書愷.txt"
+          "photo": "/images/members/蔡昀佑.jpg",
+          "introFile": "/contents/members/蔡昀佑.txt"
         },
         {
-          "name": "許書瑋",
+          "name": "許子翔",
           "position": "組員",
-          "photo": "/images/members/許書瑋.webp",
-          "introFile": "/contents/members/許書瑋.txt"
+          "photo": "/images/members/許子翔.jpg",
+          "introFile": "/contents/members/許子翔.txt"
         },
         {
-          "name": "鄭武謙",
+          "name": "郭宗信",
           "position": "組員",
-          "photo": "/images/members/鄭武謙.webp",
-          "introFile": "/contents/members/鄭武謙.txt"
+          "photo": "/images/members/郭宗信.jpg",
+          "introFile": "/contents/members/郭宗信.txt"
+        },
+        {
+          "name": "陳宣澔",
+          "position": "組員",
+          "photo": "/images/members/陳宣澔.jpg",
+          "introFile": "/contents/members/陳宣澔.txt"
+        },
+        {
+          "name": "陳芃凱",
+          "position": "組員",
+          "photo": "/images/members/陳芃凱.png",
+          "introFile": "/contents/members/陳芃凱.txt"
         }
       ]
     }
   ],
   "courses": [
     {
-      "title": "Python 程式設計基礎",
-      "description": "從零開始探索 Python 程式設計世界，掌握變數、條件判斷、迴圈與資料結構等核心概念。",
+      "title": "Python 程式設計基礎與大型語言模型（LLM）基礎入門",
+      "description": "從零開始探索 Python 程式設計世界，掌握變數、條件判斷、迴圈與資料結構等核心概念，並且探索大型語言模型的基本原理與應用場景，了解如何有效將 LLM 應用於解決實際問題。",
       "time": "Day 1"
     },
     {
-      "title": "大型語言模型（LLM）基礎入門、如何結合 Python 和大型語言模型",
-      "description": "深入學習 Python 與大型語言模型如 ChatGPT 的互動能力。探索大型語言模型的基本原理與應用場景，了解如何有效將大型語言模型應用於解決實際問題。",
+      "title": "PyGame 遊戲開發入門與 AI 輔助開發",
+      "description": "透過 LLM 輔助開發以及探索 PyGame 的基本框架與實作技巧，學習如何與 AI 結合使用 PyGame 開發簡單的遊戲。",
       "time": "Day 2"
     },
     {
-      "title": "LLM 進階技巧、多代理人（Multi-Agent）系統競賽",
-      "description": "進一步探索 LLM 的進階應用，掌握 Prompt Engineering 技巧以有效引導 AI 產出理想結果。學習如何設計與實作多代理人（Multi-Agent）系統，並透過團隊競賽形式，將所學知識整合應用於解決複雜問題，體驗 AI 協作的無限可能。",
+      "title": "認識機器學習原理與 AI 自走車競賽",
+      "description": "學習機器學習的基本原理，並且訓練自己的 AI 幫你玩遊戲！",
       "time": "Day 3"
     }
   ],
