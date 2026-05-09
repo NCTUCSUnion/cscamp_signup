@@ -251,18 +251,30 @@ const animatedProgressPct = ref(0)
 // Pixel offset and length of the progress segment (between first and last node)
 const segmentTopPx = ref(24)
 const segmentLengthPx = ref(0)
+const segmentLeftPx = ref(20)
 const timelineContainerRef = ref(null)
 
 const measureSegment = () => {
   const container = timelineContainerRef.value
   if (!container) return
-  const nodes = container.querySelectorAll('.timeline-node-desktop')
-  if (nodes.length < 2) return
-  const containerTop = container.getBoundingClientRect().top
-  const firstTop = nodes[0].getBoundingClientRect().top - containerTop + 10
-  const lastTop = nodes[nodes.length - 1].getBoundingClientRect().top - containerTop + 10
-  segmentTopPx.value = firstTop
-  segmentLengthPx.value = Math.max(0, lastTop - firstTop)
+
+  const desktopNodes = Array.from(container.querySelectorAll('.timeline-node-desktop'))
+  const mobileNodes = Array.from(container.querySelectorAll('.timeline-node-mobile'))
+  const isMobile = window.innerWidth < 768
+  const activeNodes = (isMobile ? mobileNodes : desktopNodes).filter((node) => node.offsetParent !== null)
+
+  if (activeNodes.length < 2) return
+
+  const containerRect = container.getBoundingClientRect()
+  const firstRect = activeNodes[0].getBoundingClientRect()
+  const lastRect = activeNodes[activeNodes.length - 1].getBoundingClientRect()
+  const firstCenterY = firstRect.top - containerRect.top + firstRect.height / 2
+  const lastCenterY = lastRect.top - containerRect.top + lastRect.height / 2
+  const firstCenterX = firstRect.left - containerRect.left + firstRect.width / 2
+
+  segmentTopPx.value = firstCenterY
+  segmentLengthPx.value = Math.max(0, lastCenterY - firstCenterY)
+  segmentLeftPx.value = firstCenterX
 }
 
 onMounted(() => {
@@ -331,6 +343,11 @@ watch(timelineProgressPct, (val) => {
         <div class="timeline-container relative" ref="timelineContainerRef">
           <!-- Desktop Timeline Line -->
           <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-200 -translate-x-1/2 hidden md:block z-0"></div>
+          <!-- Mobile Timeline Line -->
+          <div
+            class="md:hidden absolute top-0 w-[2px] h-full bg-gray-200 z-0"
+            :style="{ left: `${segmentLeftPx}px` }"
+          ></div>
           <!-- Filled segment above the first node (always complete) -->
           <div
             class="absolute top-0 left-1/2 w-1 -translate-x-1/2 hidden md:block timeline-progress z-10"
@@ -345,12 +362,12 @@ watch(timelineProgressPct, (val) => {
           <!-- Mobile filled segment above the first node -->
           <div
             class="md:hidden absolute left-[20px] top-0 w-[2px] timeline-progress z-10"
-            :style="{ height: `${segmentTopPx}px` }"
+            :style="{ left: `${segmentLeftPx}px`, height: `${segmentTopPx}px` }"
           ></div>
           <!-- Mobile Timeline Progress (between first and last node) -->
           <div
-            class="md:hidden absolute left-[20px] w-[2px] timeline-progress z-10"
-            :style="{ top: `${segmentTopPx}px`, height: `${(segmentLengthPx * animatedProgressPct) / 100}px` }"
+            class="md:hidden absolute w-[2px] timeline-progress z-10"
+            :style="{ left: `${segmentLeftPx}px`, top: `${segmentTopPx}px`, height: `${(segmentLengthPx * animatedProgressPct) / 100}px` }"
           ></div>
           
           <!-- Timeline Items -->
@@ -617,17 +634,6 @@ watch(timelineProgressPct, (val) => {
 @media (max-width: 768px) {
   .timeline-container {
     padding-left: 30px;
-  }
-
-  .timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 2px;
-    background-color: #e5e7eb;
-    z-index: 0;
   }
 
   .timeline-item {
