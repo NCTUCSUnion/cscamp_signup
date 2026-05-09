@@ -81,6 +81,16 @@ const refundPolicyGroups = computed(() => {
   }))
 })
 
+const openRefundGroups = ref(new Set())
+const toggleRefundGroup = (index) => {
+  if (openRefundGroups.value.has(index)) {
+    openRefundGroups.value.delete(index)
+  } else {
+    openRefundGroups.value.add(index)
+  }
+  openRefundGroups.value = new Set(openRefundGroups.value)
+}
+
 // Update countdown timer
 const updateCountdown = () => {
   const now = new Date()
@@ -405,13 +415,33 @@ const isCompletedStage = (index) => {
             <div
               v-for="(group, groupIndex) in refundPolicyGroups"
               :key="groupIndex"
-              class="bg-white rounded-lg border border-gray-200 p-4"
+              class="bg-white rounded-lg border border-gray-200 overflow-hidden"
             >
-              <div class="font-medium text-gray-900 leading-relaxed">
-                {{ group.deadline }}
-              </div>
+              <button
+                type="button"
+                class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-gray-50 transition-colors"
+                :aria-expanded="openRefundGroups.has(groupIndex)"
+                @click="toggleRefundGroup(groupIndex)"
+              >
+                <span class="font-medium text-gray-900 leading-relaxed">
+                  {{ group.deadline }}
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-500 shrink-0 transition-transform"
+                  :class="{ 'rotate-180': openRefundGroups.has(groupIndex) }"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
 
-              <ul class="mt-3 space-y-3">
+              <ul
+                v-show="openRefundGroups.has(groupIndex)"
+                class="px-4 pb-4 space-y-3 border-t border-gray-100 pt-3"
+              >
                 <li
                   v-for="(policy, index) in group.policies"
                   :key="index"
