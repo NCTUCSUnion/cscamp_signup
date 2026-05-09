@@ -1,7 +1,7 @@
 <script setup>
 import Banner from '../components/layout/Banner.vue'
 import campInfo from '../data/camp-info.json'
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 
 /** "YYYY年M月D日" or "YYYY年M月D日 HH:mm" (local time) */
 function parseCampTimelineDate(dateStr) {
@@ -23,25 +23,12 @@ const currentDate = ref(new Date())
 
 // Parse dates from timeline for comparison
 const timelineDates = computed(() => {
-  return campInfo.registration.timeline.map((item, index) => {
-    // Parse from camp-info.json
-    const parsed = parseCampTimelineDate(item.date)
-    let date = null
-
-    if (parsed) {
-      date = new Date(parsed)
-      // Day-level comparison for timeline highlighting
-      date.setHours(0, 0, 0, 0)
-    }
-    
-    // Use spread first, then override the date property
-    return {
-      ...item,
-      index,
-      date,
-      originalDateString: item.date // Keep the original string for display
-    }
-  })
+  return campInfo.registration.timeline.map((item, index) => ({
+    ...item,
+    index,
+    date: parseCampTimelineDate(item.date),
+    originalDateString: item.date // Keep the original string for display
+  }))
 })
 
 // Registration countdown deadline: same source as timeline「報名截止」in camp-info.json
@@ -64,8 +51,7 @@ const remainingTime = ref({
 
 // Calculate if deadline has passed
 const isDeadlinePassed = computed(() => {
-  const now = new Date()
-  return now > registrationDeadline.value
+  return currentDate.value > registrationDeadline.value
 })
 
 const refundPolicyGroups = computed(() => {
@@ -91,9 +77,55 @@ const toggleRefundGroup = (index) => {
   openRefundGroups.value = new Set(openRefundGroups.value)
 }
 
+// === DEV ONLY: time-travel debugger ===
+const isDev = import.meta.env.DEV
+const DEBUG_TIME_STORAGE_KEY = 'registration-debug-now'
+const debugNow = ref(null)
+const debugInputValue = ref('')
+
+const persistDebugTime = () => {
+  if (!isDev || typeof window === 'undefined') return
+
+  if (debugInputValue.value) {
+    window.localStorage.setItem(DEBUG_TIME_STORAGE_KEY, debugInputValue.value)
+  } else {
+    window.localStorage.removeItem(DEBUG_TIME_STORAGE_KEY)
+  }
+}
+
+const restoreDebugTime = () => {
+  if (!isDev || typeof window === 'undefined') return
+
+  const savedDebugTime = window.localStorage.getItem(DEBUG_TIME_STORAGE_KEY)
+  if (!savedDebugTime) return
+
+  debugInputValue.value = savedDebugTime
+  const restoredDate = new Date(savedDebugTime)
+  if (!Number.isNaN(restoredDate.getTime())) {
+    debugNow.value = restoredDate
+  }
+}
+
+const applyDebugTime = () => {
+  if (!debugInputValue.value) {
+    debugNow.value = null
+  } else {
+    const nextDebugDate = new Date(debugInputValue.value)
+    debugNow.value = Number.isNaN(nextDebugDate.getTime()) ? null : nextDebugDate
+  }
+  persistDebugTime()
+  updateCountdown()
+}
+const resetDebugTime = () => {
+  debugInputValue.value = ''
+  debugNow.value = null
+  persistDebugTime()
+  updateCountdown()
+}
+
 // Update countdown timer
 const updateCountdown = () => {
-  const now = new Date()
+  const now = debugNow.value ?? new Date()
   currentDate.value = now  // keep reactive for time-based progress
   const diff = registrationDeadline.value - now
   
@@ -119,6 +151,7 @@ const updateCountdown = () => {
 let countdownInterval = null
 
 onMounted(() => {
+  restoreDebugTime()
   // Initial update
   updateCountdown()
   // Start interval (update every second)
@@ -132,80 +165,159 @@ onUnmounted(() => {
   }
 })
 
-// Determine current stage
+// Determine timeline state from the simulated/real current time
 const currentStageIndex = computed(() => {
-  if (!timelineDates.value.length) return -1
-  
-  // Sort timeline dates in ascending order
-  const sortedTimeline = [...timelineDates.value].sort((a, b) => {
-    if (!a.date) return -1
-    if (!b.date) return 1
-    return a.date - b.date
-  })
-  
-  // Create a new date instead of using the ref value directly
-  const today = new Date()
-  // Reset time part to ensure clean comparison
-  today.setHours(0, 0, 0, 0)
-  
-  // Find the current stage - the latest stage whose date has passed
-  let currentIndex = -1
+  const items = timelineDates.value
+  if (!items.length) return -1
 
-  for (let i = sortedTimeline.length -1 ; i >= 0; i--) {
-    const timelineItem = sortedTimeline[i];
-    const timelineDate = timelineItem.date;
-    
-    if (timelineDate && timelineDate <= today) {
-      currentIndex = timelineItem.index;
-      return currentIndex;
-    } 
-  }
-
-  return -1
-})
-
-const timelineProgressPct = computed(() => {
-  const items = campInfo.registration.timeline
-  const total = items.length
-  if (total <= 1) return 0
-
-  // Parse all stage dates with full time precision
-  const dates = items.map(item => parseCampTimelineDate(item.date))
   const now = currentDate.value
+  let latestPassedIndex = -1
 
-  // Before the first stage
-  if (!dates[0] || now < dates[0]) return 0
-
-  // After or on the last stage
-  if (!dates[total - 1] || now >= dates[total - 1]) return 100
-
-  // Find the segment [i, i+1] we're currently in and interpolate
-  for (let i = 0; i < total - 1; i++) {
-    const start = dates[i]
-    const end = dates[i + 1]
-    if (start && end && now >= start && now < end) {
-      const segmentFraction = (now - start) / (end - start)
-      const nodeStart = i / (total - 1)
-      const nodeEnd = (i + 1) / (total - 1)
-      return (nodeStart + segmentFraction * (nodeEnd - nodeStart)) * 100
+  for (const item of items) {
+    if (item.date && now >= item.date) {
+      latestPassedIndex = item.index
     }
   }
 
-  return 100
+  return latestPassedIndex
+})
+
+const activeStageIndex = computed(() => {
+  const items = timelineDates.value
+  if (!items.length) return -1
+
+  const now = currentDate.value
+  const firstDate = items[0]?.date
+  if (!firstDate || now < firstDate) return -1
+
+  for (let i = 0; i < items.length - 1; i++) {
+    const stageStart = items[i]?.date
+    const nextStageStart = items[i + 1]?.date
+
+    if (!stageStart || !nextStageStart) continue
+    if (now >= stageStart && now < nextStageStart) {
+      return items[i].index
+    }
+  }
+
+  return items[items.length - 1].index
+})
+
+const timelineProgressPct = computed(() => {
+  const items = timelineDates.value
+  if (items.length <= 1) return 0
+
+  const firstDate = items[0]?.date
+  const now = currentDate.value
+  if (!firstDate || now <= firstDate) return 0
+
+  const lastIndex = items.length - 1
+  const lastDate = items[lastIndex]?.date
+  if (lastDate && now >= lastDate) return 100
+
+  let completedSegments = 0
+  let activeSegmentProgress = 0
+
+  for (let i = 0; i < lastIndex; i++) {
+    const segmentStart = items[i]?.date
+    const segmentEnd = items[i + 1]?.date
+    if (!segmentStart || !segmentEnd || segmentEnd <= segmentStart) continue
+
+    if (now >= segmentEnd) {
+      completedSegments += 1
+      continue
+    }
+
+    if (now > segmentStart) {
+      activeSegmentProgress = (now - segmentStart) / (segmentEnd - segmentStart)
+    }
+    break
+  }
+
+  return ((completedSegments + activeSegmentProgress) / lastIndex) * 100
 })
 
 // Function to check if a timeline item is current
 const isCurrentStage = (index) => {
-  return index === currentStageIndex.value
+  return index === activeStageIndex.value
 }
 
 const isCompletedStage = (index) => {
   return currentStageIndex.value >= 0 && index <= currentStageIndex.value
 }
+
+// Animated progress: ramps from 0 to actual value on mount
+const animatedProgressPct = ref(0)
+// Pixel offset and length of the progress segment (between first and last node)
+const segmentTopPx = ref(24)
+const segmentLengthPx = ref(0)
+const timelineContainerRef = ref(null)
+
+const measureSegment = () => {
+  const container = timelineContainerRef.value
+  if (!container) return
+  const nodes = container.querySelectorAll('.timeline-node-desktop')
+  if (nodes.length < 2) return
+  const containerTop = container.getBoundingClientRect().top
+  const firstTop = nodes[0].getBoundingClientRect().top - containerTop + 10
+  const lastTop = nodes[nodes.length - 1].getBoundingClientRect().top - containerTop + 10
+  segmentTopPx.value = firstTop
+  segmentLengthPx.value = Math.max(0, lastTop - firstTop)
+}
+
+onMounted(() => {
+  measureSegment()
+  window.addEventListener('resize', measureSegment)
+  // Delay one frame so the initial 0 is committed before transitioning
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      animatedProgressPct.value = timelineProgressPct.value
+    })
+  })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', measureSegment)
+})
+
+// Keep animated value synced with real progress as time ticks
+watch(timelineProgressPct, (val) => {
+  animatedProgressPct.value = val
+})
 </script>
 
 <template>
   <div>
+    <!-- DEV ONLY: time-travel debugger for timeline progress -->
+    <div
+      v-if="isDev"
+      class="fixed bottom-4 right-4 z-50 bg-white border-2 border-primary rounded-lg shadow-xl p-3 text-xs space-y-2"
+    >
+      <div class="font-bold text-primary">🛠 Debug: 模擬時間</div>
+      <div class="text-gray-600">
+        現在: {{ currentDate.toLocaleString('zh-TW') }}
+      </div>
+      <input
+        type="datetime-local"
+        v-model="debugInputValue"
+        class="border border-gray-300 rounded px-2 py-1 w-full"
+      />
+      <div class="flex gap-2">
+        <button
+          @click="applyDebugTime"
+          class="flex-1 bg-primary text-white px-2 py-1 rounded hover:opacity-80"
+        >
+          套用
+        </button>
+        <button
+          @click="resetDebugTime"
+          class="flex-1 bg-gray-300 text-gray-700 px-2 py-1 rounded hover:bg-gray-400"
+        >
+          重置
+        </button>
+      </div>
+    </div>
+
     <Banner 
       title="報名資訊" 
       backgroundImage="/images/banner-default.webp"
@@ -216,19 +328,29 @@ const isCompletedStage = (index) => {
       <section class="mb-16">
         <h2 class="text-center mb-12">報名流程</h2>
         
-        <div class="timeline-container relative">
+        <div class="timeline-container relative" ref="timelineContainerRef">
           <!-- Desktop Timeline Line -->
           <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-200 -translate-x-1/2 hidden md:block z-0"></div>
-          <!-- Desktop Timeline Progress -->
+          <!-- Filled segment above the first node (always complete) -->
           <div
             class="absolute top-0 left-1/2 w-1 -translate-x-1/2 hidden md:block timeline-progress z-10"
-            :style="{ height: `${timelineProgressPct}%` }"
+            :style="{ height: `${segmentTopPx}px` }"
+          ></div>
+          <!-- Desktop Timeline Progress (between first and last node) -->
+          <div
+            class="absolute left-1/2 w-1 -translate-x-1/2 hidden md:block timeline-progress z-10"
+            :style="{ top: `${segmentTopPx}px`, height: `${(segmentLengthPx * animatedProgressPct) / 100}px` }"
           ></div>
 
-          <!-- Mobile Timeline Progress (overlays ::before) -->
+          <!-- Mobile filled segment above the first node -->
           <div
             class="md:hidden absolute left-[20px] top-0 w-[2px] timeline-progress z-10"
-            :style="{ height: `${timelineProgressPct}%` }"
+            :style="{ height: `${segmentTopPx}px` }"
+          ></div>
+          <!-- Mobile Timeline Progress (between first and last node) -->
+          <div
+            class="md:hidden absolute left-[20px] w-[2px] timeline-progress z-10"
+            :style="{ top: `${segmentTopPx}px`, height: `${(segmentLengthPx * animatedProgressPct) / 100}px` }"
           ></div>
           
           <!-- Timeline Items -->
@@ -248,13 +370,13 @@ const isCompletedStage = (index) => {
                 <div 
                   :class="[
                     'p-6 rounded-lg shadow-md max-w-sm w-full', 
-                    isCurrentStage(index) ? 'bg-secondary bg-opacity-10' : 'bg-gray-100'
+                    isCompletedStage(index) || isCurrentStage(index) ? 'bg-gray-100' : 'bg-white'
                   ]"
                 >
                   <h3 
                     :class="[
                       'text-xl font-bold mb-2', 
-                      isCurrentStage(index) ? 'text-secondary' : 'text-primary'
+                      isCompletedStage(index) || isCurrentStage(index) ? 'text-primary' : 'text-gray-900'
                     ]"
                   >{{ item.label }}</h3>
                   <div class="text-lg font-semibold">{{ item.date }}</div>
@@ -265,8 +387,10 @@ const isCompletedStage = (index) => {
                 <div class="timeline-node-mobile md:hidden absolute top-1/2 -left-6 -translate-y-1/2">
                   <div 
                     :class="[
-                      'w-5 h-5 rounded-full border-4 border-white', 
-                    isCompletedStage(index) ? 'bg-secondary' : 'bg-primary'
+                      'w-5 h-5 rounded-full',
+                      isCompletedStage(index) || isCurrentStage(index)
+                        ? 'bg-primary shadow-[0_0_0_2px_white]'
+                        : 'bg-white border-4 border-gray-300'
                     ]"
                   ></div>
                 </div>
@@ -276,8 +400,10 @@ const isCompletedStage = (index) => {
               <div class="timeline-node-desktop absolute top-6 left-1/2 -translate-x-1/2 hidden md:block">
                 <div 
                   :class="[
-                    'w-5 h-5 rounded-full border-4 border-white', 
-                    isCompletedStage(index) ? 'bg-secondary' : 'bg-primary'
+                    'w-5 h-5 rounded-full',
+                    isCompletedStage(index) || isCurrentStage(index)
+                      ? 'bg-primary shadow-[0_0_0_2px_white]'
+                      : 'bg-white border-4 border-gray-300'
                   ]"
                 ></div>
               </div>
@@ -520,8 +646,9 @@ const isCompletedStage = (index) => {
 }
 
 .timeline-progress {
-  background: linear-gradient(to bottom, rgba(134, 167, 114, 1), rgba(134, 167, 114, 0.6));
+  background: #9ABF80;
   border-radius: 9999px;
+  transition: height 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Countdown timer styles */
