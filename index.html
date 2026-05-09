@@ -9,6 +9,16 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2026 交大資訊逐夢營 – 天資驕子</title>
+    <script>
+      (function restoreGitHubPagesRoute() {
+        const url = new URL(window.location.href)
+        const redirectedPath = url.searchParams.get('spa-path')
+        if (!redirectedPath) return
+
+        const nextUrl = decodeURIComponent(redirectedPath)
+        window.history.replaceState(null, '', nextUrl)
+      })()
+    </script>
   </head>
   <body>
     <div id="app"></div>
