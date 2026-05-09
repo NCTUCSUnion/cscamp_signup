@@ -63,7 +63,7 @@
         }
       ]
     },
-    "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform?usp=dialog"
+    "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform"
   },
   "teams": [
     {
@@ -573,6 +573,13 @@
       "answer": "為維持營隊活動品質，建議全程參與。若有特殊狀況需請假或提早離營，請提前告知並填寫請假單。"
     }
   ],
+  "contact": {
+    "email": "csunion.nctu@gmail.com",
+    "people": [
+      { "role": "總召", "name": "朱驛庭", "phone": "0970573793" },
+      { "role": "總務", "name": "林鈺誠", "phone": "0989792706" }
+    ]
+  },
   "images": {
     "slideshow": [
       "/images/slideshow/slide-1.webp",

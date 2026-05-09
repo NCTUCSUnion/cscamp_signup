@@ -1,5 +1,6 @@
 <script setup>
 import Banner from '../components/layout/Banner.vue'
+import ImageSlider from '../components/ui/ImageSlider.vue'
 import campInfo from '../data/camp-info.json'
 
 // 獲取團隊背景色的函數
@@ -44,6 +45,16 @@ function getTeamColor(teamId) {
             :class="getTeamColor(team.id)"
           >
             <h3 class="text-2xl font-bold text-white">{{ team.name }}</h3>
+          </div>
+
+          <!-- Team Image Slider -->
+          <div v-if="campInfo.images.teams[team.id]?.length > 0">
+            <ImageSlider
+              :images="campInfo.images.teams[team.id]"
+              height="h-48"
+              :autoplay-delay="4000"
+              :rounded="false"
+            />
           </div>
           
           <!-- Team Content -->

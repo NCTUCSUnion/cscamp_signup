@@ -87,7 +87,7 @@ const teams = campInfo.teams
           </div>
           
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform" 
+            :href="campInfo.registration.formUrl" 
             class="btn-primary font-heading flex items-center justify-center"
           >
             立即報名
@@ -175,7 +175,7 @@ const teams = campInfo.teams
         </div>
         
         <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSed3_UidvvDkomMjrIPuIjYHmHWDnQ7HhNuFPTBAwcC2GQ8DA/viewform" 
+          :href="campInfo.registration.formUrl" 
           class="block btn-primary text-center mt-4 font-heading flex items-center justify-center py-2"
         >
           立即報名

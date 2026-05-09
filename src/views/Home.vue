@@ -1,28 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import ImageSlider from '../components/ui/ImageSlider.vue'
 import campInfo from '../data/camp-info.json'
-
-// Hero section background parallax effect
-const heroRef = ref(null)
-const handleScroll = () => {
-  if (heroRef.value) {
-    const scrollPosition = window.scrollY
-    heroRef.value.style.backgroundPositionY = `${scrollPosition * 0.5}px`
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <div 
-      ref="heroRef"
-      class="w-full h-screen bg-cover bg-center flex items-center justify-center relative"
+      class="w-full h-screen bg-cover bg-bottom flex items-center justify-center relative"
       style="background-image: url('/images/hero-bg.webp');"
     >
       <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
@@ -31,7 +16,7 @@ onMounted(() => {
         <h2 class="text-4xl text-gray-300 md:text-5xl mb-10 tracking-wider">{{ campInfo.slogan }}</h2>
         <p class="text-xl text-gray-300 md:text-2xl mb-10">{{ campInfo.mainInfo.date }}</p>
         <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc1kgIlSA-_tvB1SgqiMZkLioA4Xj5QJ_aZiEPC7_lZBS_PJA/viewform" 
+          :href="campInfo.registration.formUrl" 
           class="btn-primary text-xl py-3 px-8"
         >
           立即報名
@@ -107,7 +92,7 @@ onMounted(() => {
               
               <div class="mt-8 text-center">
                 <a 
-                  href="https://forms.gle/XQW8x9MB258HQm5v8" 
+                  :href="campInfo.registration.formUrl" 
                   class="btn-primary"
                 >
                   立即報名
