@@ -38,9 +38,19 @@ npm run build
 npm run preview
 ```
 
+### 維護腳本 (`scripts/`)
+
+專案根目錄（`cscamp_signup/`）下執行下列指令。
+
+| 腳本 | 指令 | 說明 |
+|------|------|------|
+| `count-member-chars.mjs` | `npm run count-members` | 統計 `public/contents/members` 內每個 `.txt` 的**字數**（Unicode code points，含換行等字元），列出各檔與合計。 |
+| `convert-to-webp.js` | `node scripts/convert-to-webp.js` | 將 `public/images` 與建置後的 `dist/images` 中的 `.jpg` / `.jpeg` / `.png` / `.gif` 轉成 WebP（品質等選項見腳本內 `config`）。需先安裝 Google WebP 工具的 `cwebp`（macOS 可用 `brew install webp`）。轉檔時會暫存 `.backup`，完成後刪除；預設保留原始圖檔。若某個目錄不存在（例如尚未 `npm run build`），會略過並提示。 |
+
 ### 目錄結構
 ```
 ├── public/            # 靜態資源 (圖片等)
+├── scripts/           # 維護用 Node 腳本
 ├── src/
 │   ├── assets/        # 樣式表與其他資源
 │   │   ├── layout/    # 布局相關組件
