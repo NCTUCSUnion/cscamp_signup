@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "count-members": "node scripts/count-member-chars.mjs"
   },
   "dependencies": {
     "swiper": "^12.1.4",
