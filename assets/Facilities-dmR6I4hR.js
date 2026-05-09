@@ -1,1 +1,0 @@
-import{_ as t}from"./TeamTemplate-BSwNFtVn.js";import{o as a,x as e}from"./index-DyYdlVgk.js";import"./Banner-C4J1_Ytf.js";import"./ImageSlider-CkXANUDz.js";const p={__name:"Facilities",setup(o){return(r,i)=>(a(),e(t,{teamId:"facilities"}))}};export{p as default};
