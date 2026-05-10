@@ -365,6 +365,12 @@
           "position": "組員",
           "photo": "/images/members/陳璽安.jpg",
           "introFile": "/contents/members/陳璽安.txt"
+        },
+        {
+          "name": "郭芷杅",
+          "position": "組員",
+          "photo": "/images/members/郭芷杅.jpg",
+          "introFile": "/contents/members/郭芷杅.txt"
         }
       ]
     },
@@ -592,10 +598,7 @@
       "/images/slideshow/slide-8.webp"
     ],
     "teams": {
-      "admin": [
-        "/images/teams/admin-1.webp",
-        "/images/teams/admin-2.webp"
-      ],
+      "admin": ["/images/teams/admin-1.webp", "/images/teams/admin-2.webp"],
       "event": [
         "/images/teams/event-1.webp",
         "/images/teams/event-2.webp",
@@ -606,14 +609,8 @@
         "/images/teams/design-2.webp",
         "/images/teams/design-3.webp"
       ],
-      "life": [
-        "/images/teams/life-1.webp",
-        "/images/teams/life-2.webp"
-      ],
-      "study": [
-        "/images/teams/study-1.webp",
-        "/images/teams/study-2.webp"
-      ],
+      "life": ["/images/teams/life-1.webp", "/images/teams/life-2.webp"],
+      "study": ["/images/teams/study-1.webp", "/images/teams/study-2.webp"],
       "facilities": [
         "/images/teams/facilities-1.webp",
         "/images/teams/facilities-2.webp"
