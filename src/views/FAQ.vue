@@ -9,12 +9,12 @@ const activeTag = ref('全部')
 
 // Predefined tags for categorization
 const tags = [
-  '全部',
-  '報名',
-  '課程',
-  '住宿',
-  '費用',
-  '其他'
+  { name: '全部', icon: 'M4 6h16M4 12h16M4 18h16' },
+  { name: '報名', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+  { name: '課程', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
+  { name: '住宿', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+  { name: '費用', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { name: '其他', icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
 ]
 
 // Tag assignment (in a real app, these would be in the JSON)
@@ -67,152 +67,170 @@ const toggleItem = (key) => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-[#f9fafb] selection:bg-primary/30">
     <Banner 
       title="常見問答" 
       backgroundImage="/images/banner-default.webp"
     />
 
-    <div class="container-custom py-16">
-      <div class="text-center mb-12">
-        <h2 class="mb-4">常見問題</h2>
-        <p class="max-w-3xl mx-auto text-lg text-gray-600">
-          我們整理了學員最常詢問的問題，如果您有其他疑問，歡迎透過聯絡方式與我們洽詢。
-        </p>
-      </div>
+    <div class="py-20 md:py-32 relative overflow-hidden">
+      <!-- Decorational background layers -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#f9fafb] via-primary/5 to-[#f9fafb] pointer-events-none"></div>
+      <div class="absolute top-0 right-0 w-3/4 h-3/4 bg-primary/10 blur-[120px] rounded-full opacity-60 pointer-events-none translate-x-1/3 -translate-y-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-3/4 h-3/4 bg-primary/10 blur-[120px] rounded-full opacity-60 pointer-events-none -translate-x-1/3 translate-y-1/4"></div>
 
-      <!-- Search and Filter -->
-      <div class="mb-10 max-w-2xl mx-auto">
-        <div class="relative mb-6">
-          <input 
-            type="text"
-            v-model="searchTerm"
-            placeholder="搜尋問題..."
-            class="w-full py-3 px-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-          <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+      <div class="container-custom relative z-10">
+        <div class="text-center mb-16 md:mb-20">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight relative inline-block">
+            常見問題
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-primary rounded-full"></div>
+          </h2>
+          <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mt-8">
+            我們整理了學員最常詢問的問題<br>
+            如果您有其他疑問，歡迎透過聯絡方式與我們洽詢
+          </p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="mb-12 max-w-2xl mx-auto">
+          <div class="relative mb-6">
+            <input 
+              type="text"
+              v-model="searchTerm"
+              placeholder="搜尋問題..."
+              class="w-full py-4 px-5 pl-14 rounded-2xl border border-primary/15 bg-white/80 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300 text-gray-700 placeholder:text-gray-400"
+            />
+            <div class="absolute left-5 top-1/2 transform -translate-y-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
           </div>
-        </div>
-        
-        <!-- Tags -->
-        <div class="flex flex-wrap justify-center gap-2">
-          <button 
-            v-for="tag in tags" 
-            :key="tag"
-            @click="activeTag = tag"
-            :class="[
-              'px-4 py-2 rounded-full text-sm font-medium transition-colors',
-              activeTag === tag 
-                ? 'bg-primary text-white' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            ]"
-          >
-            {{ tag }}
-          </button>
-        </div>
-      </div>
 
-      <!-- FAQs -->
-      <div class="max-w-3xl mx-auto">
-        <div v-if="filteredFaqs.length === 0" class="text-center py-8">
-          <p class="text-lg text-gray-500">沒有符合搜尋條件的問題。請嘗試其他關鍵字。</p>
-        </div>
-        
-        <div v-else class="space-y-4">
-          <div 
-            v-for="(faq, index) in filteredFaqs" 
-            :key="faq.question"
-            :class="[
-              'bg-white shadow-md rounded-lg overflow-hidden transition',
-              faq.highlight ? 'ring-2 ring-primary/50 bg-primary/5' : ''
-            ]"
-          >
-            <!-- Question -->
-            <!-- Add hightlight:true to highlight certain faq -->
-            <div 
-              @click="toggleItem(faq.question)"
+          <!-- Tags -->
+          <div class="flex flex-wrap justify-center gap-2">
+            <button 
+              v-for="tag in tags" 
+              :key="tag.name"
+              @click="activeTag = tag.name"
               :class="[
-                'p-6 flex justify-between items-center cursor-pointer',
-                faq.highlight ? 'hover:bg-primary/10' : 'hover:bg-gray-50'
+                'inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300',
+                activeTag === tag.name 
+                  ? 'bg-primary text-white shadow-md shadow-primary/30 scale-105' 
+                  : 'bg-white/70 backdrop-blur-sm text-gray-700 border border-primary/10 hover:border-primary/30 hover:text-primary hover:-translate-y-0.5'
               ]"
             >
-              <h3 class="text-lg font-semibold pr-8">{{ faq.question }}</h3>
-              <div>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  class="h-6 w-6 text-primary transition-transform" 
-                  :class="{ 'transform rotate-180': openItems[faq.question] }"
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="tag.icon" />
+              </svg>
+              {{ tag.name }}
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQs -->
+        <div class="max-w-3xl mx-auto">
+          <div v-if="filteredFaqs.length === 0" class="text-center py-12">
+            <p class="text-lg text-gray-500">沒有符合搜尋條件的問題。請嘗試其他關鍵字。</p>
+          </div>
+
+          <div v-else class="space-y-4">
+            <div 
+              v-for="(faq, index) in filteredFaqs" 
+              :key="faq.question"
+              :class="[
+                'group relative rounded-2xl overflow-hidden transition-all duration-500 border',
+                faq.highlight 
+                  ? 'bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 shadow-[0_8px_30px_rgba(154,191,128,0.18)] hover:shadow-[0_16px_40px_rgba(154,191,128,0.28)]' 
+                  : 'bg-gradient-to-br from-white to-gray-50 border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.04),0_8px_30px_rgba(154,191,128,0.06)] hover:shadow-[0_12px_40px_rgba(154,191,128,0.18)] hover:-translate-y-1'
+              ]"
+            >
+              <!-- Question -->
+              <div 
+                @click="toggleItem(faq.question)"
+                class="p-6 flex justify-between items-center cursor-pointer relative"
+              >
+                <div class="flex items-start gap-4 pr-4">
+                  <div 
+                    :class="[
+                      'shrink-0 w-9 h-9 rounded-xl flex items-center justify-center font-bold transition-all duration-500',
+                      faq.highlight 
+                        ? 'bg-primary text-white shadow-md shadow-primary/30' 
+                        : 'bg-primary/10 text-primary group-hover:rotate-6 group-hover:scale-110'
+                    ]"
+                  >
+                    Q
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 leading-snug pt-1">{{ faq.question }}</h3>
+                </div>
+                <div 
+                  :class="[
+                    'shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-500',
+                    openItems[faq.question] ? 'bg-primary text-white rotate-180' : 'bg-primary/10 text-primary'
+                  ]"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Answer -->
+              <div 
+                v-show="openItems[faq.question]"
+                class="px-6 pb-6 pt-0"
+              >
+                <div class="border-t border-primary/10 pt-4 pl-[52px]">
+                  <p class="text-gray-600 leading-relaxed">{{ faq.answer }}</p>
+                </div>
               </div>
             </div>
-            
-            <!-- Answer -->
-            <div 
-              v-show="openItems[faq.question]"
-              class="px-6 pb-6 pt-2 border-t border-gray-200"
-            >
-              <p>{{ faq.answer }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Still Have Questions CTA -->
-      <div class="mt-16 bg-gray-100 p-8 rounded-lg text-center max-w-3xl mx-auto">
-        <h3 class="text-xl font-semibold mb-4">還有其他問題？</h3>
-        <p class="mb-6">如果以上問答沒有解決您的疑問，歡迎透過以下方式聯絡我們：</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">         
-          <a 
-            href="https://www.facebook.com/nctucsChaseDream" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-flex items-center justify-center bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary/80"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
-            </svg>
-            Facebook 粉專
-          </a>
-          <a 
-            href="https://www.instagram.com/nctucs_chasedream/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-flex items-center justify-center bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary/80"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-            Instagram
-          </a>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-2">
-          <p class="font-medium">或直接聯絡營隊負責人：</p>
-          <div class="flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span>官方信箱：<a :href="`mailto:${campInfo.contact.email}`" class="text-primary hover:underline">{{ campInfo.contact.email }}</a></span>
-          </div>
-          <div
-            v-for="person in campInfo.contact.people"
-            :key="person.role"
-            class="flex items-center justify-center gap-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            <span>{{ person.role }}：{{ person.name }} / {{ person.phone }}</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Still Have Questions CTA -->
+    <section class="py-20 md:py-28 relative overflow-hidden bg-white">
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,var(--tw-gradient-stops))] from-primary/5 via-white to-white pointer-events-none"></div>
+
+      <div class="container-custom relative z-10">
+        <div class="max-w-3xl mx-auto bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] p-8 md:p-12 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 text-center">
+            <h3 class="text-2xl md:text-3xl font-extrabold mb-4 text-gray-900 tracking-tight">還有其他問題？</h3>
+            <p class="mb-8 text-gray-600 leading-relaxed">如果以上問答沒有解決您的疑問，歡迎透過下方的 Facebook 或 Instagram 私訊我們，或使用網頁最底下的聯絡 Email 與電話直接詢問。</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+              <a 
+                href="https://www.facebook.com/nctucsChaseDream" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center justify-center bg-primary text-white py-3 px-6 rounded-xl shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                </svg>
+                Facebook 粉專
+              </a>
+              <a 
+                href="https://www.instagram.com/nctucs_chasedream/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center justify-center bg-primary text-white py-3 px-6 rounded-xl shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-</template> 
+</template>
