@@ -335,10 +335,23 @@ watch(timelineProgressPct, (val) => {
       backgroundImage="/images/banner-default.webp"
     />
 
-    <div class="container-custom py-16">
+    <!-- Page background wrapper -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-[#f9fafb] via-primary/5 to-[#f9fafb]">
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 -left-32 w-96 h-96 rounded-full blur-[120px] bg-primary/10 pointer-events-none"></div>
+      <div class="absolute bottom-40 -right-32 w-96 h-96 rounded-full blur-[120px] bg-primary/10 pointer-events-none"></div>
+
+    <div class="container-custom py-16 relative z-10">
       <!-- Registration Timeline -->
       <section class="mb-16">
-        <h2 class="text-center mb-12">報名流程</h2>
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-12 h-1.5 bg-primary rounded-full"></div>
+            <span class="text-sm font-semibold tracking-widest uppercase text-primary">Timeline</span>
+            <div class="w-12 h-1.5 bg-primary rounded-full"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">報名流程</h2>
+        </div>
         
         <div class="timeline-container relative" ref="timelineContainerRef">
           <!-- Desktop Timeline Line -->
@@ -386,8 +399,10 @@ watch(timelineProgressPct, (val) => {
               >
                 <div 
                   :class="[
-                    'p-6 rounded-lg shadow-md max-w-sm w-full', 
-                    isCompletedStage(index) || isCurrentStage(index) ? 'bg-gray-100' : 'bg-white'
+                    'p-6 rounded-2xl border max-w-sm w-full transition-all',
+                    isCompletedStage(index) || isCurrentStage(index)
+                      ? 'bg-gradient-to-br from-white to-primary/5 border-primary/30 shadow-[0_8px_30px_rgba(154,191,128,0.15)]'
+                      : 'bg-white border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
                   ]"
                 >
                   <h3 
@@ -396,7 +411,7 @@ watch(timelineProgressPct, (val) => {
                       isCompletedStage(index) || isCurrentStage(index) ? 'text-primary' : 'text-gray-900'
                     ]"
                   >{{ item.label }}</h3>
-                  <div class="text-lg font-semibold">{{ item.date }}</div>
+                  <div class="text-lg font-semibold text-gray-800">{{ item.date }}</div>
                   <p class="text-gray-600 mt-2">{{ item.description }}</p>
                 </div>
 
@@ -406,7 +421,7 @@ watch(timelineProgressPct, (val) => {
                     :class="[
                       'w-5 h-5 rounded-full',
                       isCompletedStage(index) || isCurrentStage(index)
-                        ? 'bg-primary shadow-[0_0_0_2px_white]'
+                        ? 'bg-primary shadow-[0_0_0_3px_white,0_0_0_5px_rgba(154,191,128,0.3)]'
                         : 'bg-white border-4 border-gray-300'
                     ]"
                   ></div>
@@ -419,7 +434,7 @@ watch(timelineProgressPct, (val) => {
                   :class="[
                     'w-5 h-5 rounded-full',
                     isCompletedStage(index) || isCurrentStage(index)
-                      ? 'bg-primary shadow-[0_0_0_2px_white]'
+                      ? 'bg-primary shadow-[0_0_0_3px_white,0_0_0_5px_rgba(154,191,128,0.3)]'
                       : 'bg-white border-4 border-gray-300'
                   ]"
                 ></div>
@@ -431,25 +446,60 @@ watch(timelineProgressPct, (val) => {
 
       <!-- Fee Information -->
       <section class="mb-16">
-        <h2 class="text-center mb-12">費用說明</h2>
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-12 h-1.5 bg-primary rounded-full"></div>
+            <span class="text-sm font-semibold tracking-widest uppercase text-primary">Fee &amp; Deadline</span>
+            <div class="w-12 h-1.5 bg-primary rounded-full"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">費用說明</h2>
+        </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Left: Fee Details -->
-          <div class="bg-gray-100 p-8 rounded-lg shadow-md">
-            <h3 class="text-2xl font-bold text-primary mb-6">營隊費用</h3>
-            <div class="text-xl font-semibold mb-4">{{ campInfo.registration.fee.amount }}</div>
+          <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)]">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary transition-transform group-hover:rotate-6 group-hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-primary">營隊費用</h3>
+            </div>
+            <div class="grid grid-cols-3 gap-2 md:gap-3 mb-6">
+              <div
+                v-for="(tier, index) in campInfo.registration.fee.amount"
+                :key="index"
+                :class="[
+                  'rounded-2xl border p-3 md:p-4 text-center transition-all',
+                  tier.highlight
+                    ? 'bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30'
+                    : 'bg-white border-gray-200'
+                ]"
+              >
+                <div class="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">{{ tier.label }}</div>
+                <div
+                  :class="[
+                    'text-lg md:text-2xl font-extrabold tracking-tight',
+                    tier.highlight ? 'text-primary' : 'text-gray-900'
+                  ]"
+                >
+                  {{ tier.price }}
+                </div>
+              </div>
+            </div>
             
-            <h4 class="text-lg font-semibold mt-6 mb-4">費用包含項目：</h4>
+            <h4 class="text-lg font-semibold mt-6 mb-4 text-gray-800">費用包含項目：</h4>
             <ul class="space-y-2">
-              <li v-for="(item, index) in campInfo.registration.fee.includes" :key="index" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li v-for="(item, index) in campInfo.registration.fee.includes" :key="index" class="flex items-center text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
                 {{ item }}
               </li>
-              <li class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <li class="flex items-center text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 因應教育部政策不會發放參加證明
               </li>
@@ -457,54 +507,66 @@ watch(timelineProgressPct, (val) => {
           </div>
           
           <!-- Right: Countdown Timer -->
-          <div :class="['p-8 rounded-lg shadow-md bg-gray-100']">
-            <h3 :class="[
-              'text-2xl font-bold mb-6',
-              isDeadlinePassed ? 'text-red-600' : 'text-primary'
-            ]">{{ isDeadlinePassed ? '報名已截止' : '報名倒數計時' }}</h3>
+          <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)]">
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                :class="[
+                  'w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:rotate-6 group-hover:scale-110',
+                  isDeadlinePassed ? 'bg-red-100 text-red-600' : 'bg-primary/10 text-primary'
+                ]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 :class="[
+                'text-2xl font-bold',
+                isDeadlinePassed ? 'text-red-600' : 'text-primary'
+              ]">{{ isDeadlinePassed ? '報名已截止' : '報名倒數計時' }}</h3>
+            </div>
             
             <div class="space-y-6">
               <div class="text-center">
                 <div class="flex justify-center items-center space-x-4 mb-6">
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-100 border border-red-200' : 'bg-white'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
                   ]">
                     <div :class="[
-                      'text-3xl font-bold',
+                      'text-3xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.days }}</div>
                     <div class="text-sm text-gray-600">天</div>
                   </div>
-                  <div class="text-2xl font-bold text-gray-400">:</div>
+                  <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-100 border border-red-200' : 'bg-white'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
                   ]">
                     <div :class="[
-                      'text-3xl font-bold',
+                      'text-3xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.hours }}</div>
                     <div class="text-sm text-gray-600">時</div>
                   </div>
-                  <div class="text-2xl font-bold text-gray-400">:</div>
+                  <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-100 border border-red-200' : 'bg-white'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
                   ]">
                     <div :class="[
-                      'text-3xl font-bold',
+                      'text-3xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.minutes }}</div>
                     <div class="text-sm text-gray-600">分</div>
                   </div>
-                  <div class="text-2xl font-bold text-gray-400">:</div>
+                  <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-100 border border-red-200' : 'bg-white'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
                   ]">
                     <div :class="[
-                      'text-3xl font-bold',
+                      'text-3xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.seconds }}</div>
                     <div class="text-sm text-gray-600">秒</div>
@@ -548,9 +610,16 @@ watch(timelineProgressPct, (val) => {
           </div>
         </div>
 
-        <div class="bg-gray-100 p-8 rounded-lg shadow-md mt-8">
+        <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] mt-8 transition-all hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)]">
           <div class="flex items-center justify-between gap-4 mb-6">
-            <h3 class="text-2xl font-bold text-primary">退費說明</h3>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary transition-transform group-hover:rotate-6 group-hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-primary">退費說明</h3>
+            </div>
             <span class="text-sm text-gray-500">依申請時間與原因計算</span>
           </div>
 
@@ -558,21 +627,22 @@ watch(timelineProgressPct, (val) => {
             <div
               v-for="(group, groupIndex) in refundPolicyGroups"
               :key="groupIndex"
-              class="bg-white rounded-lg border border-gray-200 overflow-hidden"
+              class="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all"
+              :class="{ 'border-primary/30 shadow-[0_4px_20px_rgba(154,191,128,0.1)]': openRefundGroups.has(groupIndex) }"
             >
               <button
                 type="button"
-                class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-gray-50 transition-colors"
+                class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-primary/5 transition-colors"
                 :aria-expanded="openRefundGroups.has(groupIndex)"
                 @click="toggleRefundGroup(groupIndex)"
               >
-                <span class="font-medium text-gray-900 leading-relaxed">
+                <span class="font-bold text-gray-900 leading-relaxed">
                   {{ group.deadline }}
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-gray-500 shrink-0 transition-transform"
-                  :class="{ 'rotate-180': openRefundGroups.has(groupIndex) }"
+                  :class="{ 'rotate-180 text-primary': openRefundGroups.has(groupIndex) }"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -596,7 +666,11 @@ watch(timelineProgressPct, (val) => {
                   <span
                     :class="[
                       'shrink-0 inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold',
-                      policy.percentage === 0 ? 'bg-gray-100 text-gray-700' : 'bg-primary bg-opacity-10 text-primary'
+                      policy.percentage === 0
+                        ? 'bg-red-100 text-red-700'
+                        : policy.percentage < 50
+                          ? 'bg-amber-100 text-amber-700'
+                          : 'bg-primary/10 text-primary'
                     ]"
                   >
                     退還 {{ policy.percentage }}%
@@ -606,25 +680,33 @@ watch(timelineProgressPct, (val) => {
             </div>
           </div>
 
-          <div class="mt-6 text-sm text-gray-600">
+          <div class="mt-6 text-sm text-gray-500">
             實際退費以主辦單位審核與公告為準。
           </div>
         </div>
       </section>
 
       <!-- Registration CTA -->
-      <section class="bg-gray-100 p-8 rounded-lg text-center">
-        <h2 class="mb-6">準備好成為營隊的一員了嗎？</h2>
-        <p class="mb-8 text-lg">點擊下方按鈕填寫報名表單，開始你的程式學習之旅！</p>
-        <a 
-          :href="campInfo.registration.formUrl" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="btn-primary text-xl py-3 px-8 font-heading"
-        >
-          前往報名表單
-        </a>
+      <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white to-primary/5 p-10 md:p-14 rounded-3xl border border-primary/20 text-center shadow-[0_8px_40px_rgba(154,191,128,0.12)]">
+        <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-primary/10 blur-[80px] pointer-events-none"></div>
+        <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-primary/10 blur-[80px] pointer-events-none"></div>
+        <div class="relative z-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">準備好成為營隊的一員了嗎？</h2>
+          <p class="mb-8 text-lg text-gray-700">點擊下方按鈕填寫報名表單，開始你的程式學習之旅！</p>
+          <a 
+            :href="campInfo.registration.formUrl" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 btn-primary text-xl py-3 px-8 font-heading transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            前往報名表單
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </section>
+    </div>
     </div>
   </div>
 </template>
