@@ -1,1 +1,0 @@
-import{_ as t}from"./TeamTemplate-CjJQtyHA.js";import{o as e,x as o}from"./index-DA7Th1Ob.js";import"./Banner-Fsx08Mzr.js";import"./ImageSlider-C8YWwyNz.js";const s={__name:"Event",setup(r){return(a,_)=>(e(),o(t,{teamId:"event"}))}};export{s as default};
