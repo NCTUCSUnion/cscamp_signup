@@ -3,7 +3,7 @@
   "year": "2026",
   "slogan": "天資驕子",
   "mainInfo": {
-    "date": "2026/07/06 (一) ～ 2026/07/10 (五)",
+    "date": "2026/07/06 ～ 2026/07/10",
     "location": "國立陽明交通大學 工程三館",
     "audience": "高中生（含升高一及升大一）",
     "fee": "單人報名 / 8,000 元、團體報名 / 7,700 元、清寒補助身份報名免費"
@@ -22,8 +22,18 @@
       },
       {
         "label": "錄取公告",
-        "date": "2026年6月1日",
-        "description": "將於網站及Facebook粉專公告錄取名單"
+        "date": "2026年6月1日 12:00",
+        "description": "將於網站公布名單以及寄信個別通知"
+      },
+      {
+        "label": "繳費截止",
+        "date": "2026年6月5日 22:00",
+        "description": "若在繳費期限內未完成繳費將視同放棄資格"
+      },
+      {
+        "label": "備取名單",
+        "date": "2026年6月6日 12:00",
+        "description": "將於網站公布名單以及寄信個別通知"
       }
     ],
     "fee": {
@@ -373,8 +383,14 @@
         {
           "name": "郭芷杅",
           "position": "組員",
-          "photo": "/images/members/郭芷杅.jpg",
+          "photo": "/images/members/郭芷杅.webp",
           "introFile": "/contents/members/郭芷杅.txt"
+        },
+        {
+          "name": "曾煥宗",
+          "position": "組員",
+          "photo": "/images/members/曾煥宗.jpg",
+          "introFile": "/contents/members/曾煥宗.txt"
         }
       ]
     },
