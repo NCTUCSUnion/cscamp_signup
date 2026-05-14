@@ -50,14 +50,22 @@ const handleImageError = () => {
     <div class="grid grid-cols-1 md:grid-cols-5 h-full">
       <!-- Left: Member Photo -->
       <div 
-        class="member-photo overflow-hidden md:col-span-2 flex items-center justify-center"
+        class="member-photo relative overflow-hidden md:col-span-2 flex items-center justify-center"
         :class="{ 'bg-gray-100': imageError }"
       >
+        <!-- Blurred background (mobile only, fills letterbox area) -->
+        <img
+          v-if="!imageError"
+          :src="member.photo"
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-cover scale-110 blur-sm opacity-70 md:hidden"
+        />
         <img 
           v-if="!imageError"
           :src="member.photo"
           :alt="member.name" 
-          class="w-full h-full object-cover"
+          class="member-photo-fg relative w-full h-full object-contain md:object-cover md:object-top"
           @error="handleImageError"
         />
         <div v-else class="text-center p-4">
@@ -86,12 +94,35 @@ const handleImageError = () => {
 <style scoped>
 .member-photo {
   height: 240px;
+  width: 100%;
+}
+
+.member-photo-fg {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 20%,
+    #000 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 20%,
+    #000 80%,
+    transparent 100%
+  );
 }
 
 @media (min-width: 768px) {
   .member-photo {
     height: 100%;
     min-height: 240px;
+  }
+
+  .member-photo-fg {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }
 
