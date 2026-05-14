@@ -384,7 +384,7 @@ watch(timelineProgressPct, (val) => {
           ></div>
           
           <!-- Timeline Items -->
-          <div class="timeline-items space-y-12">
+          <div class="timeline-items space-y-6">
             <div 
               v-for="(item, index) in campInfo.registration.timeline" 
               :key="index"
@@ -473,8 +473,8 @@ watch(timelineProgressPct, (val) => {
                 :class="[
                   'rounded-2xl border p-3 md:p-4 text-center transition-all',
                   tier.highlight
-                    ? 'bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30'
-                    : 'bg-white border-gray-200'
+                    ? 'bg-gradient-to-br from-primary/15 to-primary/5 border-primary/30'
+                    : 'bg-primary/5 border-primary/10'
                 ]"
               >
                 <div class="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">{{ tier.label }}</div>
@@ -507,7 +507,7 @@ watch(timelineProgressPct, (val) => {
           </div>
           
           <!-- Right: Countdown Timer -->
-          <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)]">
+          <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)] flex flex-col">
             <div class="flex items-center gap-3 mb-6">
               <div
                 :class="[
@@ -525,15 +525,15 @@ watch(timelineProgressPct, (val) => {
               ]">{{ isDeadlinePassed ? '報名已截止' : '報名倒數計時' }}</h3>
             </div>
             
-            <div class="space-y-6">
+            <div class="space-y-6 flex flex-col flex-1">
               <div class="text-center">
-                <div class="flex justify-center items-center space-x-4 mb-6">
+                <div class="flex justify-center items-center space-x-1 md:space-x-4 mb-6">
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25'
                   ]">
                     <div :class="[
-                      'text-3xl font-extrabold',
+                      'text-4xl md:text-5xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.days }}</div>
                     <div class="text-sm text-gray-600">天</div>
@@ -541,10 +541,10 @@ watch(timelineProgressPct, (val) => {
                   <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25'
                   ]">
                     <div :class="[
-                      'text-3xl font-extrabold',
+                      'text-4xl md:text-5xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.hours }}</div>
                     <div class="text-sm text-gray-600">時</div>
@@ -552,10 +552,10 @@ watch(timelineProgressPct, (val) => {
                   <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25'
                   ]">
                     <div :class="[
-                      'text-3xl font-extrabold',
+                      'text-4xl md:text-5xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.minutes }}</div>
                     <div class="text-sm text-gray-600">分</div>
@@ -563,10 +563,10 @@ watch(timelineProgressPct, (val) => {
                   <div class="text-2xl font-bold text-gray-300">:</div>
                   <div :class="[
                     'countdown-box',
-                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-white to-primary/5 border border-primary/20'
+                    isDeadlinePassed ? 'bg-red-50 border border-red-200' : 'bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25'
                   ]">
                     <div :class="[
-                      'text-3xl font-extrabold',
+                      'text-4xl md:text-5xl font-extrabold',
                       isDeadlinePassed ? 'text-red-600' : 'text-primary'
                     ]">{{ remainingTime.seconds }}</div>
                     <div class="text-sm text-gray-600">秒</div>
@@ -579,7 +579,7 @@ watch(timelineProgressPct, (val) => {
                 ]">{{ isDeadlinePassed ? '本次報名已結束，敬請期待下一屆！' : '距離報名截止還剩' }}</p>
               </div>
               
-              <div v-if="!isDeadlinePassed" class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <div v-if="!isDeadlinePassed" class="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-auto">
                 <div class="flex items-start space-x-3">
                   <div class="text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -593,7 +593,7 @@ watch(timelineProgressPct, (val) => {
                 </div>
               </div>
               
-              <div v-if="isDeadlinePassed" class="bg-red-50 p-4 rounded-lg border border-red-200">
+              <div v-if="isDeadlinePassed" class="bg-red-50 p-4 rounded-lg border border-red-200 mt-auto">
                 <div class="flex items-start space-x-3">
                   <div class="text-red-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -611,7 +611,7 @@ watch(timelineProgressPct, (val) => {
         </div>
 
         <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] mt-8 transition-all hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)]">
-          <div class="flex items-center justify-between gap-4 mb-6">
+          <div class="mb-6">
             <div class="flex items-center gap-3">
               <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary transition-transform group-hover:rotate-6 group-hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -620,15 +620,15 @@ watch(timelineProgressPct, (val) => {
               </div>
               <h3 class="text-2xl font-bold text-primary">退費說明</h3>
             </div>
-            <span class="text-sm text-gray-500">依申請時間與原因計算</span>
+            <p class="text-sm text-gray-500 mt-2 ml-[3.75rem]">依申請時間與原因計算</p>
           </div>
 
           <div class="space-y-4">
             <div
               v-for="(group, groupIndex) in refundPolicyGroups"
               :key="groupIndex"
-              class="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all"
-              :class="{ 'border-primary/30 shadow-[0_4px_20px_rgba(154,191,128,0.1)]': openRefundGroups.has(groupIndex) }"
+              class="bg-primary/5 rounded-2xl border border-primary/10 overflow-hidden transition-all"
+              :class="{ 'border-primary/30 shadow-[0_4px_20px_rgba(154,191,128,0.1)] bg-primary/[0.08]': openRefundGroups.has(groupIndex) }"
             >
               <button
                 type="button"
@@ -697,12 +697,12 @@ watch(timelineProgressPct, (val) => {
             :href="campInfo.registration.formUrl" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="inline-flex items-center gap-2 btn-primary text-xl py-3 px-8 font-heading transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            class="btn-primary btn-fly text-xl py-3 px-8 font-heading transition-all hover:-translate-y-0.5 hover:shadow-lg"
           >
+            <span class="btn-fly-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+            </span>
             前往報名表單
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
           </a>
         </div>
       </section>
@@ -741,11 +741,9 @@ watch(timelineProgressPct, (val) => {
 
 /* Countdown timer styles */
 .countdown-box {
-  background-color: white;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  min-width: 4rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  min-width: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -754,12 +752,8 @@ watch(timelineProgressPct, (val) => {
 
 @media (max-width: 640px) {
   .countdown-box {
-    min-width: 3rem;
-    padding: 0.5rem;
-  }
-  
-  .countdown-box .text-3xl {
-    font-size: 1.5rem;
+    min-width: 3.5rem;
+    padding: 0.625rem 0.5rem;
   }
 }
 </style> 

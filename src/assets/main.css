@@ -37,4 +37,33 @@
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
-} 
+}
+
+/* Paper plane button - icon + hover fly animation */
+.btn-fly {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-fly-icon {
+  display: inline-flex;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.btn-fly:hover .btn-fly-icon,
+.btn-fly:focus-visible .btn-fly-icon {
+  animation: btnFly 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes btnFly {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  40%  { transform: translate(14px, -14px) rotate(20deg); opacity: 0; }
+  41%  { transform: translate(-14px, 14px) rotate(-20deg); opacity: 0; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-fly:hover .btn-fly-icon,
+  .btn-fly:focus-visible .btn-fly-icon {
+    animation: none;
+  }
+}

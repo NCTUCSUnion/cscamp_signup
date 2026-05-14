@@ -88,9 +88,12 @@ const teams = campInfo.teams
           
           <a 
             :href="campInfo.registration.formUrl" 
-            class="btn-primary font-heading flex items-center justify-center"
+            class="btn-primary btn-fly font-heading"
           >
-            立即報名
+            <span class="btn-fly-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+            </span>
+            報名表單
           </a>
         </div>
 
@@ -176,9 +179,12 @@ const teams = campInfo.teams
         
         <a 
           :href="campInfo.registration.formUrl" 
-          class="block btn-primary text-center mt-4 font-heading flex items-center justify-center py-2"
+          class="btn-primary btn-fly w-full text-center mt-4 font-heading py-2"
         >
-          立即報名
+          <span class="btn-fly-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+          </span>
+          報名表單
         </a>
       </div>
       </transition>

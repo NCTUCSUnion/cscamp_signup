@@ -1,31 +1,86 @@
 <script setup>
+import { ref } from 'vue'
 import ImageSlider from '../components/ui/ImageSlider.vue'
 import campInfo from '../data/camp-info.json'
+
+const heroRef = ref(null)
+
+const scrollToInfo = () => {
+  if (!heroRef.value) return
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const heroBottom = heroRef.value.getBoundingClientRect().bottom + window.scrollY
+  window.scrollTo({
+    top: heroBottom,
+    behavior: prefersReduced ? 'auto' : 'smooth',
+  })
+}
 </script>
 
 <template>
   <div class="bg-[#f9fafb] selection:bg-primary/30">
     <!-- Hero Section -->
-    <div 
-      class="w-full h-screen bg-cover bg-bottom flex items-center justify-center relative"
-      style="background-image: url('/images/hero-bg.webp');"
-    >
-      <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+    <div ref="heroRef" class="w-full h-[calc(100vh-5rem)] relative overflow-hidden flex items-center justify-center">
+      <!-- A. 3 圖 crossfade + 各自 Ken Burns -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-cover bg-bottom hero-slide hero-slide-1"
+          style="background-image: url('/images/hero-bg.webp');"
+        ></div>
+        <div
+          class="absolute inset-0 bg-cover bg-center hero-slide hero-slide-2"
+          style="background-image: url('/images/hero-bg2.webp');"
+        ></div>
+        <div
+          class="absolute inset-0 bg-cover bg-center hero-slide hero-slide-3"
+          style="background-image: url('/images/hero-bg3.webp');"
+        ></div>
+      </div>
+
+      <!-- 朦朧 overlay：白霧 + 暗化 + blur -->
+      <div class="absolute inset-0 bg-white/20 backdrop-blur-[4px] md:bg-white/25 md:backdrop-blur-[6px]"></div>
+      <div class="absolute inset-0 bg-black/26 md:bg-black/30"></div>
+
+      <!-- C. 漂浮 blob -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="hero-blob hero-blob-1 absolute w-[30rem] h-[30rem] md:w-[40rem] md:h-[40rem] rounded-full bg-primary/26 md:bg-primary/30 blur-[100px] md:blur-[120px]"></div>
+        <div class="hero-blob hero-blob-2 absolute w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] rounded-full bg-[#7DA868]/20 md:bg-[#7DA868]/25 blur-[100px] md:blur-[120px]"></div>
+        <div class="hero-blob hero-blob-3 absolute w-[22rem] h-[22rem] md:w-[28rem] md:h-[28rem] rounded-full bg-white/9 md:bg-white/10 blur-[90px] md:blur-[100px]"></div>
+      </div>
+
+      <!-- B. Stagger fade-in 文字 -->
       <div class="container-custom relative z-10 text-center text-white hero-content">
-        <h1 class="text-8xl md:text-8xl font-bold mb-8 tracking-wider">{{ campInfo.campName }}</h1>
-        <h2 class="text-4xl text-gray-300 md:text-5xl mb-10 tracking-wider">{{ campInfo.slogan }}</h2>
-        <p class="text-xl text-gray-300 md:text-2xl mb-10">{{ campInfo.mainInfo.date }}</p>
+        <h1 class="text-8xl md:text-8xl font-bold mb-8 tracking-wider hero-fade hero-fade-1">{{ campInfo.campName }}</h1>
+        <h2 class="text-4xl text-gray-200 md:text-5xl mb-10 tracking-wider hero-fade hero-fade-2">{{ campInfo.slogan }}</h2>
+        <p class="text-xl text-gray-200 md:text-2xl mb-10 hero-fade hero-fade-3">{{ campInfo.mainInfo.date }}</p>
         <a 
           :href="campInfo.registration.formUrl" 
-          class="btn-primary text-xl py-3 px-8 inline-block shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+          class="btn-primary btn-fly text-xl py-3 px-8 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 hero-fade hero-fade-4"
         >
+          <span class="btn-fly-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+          </span>
           立即報名
         </a>
+      </div>
+
+      <!-- G. 滾動提示 -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <button
+          type="button"
+          @click="scrollToInfo"
+          aria-label="向下捲動到營隊資訊"
+          class="flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-md hero-fade hero-fade-5"
+        >
+          <span class="text-xs tracking-[0.3em] uppercase">Scroll</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hero-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </button>
       </div>
     </div>
 
     <!-- Main Information Section -->
-    <section class="py-20 md:py-32 relative overflow-hidden">
+    <section id="camp-info" class="py-20 md:py-32 relative overflow-hidden">
       <!-- Decorational background layers -->
       <div class="absolute inset-0 bg-gradient-to-br from-[#f9fafb] via-primary/5 to-[#f9fafb] pointer-events-none"></div>
       <div class="absolute top-0 right-0 w-3/4 h-3/4 bg-primary/10 blur-[120px] rounded-full opacity-60 pointer-events-none translate-x-1/3 -translate-y-1/4"></div>
@@ -105,8 +160,11 @@ import campInfo from '../data/camp-info.json'
               <div class="mt-8 text-center relative z-10">
                 <a 
                   :href="campInfo.registration.formUrl" 
-                  class="btn-primary inline-block shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
+                  class="btn-primary btn-fly shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
                 >
+                  <span class="btn-fly-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+                  </span>
                   立即報名
                 </a>
               </div>
@@ -211,6 +269,121 @@ import campInfo from '../data/camp-info.json'
   
   .hero-content p {
     font-size: 1.25rem;
+  }
+}
+
+/* A. 3 圖 crossfade + 各自 Ken Burns
+   每張顯示窗口 9s，前後 1.5s 交疊，total cycle 27s
+   時間軸（百分比）：
+     slide-1: 0% in → 33.3% out
+     slide-2: 33.3% in → 66.6% out
+     slide-3: 66.6% in → 100% (loop back to slide-1)
+*/
+.hero-slide {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: heroCrossfade 27s ease-in-out infinite, heroKenburns 27s ease-in-out infinite alternate;
+}
+
+.hero-slide-1 { animation-delay: 0s, 0s; }
+.hero-slide-2 { animation-delay: -18s, -3s; }
+.hero-slide-3 { animation-delay: -9s, -6s; }
+
+@keyframes heroCrossfade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  33%  { opacity: 1; }
+  38%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes heroKenburns {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.18) translate(-2%, -2%); }
+}
+
+/* B. Stagger fade-in（從下方滑入） */
+.hero-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-fade-1 { animation-delay: 0.2s; }
+.hero-fade-2 { animation-delay: 0.5s; }
+.hero-fade-3 { animation-delay: 0.8s; }
+.hero-fade-4 { animation-delay: 1.1s; }
+.hero-fade-5 { animation-delay: 1.6s; }
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* C. 漂浮 blob */
+.hero-blob {
+  will-change: transform;
+}
+
+.hero-blob-1 {
+  top: -10%;
+  left: -10%;
+  animation: blobFloat1 18s ease-in-out infinite alternate;
+}
+
+.hero-blob-2 {
+  bottom: -15%;
+  right: -10%;
+  animation: blobFloat2 22s ease-in-out infinite alternate;
+}
+
+.hero-blob-3 {
+  top: 30%;
+  right: 20%;
+  animation: blobFloat3 26s ease-in-out infinite alternate;
+}
+
+@keyframes blobFloat1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8%, 12%) scale(1.15); }
+}
+
+@keyframes blobFloat2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-10%, -8%) scale(1.1); }
+}
+
+@keyframes blobFloat3 {
+  0%   { transform: translate(0, 0) scale(0.9); }
+  100% { transform: translate(-12%, 6%) scale(1.2); }
+}
+
+/* G. 滾動提示 bounce */
+.hero-bounce {
+  animation: heroBounce 2s ease-in-out infinite;
+}
+
+@keyframes heroBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50%      { transform: translateY(8px); opacity: 1; }
+}
+
+/* 尊重 prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-blob,
+  .hero-bounce {
+    animation: none;
+  }
+  .hero-slide-1 { opacity: 1; }
+  .hero-slide-2,
+  .hero-slide-3 { opacity: 0; }
+  .hero-fade {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 </style>

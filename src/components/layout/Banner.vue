@@ -24,7 +24,7 @@ defineProps({
   <!-- Team variant: 漸層 + blob 光暈 + dot pattern -->
   <div
     v-if="variant === 'team'"
-    class="w-full h-72 md:h-80 relative flex items-center justify-center overflow-hidden"
+    class="w-full h-48 md:h-80 relative flex items-center justify-center overflow-hidden"
     :class="backgroundColor"
   >
     <!-- 漸層覆蓋（讓純色多一點層次）-->
@@ -53,13 +53,13 @@ defineProps({
   <!-- Default variant: 原本的圖片 banner -->
   <div
     v-else
-    class="w-full h-64 relative flex items-center justify-center"
+    class="w-full h-44 md:h-64 relative flex items-center justify-center"
     :class="backgroundColor"
   >
     <!-- Background image with overlay -->
     <div
       v-if="backgroundImage"
-      class="absolute inset-0 bg-cover bg-center"
+      class="absolute inset-0 bg-cover bg-[position:15%_center] md:bg-center"
       :style="{ backgroundImage: `url(${backgroundImage})` }"
     ></div>
 
