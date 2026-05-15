@@ -531,6 +531,78 @@
       ]
     }
   ],
+  "activity": {
+    "intro": "本次營隊除了精彩的程式課程之外，也安排了兩項特別的活動，讓學員親身走進台灣資訊科技的第一線，並與系上教授近距離交流。",
+    "questionFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeUAmbbh5bQr60HUJsuxJrNZX4CcTM6GtZgQdvWR1_KQDj6bw/viewform?usp=dialog",
+    "nchcVisit": {
+      "title": "新竹國網中心參訪",
+      "subtitle": "走進台灣最強的算力核心",
+      "description": "國家高速網路與計算中心（NCHC）負責建置與維運台灣最重要的高效能運算（HPC）基礎設施，旗下「台灣杉」系列超級電腦長年支援台灣的氣候模擬、生醫研究與大型 AI 模型訓練（包含本土 TAIDE 大型語言模型）。本次活動將安排學員實地參訪位於新竹的國網中心，了解超級電腦的實際運作方式，以及高效能運算如何支撐台灣的科研發展。",
+      "highlights": [
+        "實地參觀台灣最具規模的超級電腦機房",
+        "認識高效能運算（HPC）與 AI 雲端服務的應用",
+        "由國網中心同仁親自導覽，第一手了解國家級資通訊建設"
+      ],
+      "image": "/images/activity/nchc.webp",
+      "website": "https://www.nchc.org.tw/"
+    },
+    "professorTalk": {
+      "title": "教授座談會",
+      "subtitle": "與系上教授面對面",
+      "description": "我們邀請了系上多位於不同領域具有代表性的教授，與學員分享他們的研究領域、求學與職涯歷程，並開放現場提問。座談會內容將涵蓋系統軟體、網路通訊、人工智慧與機器人等資工領域中重要的研究方向，希望幫助學員了解資工系的多元面貌，並對未來的學習方向有更具體的想像。",
+      "preQuestionNote": "為了讓座談會更聚焦於大家關心的議題，我們會在營期前透過表單事先蒐集學員想詢問教授的問題；表單連結將於報到後或營隊資訊中提供。"
+    },
+    "professors": [
+      {
+        "id": "chang-lipin",
+        "name": "張立平",
+        "position": "資訊工程學系 系主任／教授",
+        "photo": "/images/professors/張立平.webp",
+        "homepage": "https://sites.google.com/view/lpchang",
+        "introFile": "/contents/professors/張立平.txt",
+        "fields": ["嵌入式系統", "作業系統", "儲存與記憶體系統", "AIoT"],
+        "highlights": [
+          "現任陽明交大資工系 系主任",
+          "獲選 Stanford 全球前 2% 頂尖科學家",
+          "ASPDAC 十年最具影響力論文獎、EMSOFT 傑出論文獎",
+          "ACM Transactions on Embedded Computing Systems 副主編",
+          "與群聯、聯發科、微軟、工研院等產業界長期合作"
+        ]
+      },
+      {
+        "id": "tsai-menghsun",
+        "name": "蔡孟勳",
+        "position": "資訊工程學系 教授 ／ 國家高速網路與計算中心 副主任",
+        "photo": "/images/professors/蔡孟勳.webp",
+        "homepage": "https://www.cs.nycu.edu.tw/~tsaimh/",
+        "introFile": "/contents/professors/蔡孟勳.txt",
+        "fields": ["軟體定義網路 (SDN)", "物聯網", "5G/6G 行動通訊", "資訊安全"],
+        "highlights": [
+          "現任國家高速網路與計算中心（NCHC）副主任",
+          "推動國網雲端算力中心與主權 AI（TAIDE）相關基礎設施",
+          "IEEE Senior Member，曾獲潘文淵文教基金會探索研究獎",
+          "多次榮獲校級教學傑出獎",
+          "指導學生獲得 Google PhD Fellowship 等國際級榮譽"
+        ]
+      },
+      {
+        "id": "chen-yiting",
+        "name": "陳奕廷",
+        "position": "資訊工程學系 副教授",
+        "photo": "/images/professors/陳奕廷.webp",
+        "homepage": "https://sites.google.com/site/yitingchen0524/",
+        "introFile": "/contents/professors/陳奕廷.txt",
+        "fields": ["電腦視覺", "自動駕駛", "機器人感知與操作", "以人為本的 AI"],
+        "highlights": [
+          "曾於美國 Honda Research Institute 擔任資深研究科學家（2015–2020）",
+          "獲國科會 2030 跨世代國際年輕傑出學者（2024）",
+          "獲教育部玉山青年學者（2021）",
+          "研究成果發表於 CVPR、ICCV、NeurIPS、ICRA、RSS 等頂尖會議",
+          "主持「以人為本之智慧系統實驗室」（HCIS Lab）"
+        ]
+      }
+    ]
+  },
   "courses": [
     {
       "title": "Python 程式設計基礎與大型語言模型（LLM）基礎入門",
