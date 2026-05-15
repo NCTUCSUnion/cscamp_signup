@@ -417,27 +417,41 @@ watch(timelineProgressPct, (val) => {
 
                 <!-- Mobile Only - Timeline Node -->
                 <div class="timeline-node-mobile md:hidden absolute top-1/2 -left-6 -translate-y-1/2">
-                  <div 
+                  <div class="relative w-5 h-5">
+                    <template v-if="isCurrentStage(index)">
+                      <span class="timeline-ping timeline-ping-1 absolute inset-0 rounded-full bg-primary/60"></span>
+                      <span class="timeline-ping timeline-ping-2 absolute inset-0 rounded-full bg-primary/50"></span>
+                      <span class="timeline-ping timeline-ping-3 absolute inset-0 rounded-full bg-primary/40"></span>
+                    </template>
+                    <div
+                      :class="[
+                        'relative w-5 h-5 rounded-full',
+                        isCompletedStage(index) || isCurrentStage(index)
+                          ? 'bg-primary shadow-[0_0_0_3px_white,0_0_0_5px_rgba(154,191,128,0.3)]'
+                          : 'bg-white border-4 border-gray-300'
+                      ]"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Node - visible on desktop -->
+              <div class="timeline-node-desktop absolute top-6 left-1/2 -translate-x-1/2 hidden md:block">
+                <div class="relative w-5 h-5">
+                  <template v-if="isCurrentStage(index)">
+                    <span class="timeline-ping timeline-ping-1 absolute inset-0 rounded-full bg-primary/60"></span>
+                    <span class="timeline-ping timeline-ping-2 absolute inset-0 rounded-full bg-primary/50"></span>
+                    <span class="timeline-ping timeline-ping-3 absolute inset-0 rounded-full bg-primary/40"></span>
+                  </template>
+                  <div
                     :class="[
-                      'w-5 h-5 rounded-full',
+                      'relative w-5 h-5 rounded-full',
                       isCompletedStage(index) || isCurrentStage(index)
                         ? 'bg-primary shadow-[0_0_0_3px_white,0_0_0_5px_rgba(154,191,128,0.3)]'
                         : 'bg-white border-4 border-gray-300'
                     ]"
                   ></div>
                 </div>
-              </div>
-              
-              <!-- Timeline Node - visible on desktop -->
-              <div class="timeline-node-desktop absolute top-6 left-1/2 -translate-x-1/2 hidden md:block">
-                <div 
-                  :class="[
-                    'w-5 h-5 rounded-full',
-                    isCompletedStage(index) || isCurrentStage(index)
-                      ? 'bg-primary shadow-[0_0_0_3px_white,0_0_0_5px_rgba(154,191,128,0.3)]'
-                      : 'bg-white border-4 border-gray-300'
-                  ]"
-                ></div>
               </div>
             </div>
           </div>
@@ -851,5 +865,25 @@ watch(timelineProgressPct, (val) => {
   .cta-slide-1 { opacity: 1; }
   .cta-slide-2,
   .cta-slide-3 { opacity: 0; }
+  .timeline-ping { animation: none; opacity: 0; }
+}
+
+/* ===== Timeline current-node ripple ===== */
+.timeline-ping {
+  transform: scale(1);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: timelinePing 4s cubic-bezier(0.16, 0.6, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+.timeline-ping-1 { animation-delay: 0s; }
+.timeline-ping-2 { animation-delay: 1.3s; }
+.timeline-ping-3 { animation-delay: 2.6s; }
+
+@keyframes timelinePing {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  90%  { transform: scale(3);   opacity: 0; }
+  100% { transform: scale(3);   opacity: 0; }
 }
 </style>
