@@ -687,17 +687,46 @@ watch(timelineProgressPct, (val) => {
       </section>
 
       <!-- Registration CTA -->
-      <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white to-primary/5 p-10 md:p-14 rounded-3xl border border-primary/20 text-center shadow-[0_8px_40px_rgba(154,191,128,0.12)]">
-        <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-primary/10 blur-[80px] pointer-events-none"></div>
-        <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-primary/10 blur-[80px] pointer-events-none"></div>
+      <section class="cta-hero relative overflow-hidden p-10 md:p-16 rounded-3xl border border-white/20 text-center shadow-[0_20px_60px_rgba(154,191,128,0.25)]">
+        <!-- Background image slides (frosted) -->
+        <div class="absolute inset-0">
+          <div
+            class="absolute inset-0 bg-cover bg-center cta-slide cta-slide-1"
+            style="background-image: url('/images/hero-bg.webp');"
+          ></div>
+          <div
+            class="absolute inset-0 bg-cover bg-center cta-slide cta-slide-2"
+            style="background-image: url('/images/hero-bg2.webp');"
+          ></div>
+          <div
+            class="absolute inset-0 bg-cover bg-center cta-slide cta-slide-3"
+            style="background-image: url('/images/hero-bg3.webp');"
+          ></div>
+        </div>
+
+        <!-- Heavy frost: extra blur + gradient tint + brightening overlay -->
+        <div class="absolute inset-0 backdrop-blur-[20px] md:backdrop-blur-[10px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/55 via-primary/30 to-[#7DA868]/50"></div>
+        <div class="absolute inset-0 bg-white/15"></div>
+
+        <!-- Floating blobs -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+          <div class="cta-blob cta-blob-1 absolute w-[20rem] h-[20rem] md:w-[28rem] md:h-[28rem] rounded-full bg-white/25 blur-[80px] md:blur-[100px]"></div>
+          <div class="cta-blob cta-blob-2 absolute w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] rounded-full bg-primary/40 blur-[80px] md:blur-[100px]"></div>
+        </div>
+
         <div class="relative z-10">
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">準備好成為營隊的一員了嗎？</h2>
-          <p class="mb-8 text-lg text-gray-700">點擊下方按鈕填寫報名表單，開始你的程式學習之旅！</p>
-          <a 
-            :href="campInfo.registration.formUrl" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="btn-primary btn-fly text-xl py-3 px-8 font-heading transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
+            準備好成為營隊的一員了嗎？
+          </h2>
+          <p class="mb-8 text-lg text-white/95 drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)]">
+            點擊下方按鈕填寫報名表單，開始你的程式學習之旅！
+          </p>
+          <a
+            :href="campInfo.registration.formUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-fly inline-flex items-center justify-center gap-2 text-xl py-3 px-8 font-heading bg-white text-primary rounded-md font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
             <span class="btn-fly-icon">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
@@ -756,4 +785,71 @@ watch(timelineProgressPct, (val) => {
     padding: 0.625rem 0.5rem;
   }
 }
-</style> 
+
+/* ===== Registration CTA: frosted hero with crossfading backgrounds ===== */
+.cta-hero {
+  isolation: isolate;
+}
+
+.cta-slide {
+  opacity: 0;
+  will-change: transform, opacity;
+  /* Slightly faster cycle than home hero (24s vs 27s) for variety */
+  animation: ctaCrossfade 24s ease-in-out infinite,
+             ctaKenburns 24s ease-in-out infinite alternate;
+  transform: scale(1.1);
+}
+
+.cta-slide-1 { animation-delay: 0s, 0s; }
+.cta-slide-2 { animation-delay: -16s, -3s; }
+.cta-slide-3 { animation-delay: -8s, -6s; }
+
+@keyframes ctaCrossfade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  33%  { opacity: 1; }
+  38%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes ctaKenburns {
+  0%   { transform: scale(1.1) translate(0, 0); }
+  100% { transform: scale(1.22) translate(-2%, -2%); }
+}
+
+.cta-blob {
+  will-change: transform;
+}
+
+.cta-blob-1 {
+  top: -20%;
+  left: -10%;
+  animation: ctaBlobFloat1 20s ease-in-out infinite alternate;
+}
+
+.cta-blob-2 {
+  bottom: -25%;
+  right: -10%;
+  animation: ctaBlobFloat2 24s ease-in-out infinite alternate;
+}
+
+@keyframes ctaBlobFloat1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 8%) scale(1.15); }
+}
+
+@keyframes ctaBlobFloat2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-8%, -6%) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-slide,
+  .cta-blob {
+    animation: none;
+  }
+  .cta-slide-1 { opacity: 1; }
+  .cta-slide-2,
+  .cta-slide-3 { opacity: 0; }
+}
+</style>
