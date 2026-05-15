@@ -37,8 +37,8 @@ const scrollToInfo = () => {
       </div>
 
       <!-- 朦朧 overlay：白霧 + 暗化 + blur -->
-      <div class="absolute inset-0 bg-white/25 backdrop-blur-[4px] md:bg-white/25 md:backdrop-blur-[4px]"></div>
-      <div class="absolute inset-0 bg-black/30 md:bg-black/30"></div>
+      <div class="absolute inset-0 bg-white/25 backdrop-blur-[6px] md:bg-white/25 md:backdrop-blur-[6px]"></div>
+      <div class="absolute inset-0 bg-black/25 md:bg-black/25"></div>
 
       <!-- C. 漂浮 blob -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -49,12 +49,12 @@ const scrollToInfo = () => {
 
       <!-- B. Stagger fade-in 文字 -->
       <div class="container-custom relative z-10 text-center text-white hero-content">
-        <h1 class="text-8xl md:text-8xl font-bold mb-8 tracking-wider hero-fade hero-fade-1">{{ campInfo.campName }}</h1>
-        <h2 class="text-4xl text-gray-200 md:text-5xl mb-10 tracking-wider hero-fade hero-fade-2">{{ campInfo.slogan }}</h2>
-        <p class="text-xl text-gray-200 md:text-2xl mb-10 hero-fade hero-fade-3">{{ campInfo.mainInfo.date }}</p>
+        <h1 class="text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-wider hero-title-reveal"><span class="hero-shine" :data-text="campInfo.campName">{{ campInfo.campName }}</span></h1>
+        <h2 class="text-3xl md:text-5xl text-gray-200 mb-8 md:mb-10 tracking-wider hero-fade hero-fade-2"><span class="hero-shine hero-shine-soft" :data-text="campInfo.slogan">{{ campInfo.slogan }}</span></h2>
+        <p class="text-[0.95rem] md:text-2xl text-gray-200 mb-8 md:mb-10 hero-fade hero-fade-3">{{ campInfo.mainInfo.date }}</p>
         <a 
           :href="campInfo.registration.formUrl" 
-          class="btn-primary btn-fly text-xl py-3 px-8 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 hero-fade hero-fade-4"
+          class="btn-primary btn-fly text-base md:text-xl py-2.5 md:py-3 px-6 md:px-8 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 hero-fade hero-fade-4"
         >
           <span class="btn-fly-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
@@ -279,17 +279,9 @@ const scrollToInfo = () => {
 </template>
 
 <style scoped>
-.hero-content {
-  transform: translateY(-8vh);
-}
-
 @media (max-width: 640px) {
   .hero-content h1 {
     font-size: 3rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.25rem;
   }
 }
 
@@ -303,7 +295,7 @@ const scrollToInfo = () => {
 .hero-slide {
   opacity: 0;
   will-change: transform, opacity;
-  animation: heroCrossfade 27s ease-in-out infinite, heroKenburns 27s ease-in-out infinite alternate;
+  animation: heroCrossfade 27s ease-in-out infinite, heroKenburns 12s ease-in-out infinite alternate;
 }
 
 .hero-slide-1 { animation-delay: 0s, 0s; }
@@ -319,8 +311,8 @@ const scrollToInfo = () => {
 }
 
 @keyframes heroKenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.18) translate(-2%, -2%); }
+  0%   { transform: scale(1.08) translate(0, 0); }
+  100% { transform: scale(1.2) translate(-5%, -4%); }
 }
 
 /* B. Stagger fade-in（從下方滑入） */
@@ -330,17 +322,92 @@ const scrollToInfo = () => {
   animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-fade-1 { animation-delay: 0.2s; }
-.hero-fade-2 { animation-delay: 0.5s; }
-.hero-fade-3 { animation-delay: 0.8s; }
-.hero-fade-4 { animation-delay: 1.1s; }
-.hero-fade-5 { animation-delay: 1.6s; }
+.hero-title-reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.96);
+  animation: heroTitleReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.hero-fade-2 { animation-delay: 1s; }
+.hero-fade-3 { animation-delay: 1.3s; }
+.hero-fade-4 { animation-delay: 1.65s; }
+.hero-fade-5 { animation-delay: 2.15s; }
+
+@keyframes heroTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
 
 @keyframes heroFadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* B-2. 標題高光反射 */
+.hero-shine {
+  position: relative;
+  display: inline-block;
+  /* 底色略偏冷白，讓高光帶看得出對比 */
+  color: #c1dbb2;
+}
+
+.hero-shine-soft {
+  color: #c9ced6;
+}
+
+/* 上層用 ::after 疊一條高光帶，並用 screen 混色直接加亮底字 */
+.hero-shine::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* 微微帶綠的暖光：primary #9ABF80 系，核心保留亮白避免變死綠 */
+  background-image: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 44%,
+    rgba(154, 191, 128, 0.55) 47%,
+    rgba(184, 212, 154, 0.95) 49%,
+    #f3fce4 50%,
+    rgba(184, 212, 154, 0.95) 51%,
+    rgba(154, 191, 128, 0.55) 53%,
+    rgba(255, 255, 255, 0) 56%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 160% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  mix-blend-mode: screen;
+  animation: heroShineSweep 8s linear 1.0s infinite;
+  will-change: background-position;
+}
+
+.hero-shine-soft::after {
+  animation-duration: 8s;
+  animation-delay: 3.0s;
+}
+
+@keyframes heroShineSweep {
+  0%   { background-position: 160% 0; }
+  80%  { background-position: -60% 0; }
+  100% { background-position: -60% 0; }
 }
 
 /* C. 漂浮 blob */
@@ -408,6 +475,15 @@ const scrollToInfo = () => {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+  .hero-shine {
+    color: #ffffff;
+  }
+  .hero-shine-soft {
+    color: #e5e7eb;
+  }
+  .hero-shine::after {
+    display: none;
   }
 }
 </style>
