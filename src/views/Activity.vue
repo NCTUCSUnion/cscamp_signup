@@ -161,8 +161,8 @@ const activity = campInfo.activity
         </div>
 
         <!-- Professor cards (Slider) -->
-        <div class="max-w-5xl mx-auto">
-          <div class="relative px-2 md:px-16 lg:px-20">
+        <div class="max-w-6xl mx-auto">
+          <div class="relative -mx-3 px-0 md:mx-0 md:px-16 lg:px-20">
             <Swiper
               :modules="[Navigation, Pagination, Keyboard]"
               :slides-per-view="1"
@@ -181,33 +181,33 @@ const activity = campInfo.activity
                 v-for="prof in activity.professors"
                 :key="prof.id"
               >
-                <ProfessorCard :professor="prof" />
+                <div class="h-full w-full px-5 pt-5 pb-9 md:p-10 flex">
+                  <ProfessorCard :professor="prof" />
+                </div>
               </SwiperSlide>
 
               <!-- Stay tuned slide -->
               <SwiperSlide key="stay-tuned">
-                <article
-                  class="relative bg-gradient-to-br from-white to-primary/5 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] overflow-hidden min-h-[720px] md:min-h-[480px] flex items-center justify-center"
-                >
-                  <!-- decorative blobs -->
-                  <div class="absolute -top-16 -right-16 w-56 h-56 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <div class="absolute -bottom-20 -left-20 w-56 h-56 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                  <div class="relative z-10 text-center px-6 md:px-12 py-12 max-w-xl">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                      </svg>
+                <div class="h-full w-full px-5 pt-5 pb-9 md:p-10 flex">
+                  <article
+                    class="relative h-full w-full bg-gradient-to-br from-white to-primary/5 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(0,0,0,0.06)] overflow-hidden flex items-center justify-center"
+                  >
+                    <div class="relative z-10 text-center px-6 md:px-12 py-12 max-w-xl">
+                      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                      </div>
+                      <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3 font-heading">
+                        更多教授，敬請期待！
+                      </h3>
+                      <p class="text-gray-600 leading-relaxed text-[15px] md:text-base">
+                        我們仍在持續邀請更多系上教授參與本次座談會，名單將陸續公布。<br class="hidden md:inline" />
+                        請持續關注報名網站與我們的粉絲專頁，掌握第一手消息。
+                      </p>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3 font-heading">
-                      更多教授，敬請期待！
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed text-[15px] md:text-base">
-                      我們仍在持續邀請更多系上教授參與本次座談會，名單將陸續公布。<br class="hidden md:inline" />
-                      請持續關注報名網站與我們的粉絲專頁貼文，掌握第一手消息。
-                    </p>
-                  </div>
-                </article>
+                  </article>
+                </div>
               </SwiperSlide>
             </Swiper>
 
@@ -298,6 +298,20 @@ const activity = campInfo.activity
 .professor-swiper :deep(.swiper-button-next),
 .professor-swiper :deep(.swiper-button-prev) {
   display: none;
+}
+
+/* Equal-height slides: stretch every slide to the tallest one */
+.professor-swiper :deep(.swiper-wrapper) {
+  align-items: stretch;
+}
+
+.professor-swiper :deep(.swiper-slide) {
+  height: auto;
+  display: flex;
+}
+
+.professor-swiper :deep(.swiper-slide) > * {
+  width: 100%;
 }
 
 /* External pagination dots */

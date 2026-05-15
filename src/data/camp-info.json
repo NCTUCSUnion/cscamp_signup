@@ -574,11 +574,12 @@
         "name": "蔡孟勳",
         "position": "資訊工程學系 教授 ／ 國網中心 副主任",
         "photo": "/images/professors/蔡孟勳.webp",
+        "imagePosition": "38% top",
         "homepage": "https://www.cs.nycu.edu.tw/~tsaimh/",
         "introFile": "/contents/professors/蔡孟勳.txt",
         "fields": ["軟體定義網路", "物聯網", "行動網路", "資訊安全"],
         "highlights": [
-          "現任國家高速網路與計算中心（NCHC）副主任",
+          "現任國家高速網路與計算中心副主任",
           "推動國網雲端算力中心與主權 AI（TAIDE）相關基礎設施",
           "IEEE Senior Member，曾獲潘文淵文教基金會探索研究獎",
           "多次榮獲校級教學傑出獎",
@@ -594,11 +595,11 @@
         "introFile": "/contents/professors/陳奕廷.txt",
         "fields": ["人本實體人工智慧", "智慧駕駛系統", "電腦視覺"],
         "highlights": [
-          "曾於美國 Honda Research Institute 擔任資深研究科學家（2015–2020）",
-          "獲國科會 2030 跨世代國際年輕傑出學者（2024）",
-          "獲教育部玉山青年學者（2021）",
-          "研究成果發表於 CVPR、ICCV、NeurIPS、ICRA、RSS 等頂尖會議",
-          "主持「以人為本之智慧系統實驗室」（HCIS Lab）"
+          "曾於美國 Honda Research Institute 擔任資深研究科學家",
+          "獲國科會 2030 跨世代國際年輕傑出學者",
+          "獲選教育部玉山青年學者",
+          "研究成果發表於 CVPR、ICCV、NeurIPS 等頂尖會議",
+          "帶領「以人為本之智慧系統實驗室」（HCIS Lab）"
         ]
       }
     ]

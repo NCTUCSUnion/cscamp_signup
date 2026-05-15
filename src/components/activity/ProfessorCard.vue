@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 
 const props = defineProps({
   professor: {
@@ -10,6 +10,10 @@ const props = defineProps({
 
 const introText = ref(props.professor.intro || '')
 const imageError = ref(false)
+
+const desktopPhotoStyle = computed(() => ({
+  objectPosition: props.professor.imagePosition || 'center top'
+}))
 
 onMounted(async () => {
   if (props.professor.introFile) {
@@ -31,15 +35,12 @@ const handleImageError = () => {
 
 <template>
   <article
-    class="group relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] hover:shadow-[0_20px_50px_rgba(154,191,128,0.18)] transition-all duration-500 overflow-hidden"
+    class="group relative h-full w-full bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 overflow-hidden"
   >
-    <!-- subtle decorative blob -->
-    <div class="absolute -top-16 -right-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 relative z-10 md:h-full">
       <!-- Left: Photo -->
-      <div class="md:col-span-6 lg:col-span-5 relative">
-        <div class="professor-photo relative overflow-hidden bg-gray-100 flex items-center justify-center">
+      <div class="md:col-span-6 lg:col-span-5 relative md:h-full">
+        <div class="professor-photo relative overflow-hidden bg-gray-100 flex items-center justify-center md:h-full">
           <!-- Blurred background fill (mobile only, when image is letterboxed) -->
           <img
             v-if="!imageError"
@@ -52,7 +53,8 @@ const handleImageError = () => {
             v-if="!imageError"
             :src="professor.photo"
             :alt="professor.name"
-            class="professor-photo-fg relative w-full h-full object-contain md:object-cover md:object-top"
+            class="professor-photo-fg relative w-full h-full object-contain md:object-cover"
+            :style="desktopPhotoStyle"
             @error="handleImageError"
           />
           <div v-else class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
