@@ -549,7 +549,7 @@
     "professorTalk": {
       "title": "教授座談會",
       "subtitle": "與系上教授面對面",
-      "description": "我們邀請了系上多位於不同領域具有代表性的教授，與學員分享他們的研究領域、求學與職涯歷程，並開放現場提問。座談會內容將涵蓋系統軟體、網路通訊、人工智慧與機器人等資工領域中重要的研究方向，希望幫助學員了解資工系的多元面貌，並對未來的學習方向有更具體的想像。",
+      "description": "我們邀請了系上多位於不同領域具有代表性的教授，與學員分享他們的研究領域、求學與職涯歷程，並開放現場提問。實際討論主題將於事前問題蒐集後彙整決定，希望幫助學員了解資工系的多元面貌，並對未來的學習方向有更具體的想像。",
       "preQuestionNote": "為了讓座談會更聚焦於大家關心的議題，我們會在營期前透過表單事先蒐集學員想詢問教授的問題；表單連結將於報到後或營隊資訊中提供。"
     },
     "professors": [
@@ -560,7 +560,7 @@
         "photo": "/images/professors/張立平.webp",
         "homepage": "https://sites.google.com/view/lpchang",
         "introFile": "/contents/professors/張立平.txt",
-        "fields": ["嵌入式系統", "作業系統", "儲存與記憶體系統", "AIoT"],
+        "fields": ["嵌入式系統", "AIoT", "儲存與記憶體系統", "作業系統"],
         "highlights": [
           "現任陽明交大資工系 系主任",
           "獲選 Stanford 全球前 2% 頂尖科學家",
@@ -572,11 +572,11 @@
       {
         "id": "tsai-menghsun",
         "name": "蔡孟勳",
-        "position": "資訊工程學系 教授 ／ 國家高速網路與計算中心 副主任",
+        "position": "資訊工程學系 教授 ／ 國網中心 副主任",
         "photo": "/images/professors/蔡孟勳.webp",
         "homepage": "https://www.cs.nycu.edu.tw/~tsaimh/",
         "introFile": "/contents/professors/蔡孟勳.txt",
-        "fields": ["軟體定義網路 (SDN)", "物聯網", "5G/6G 行動通訊", "資訊安全"],
+        "fields": ["軟體定義網路", "物聯網", "行動網路", "資訊安全"],
         "highlights": [
           "現任國家高速網路與計算中心（NCHC）副主任",
           "推動國網雲端算力中心與主權 AI（TAIDE）相關基礎設施",
@@ -592,7 +592,7 @@
         "photo": "/images/professors/陳奕廷.webp",
         "homepage": "https://sites.google.com/site/yitingchen0524/",
         "introFile": "/contents/professors/陳奕廷.txt",
-        "fields": ["電腦視覺", "自動駕駛", "機器人感知與操作", "以人為本的 AI"],
+        "fields": ["人本實體人工智慧", "智慧駕駛系統", "電腦視覺"],
         "highlights": [
           "曾於美國 Honda Research Institute 擔任資深研究科學家（2015–2020）",
           "獲國科會 2030 跨世代國際年輕傑出學者（2024）",

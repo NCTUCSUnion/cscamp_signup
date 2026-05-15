@@ -117,6 +117,28 @@ const getRingColor = computed(() => {
             </h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-8">{{ team.description }}</p>
 
+            <!-- Mobile-only: Team Photos between intro and responsibilities -->
+            <div class="md:hidden mb-8">
+              <div
+                v-if="teamImages.length > 0"
+                class="rounded-3xl overflow-hidden border shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+                :class="getBorderColor"
+              >
+                <ImageSlider
+                  :images="teamImages"
+                  height="h-80"
+                  :autoplay-delay="4000"
+                />
+              </div>
+              <div
+                v-else
+                class="bg-white h-80 rounded-3xl border flex items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+                :class="getBorderColor"
+              >
+                <p class="text-gray-400">照片準備中...</p>
+              </div>
+            </div>
+
             <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" :class="getTextColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -140,8 +162,8 @@ const getRingColor = computed(() => {
             </ul>
           </div>
 
-          <!-- Right: Team Photos -->
-          <div>
+          <!-- Right: Team Photos (desktop only) -->
+          <div class="hidden md:block">
             <div
               v-if="teamImages.length > 0"
               class="rounded-3xl overflow-hidden border shadow-[0_10px_40px_rgba(0,0,0,0.08)]"

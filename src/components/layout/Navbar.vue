@@ -21,9 +21,9 @@ const toggleTeamDropdown = () => {
 const navLinks = [
   { name: '首頁', path: '/' },
   { name: '報名資訊', path: '/registration' },
-  { name: '各組介紹', path: '/team', hasDropdown: true },
-  { name: '課程簡介', path: '/courses' },
   { name: '活動介紹', path: '/activity' },
+  { name: '課程介紹', path: '/courses' },
+  { name: '各組介紹', path: '/team', hasDropdown: true },
   { name: '常見 QA', path: '/faq' },
 ]
 

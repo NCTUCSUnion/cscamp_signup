@@ -155,7 +155,7 @@ const activity = campInfo.activity
             {{ activity.professorTalk.title }}
           </h3>
           <p class="text-lg text-gray-500 mb-6">{{ activity.professorTalk.subtitle }}</p>
-          <p class="text-gray-700 leading-relaxed text-[15px] md:text-base">
+          <p class="text-gray-700 leading-relaxed text-[15px] md:text-base max-w-2xl mx-auto">
             {{ activity.professorTalk.description }}
           </p>
         </div>

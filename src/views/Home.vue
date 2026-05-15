@@ -37,8 +37,8 @@ const scrollToInfo = () => {
       </div>
 
       <!-- 朦朧 overlay：白霧 + 暗化 + blur -->
-      <div class="absolute inset-0 bg-white/20 backdrop-blur-[4px] md:bg-white/25 md:backdrop-blur-[6px]"></div>
-      <div class="absolute inset-0 bg-black/26 md:bg-black/30"></div>
+      <div class="absolute inset-0 bg-white/25 backdrop-blur-[4px] md:bg-white/25 md:backdrop-blur-[4px]"></div>
+      <div class="absolute inset-0 bg-black/30 md:bg-black/30"></div>
 
       <!-- C. 漂浮 blob -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -188,7 +188,7 @@ const scrollToInfo = () => {
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 max-w-7xl mx-auto">
           <!-- Registration Card -->
           <router-link 
             to="/registration" 
@@ -196,7 +196,7 @@ const scrollToInfo = () => {
           >
             <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
             <div class="h-48 overflow-hidden relative">
-              <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/registration-card.webp');"></div>
+              <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/teams-card.webp');"></div>
             </div>
             <div class="p-6 relative z-20">
               <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">報名資訊</h3>
@@ -210,18 +210,18 @@ const scrollToInfo = () => {
             </div>
           </router-link>
 
-          <!-- Teams Card -->
-          <router-link 
-            to="/team" 
+          <!-- Activity Card -->
+          <router-link
+            to="/activity"
             class="group relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] hover:shadow-[0_20px_50px_rgba(154,191,128,0.25)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block"
           >
             <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
             <div class="h-48 overflow-hidden relative">
-              <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/teams-card.webp');"></div>
+              <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/activity/nchc.webp');"></div>
             </div>
             <div class="p-6 relative z-20">
-              <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">各組介紹</h3>
-              <p class="text-gray-600 mb-4 leading-relaxed">認識六大組別與他們的職責。</p>
+              <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">活動介紹</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">國網中心參訪、教授座談與更多精彩活動。</p>
               <span class="text-primary font-semibold inline-flex items-center">
                 查看詳情
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -241,8 +241,29 @@ const scrollToInfo = () => {
               <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/courses-card.webp');"></div>
             </div>
             <div class="p-6 relative z-20">
-              <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">課程簡介</h3>
+              <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">課程介紹</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">探索我們精心設計的程式教學課程。</p>
+              <span class="text-primary font-semibold inline-flex items-center">
+                查看詳情
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </router-link>
+
+          <!-- Teams Card -->
+          <router-link
+            to="/team"
+            class="group relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_12px_40px_rgba(154,191,128,0.08)] hover:shadow-[0_20px_50px_rgba(154,191,128,0.25)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
+            <div class="h-48 overflow-hidden relative">
+              <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style="background-image: url('/images/registration-card.webp');"></div>
+            </div>
+            <div class="p-6 relative z-20">
+              <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">各組介紹</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">認識六大組別與他們的職責。</p>
               <span class="text-primary font-semibold inline-flex items-center">
                 查看詳情
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -330,7 +351,7 @@ const scrollToInfo = () => {
 .hero-blob-1 {
   top: -10%;
   left: -10%;
-  animation: blobFloat1 18s ease-in-out infinite alternate;
+  animation: blobFloat1 12s ease-in-out infinite alternate;
 }
 
 .hero-blob-2 {
@@ -342,22 +363,25 @@ const scrollToInfo = () => {
 .hero-blob-3 {
   top: 30%;
   right: 20%;
-  animation: blobFloat3 26s ease-in-out infinite alternate;
+  animation: blobFloat3 16s ease-in-out infinite alternate;
 }
 
 @keyframes blobFloat1 {
   0%   { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(8%, 12%) scale(1.15); }
+  50%  { transform: translate(30vw, 26vh) scale(1.3); }
+  100% { transform: translate(50vw, 40vh) scale(1.5); }
 }
 
 @keyframes blobFloat2 {
   0%   { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-10%, -8%) scale(1.1); }
+  50%  { transform: translate(-12vw, -10vh) scale(1.08); }
+  100% { transform: translate(-24vw, -18vh) scale(1.18); }
 }
 
 @keyframes blobFloat3 {
   0%   { transform: translate(0, 0) scale(0.9); }
-  100% { transform: translate(-12%, 6%) scale(1.2); }
+  50%  { transform: translate(-20vw, 8vh) scale(1.12); }
+  100% { transform: translate(-38vw, 18vh) scale(1.32); }
 }
 
 /* G. 滾動提示 bounce */

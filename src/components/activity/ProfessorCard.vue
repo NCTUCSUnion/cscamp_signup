@@ -93,7 +93,7 @@ const handleImageError = () => {
           <span
             v-for="field in professor.fields"
             :key="field"
-            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] md:text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+            class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[11px] md:text-xs font-medium bg-primary/10 text-primary border border-primary/20"
           >
             {{ field }}
           </span>

@@ -8,11 +8,11 @@
 - `hero-bg.jpg` - 首頁 Hero 區背景圖片
 - `registration-banner.jpg` - 報名資訊頁橫幅
 - `teams-banner.jpg` - 各組介紹頁橫幅
-- `courses-banner.jpg` - 課程簡介頁橫幅
+- `courses-banner.jpg` - 課程介紹頁橫幅
 - `faq-banner.jpg` - 常見問答頁橫幅
 - `registration-card.jpg` - 首頁報名資訊卡片圖片
 - `teams-card.jpg` - 首頁各組介紹卡片圖片
-- `courses-card.jpg` - 首頁課程簡介卡片圖片
+- `courses-card.jpg` - 首頁課程介紹卡片圖片
 
 ## 幻燈片輪播圖片
 

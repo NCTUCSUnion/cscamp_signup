@@ -6,7 +6,7 @@ import campInfo from '../data/camp-info.json'
 <template>
   <div class="bg-[#f9fafb] selection:bg-primary/30">
     <Banner 
-      title="課程簡介" 
+      title="課程介紹" 
       backgroundImage="/images/banner-default.webp"
     />
 

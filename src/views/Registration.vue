@@ -719,7 +719,7 @@ watch(timelineProgressPct, (val) => {
         </div>
 
         <!-- Heavy frost: extra blur + gradient tint + brightening overlay -->
-        <div class="absolute inset-0 backdrop-blur-[20px] md:backdrop-blur-[10px]"></div>
+        <div class="absolute inset-0 backdrop-blur-[10px] md:backdrop-blur-[10px]"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-primary/55 via-primary/30 to-[#7DA868]/50"></div>
         <div class="absolute inset-0 bg-white/15"></div>
 
