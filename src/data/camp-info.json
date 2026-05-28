@@ -532,7 +532,7 @@
     }
   ],
   "activity": {
-    "intro": "本次營隊除了精彩的程式課程之外，也安排了兩項特別的活動，讓學員親身走進台灣資訊科技的第一線，並與系上教授近距離交流。",
+    "intro": "本次營隊除了精彩的程式課程之外，也安排了兩項特別的活動，讓學員親身走進台灣資訊科技的第一線，並與系上教授和學長近距離交流。",
     "questionFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeUAmbbh5bQr60HUJsuxJrNZX4CcTM6GtZgQdvWR1_KQDj6bw/viewform?usp=dialog",
     "nchcVisit": {
       "title": "新竹國網中心參訪",
@@ -547,10 +547,10 @@
       "website": "https://www.nchc.org.tw/"
     },
     "professorTalk": {
-      "title": "教授座談會",
-      "subtitle": "與系上教授面對面",
-      "description": "我們邀請了系上多位於不同領域具有代表性的教授，與學員分享他們的研究領域、求學與職涯歷程，並開放現場提問。實際討論主題將於事前問題蒐集後彙整決定，希望幫助學員了解資工系的多元面貌，並對未來的學習方向有更具體的想像。",
-      "preQuestionNote": "為了讓座談會更聚焦於大家關心的議題，我們會在營期前透過表單事先蒐集學員想詢問教授的問題；表單連結將於報到後或營隊資訊中提供。"
+      "title": "專家座談會",
+      "subtitle": "與系上教授、學長面對面",
+      "description": "我們邀請了系上多位於不同領域具有代表性的教授，以及一位走過相同路徑的學長，與學員分享他們的研究領域、求學與職涯歷程，並開放現場提問。實際討論主題將於事前問題蒐集後彙整決定，希望幫助學員了解資工系的多元面貌，並對未來的學習方向有更具體的想像。",
+      "preQuestionNote": "為了讓座談會更聚焦於大家關心的議題，我們會在營期前透過表單事先蒐集學員想詢問講者的問題；表單連結將於報到後或營隊資訊中提供。"
     },
     "professors": [
       {
@@ -600,6 +600,37 @@
           "獲選教育部玉山青年學者",
           "研究成果發表於 CVPR、ICCV、NeurIPS 等頂尖會議",
           "帶領「以人為本之智慧系統實驗室」（HCIS Lab）"
+        ]
+      },
+      {
+        "id": "wang-bangren",
+        "name": "王邦任",
+        "position": "資訊工程學系 助理教授",
+        "photo": "/images/professors/王邦任.webp",
+        "homepage": "https://denniswang.net/",
+        "introFile": "/contents/professors/王邦任.txt",
+        "fields": ["人機互動", "社群運算", "社群媒體", "個人資訊學"],
+        "highlights": [
+          "美國加州大學爾灣分校（UC Irvine）資訊學博士",
+          "美國伊利諾大學香檳分校（UIUC）電腦科學碩士",
+          "獲選擔任 CHI 2026 議程委員（Associate Chair）",
+          "研究成果發表於 CHI、CSCW 等人機互動頂尖會議"
+        ]
+      },
+      {
+        "id": "li-jieying",
+        "name": "李杰穎",
+        "position": "資訊工程學系 博士生 ／ 知名外商軟體工程師",
+        "photo": "/images/professors/李杰穎.webp",
+        "homepage": "https://jayinnn.dev/",
+        "introFile": "/contents/professors/李杰穎.txt",
+        "fields": ["電腦視覺", "計算攝影", "深度學習", "軟體工程師"],
+        "highlights": [
+          "高中時獲旺宏科學獎最大獎「旺宏獎」",
+          "以 APCS 組管道進入陽明交大資工",
+          "現為知名外商軟體工程師及陽明交大資工博士生",
+          "曾赴蘇黎世聯邦理工學院交換",
+          "研究成果發表於 CVPR、ICCV 等頂尖會議"
         ]
       }
     ]

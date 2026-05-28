@@ -221,7 +221,7 @@ const scrollToInfo = () => {
             </div>
             <div class="p-6 relative z-20">
               <h3 class="text-xl font-bold mb-2 text-gray-900 tracking-tight">活動介紹</h3>
-              <p class="text-gray-600 mb-4 leading-relaxed">國網中心參訪、教授座談與更多精彩活動。</p>
+              <p class="text-gray-600 mb-4 leading-relaxed">國網中心參訪、專家座談與更多精彩活動。</p>
               <span class="text-primary font-semibold inline-flex items-center">
                 查看詳情
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
