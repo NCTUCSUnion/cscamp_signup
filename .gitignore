@@ -76,3 +76,7 @@ $RECYCLE.BIN/
 
 # Raw source images (not for repo)
 *.jpeg.bak*
+
+# Private rosters / PII source files (never commit)
+錄取名單*.csv
+*.roster.csv
