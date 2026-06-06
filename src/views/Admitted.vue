@@ -144,13 +144,13 @@ const formattedDate = generatedAt
 
         <div
           v-else
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 max-w-6xl mx-auto"
         >
           <article
             v-for="(person, idx) in filteredEntries"
             :key="`${person.name}-${person.school}-${idx}`"
             :class="[
-              'rounded-2xl border px-5 py-4 backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-center',
+              'rounded-2xl border px-3 py-3 md:px-4 md:py-4 backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-center',
               person.gender === 'female'
                 ? 'bg-rose-50/80 border-rose-200/70'
                 : person.gender === 'male'
@@ -160,7 +160,7 @@ const formattedDate = generatedAt
           >
             <h3
               :class="[
-                'text-lg font-extrabold tracking-wide font-heading mb-1',
+                'text-base md:text-lg font-extrabold tracking-wide font-heading mb-1',
                 person.gender === 'female'
                   ? 'text-rose-700'
                   : person.gender === 'male'
@@ -170,7 +170,7 @@ const formattedDate = generatedAt
             >
               {{ person.name }}
             </h3>
-            <p class="text-sm text-gray-600 leading-snug">{{ person.school }}</p>
+            <p class="text-xs md:text-sm text-gray-600 leading-snug">{{ person.school }}</p>
           </article>
         </div>
 
