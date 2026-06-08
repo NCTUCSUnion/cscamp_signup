@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-06-08T09:00:27.697Z",
+  "_note": "`entries` are notified waitlist members shown on the site. `pendingEntries` are not yet notified and intentionally hidden from the UI; promote rows from `pendingEntries` to `entries` (or merge both) when ready to publish them.",
+  "count": 10,
+  "pendingCount": 3,
+  "entries": [
+    {
+      "name": "李O修",
+      "school": "建國中學",
+      "gender": "male"
+    },
+    {
+      "name": "文O桓",
+      "school": "東興國中",
+      "gender": "male"
+    },
+    {
+      "name": "劉O豪",
+      "school": "板橋高中",
+      "gender": "male"
+    },
+    {
+      "name": "陳O廷",
+      "school": "六和高中",
+      "gender": "male"
+    },
+    {
+      "name": "許O輝",
+      "school": "振聲高中",
+      "gender": "male"
+    },
+    {
+      "name": "劉O邦",
+      "school": "高師大附中",
+      "gender": "male"
+    },
+    {
+      "name": "陳O瑄",
+      "school": "新竹高中",
+      "gender": "male"
+    },
+    {
+      "name": "林O洋",
+      "school": "新竹高中",
+      "gender": "male"
+    },
+    {
+      "name": "黃O超",
+      "school": "衛道中學",
+      "gender": "male"
+    },
+    {
+      "name": "徐O樂",
+      "school": "CTSKL",
+      "gender": "male"
+    }
+  ],
+  "pendingEntries": [
+    {
+      "name": "陳O軒",
+      "school": "西松高中",
+      "gender": "male"
+    },
+    {
+      "name": "吳O翰",
+      "school": "奎山中學",
+      "gender": "male"
+    },
+    {
+      "name": "謝O呈",
+      "school": "建功高中",
+      "gender": "male"
+    }
+  ]
+}

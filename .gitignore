@@ -78,5 +78,6 @@ $RECYCLE.BIN/
 *.jpeg.bak*
 
 # Private rosters / PII source files (never commit)
-錄取名單*.csv
+*錄取名單*.csv
+*備取名單*.csv
 *.roster.csv

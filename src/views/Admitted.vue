@@ -1,15 +1,34 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import Banner from '../components/layout/Banner.vue'
 import admittedData from '../data/admitted-list.json'
+import waitlistData from '../data/waitlist.json'
 
+const lists = {
+  admitted: {
+    label: '正取名單',
+    shortLabel: '正取',
+    description: '恭喜以下入選的同學！您可以在下方搜尋自己的全名找到自己。',
+    entries: admittedData.entries || [],
+    generatedAt: admittedData.generatedAt ? new Date(admittedData.generatedAt) : null,
+  },
+  waitlist: {
+    label: '備取名單',
+    shortLabel: '備取',
+    description: '以下為備取同學名單，將依序遞補錄取空缺，敬請耐心等候我們的通知。',
+    entries: waitlistData.entries || [],
+    generatedAt: waitlistData.generatedAt ? new Date(waitlistData.generatedAt) : null,
+  },
+}
+
+const listKeys = ['admitted', 'waitlist']
+const activeList = ref('admitted')
 const searchTerm = ref('')
 const activeFilter = ref('全部')
 
-const entries = admittedData.entries || []
-const generatedAt = admittedData.generatedAt
-  ? new Date(admittedData.generatedAt)
-  : null
+const currentList = computed(() => lists[activeList.value])
+const entries = computed(() => currentList.value.entries)
+const generatedAt = computed(() => currentList.value.generatedAt)
 
 const filters = [
   { name: '全部', value: 'all' },
@@ -30,7 +49,7 @@ function maskQuery(q) {
 const filteredEntries = computed(() => {
   const q = searchTerm.value.trim().toLowerCase()
   const masked = maskQuery(searchTerm.value).toLowerCase()
-  return entries.filter((e) => {
+  return entries.value.filter((e) => {
     if (activeFilter.value === 'male' && e.gender !== 'male') return false
     if (activeFilter.value === 'female' && e.gender !== 'female') return false
     if (q === '') return true
@@ -44,17 +63,22 @@ const filteredEntries = computed(() => {
   })
 })
 
-const totalCount = entries.length
-const maleCount = entries.filter((e) => e.gender === 'male').length
-const femaleCount = entries.filter((e) => e.gender === 'female').length
+const totalCount = computed(() => entries.value.length)
+const maleCount = computed(() => entries.value.filter((e) => e.gender === 'male').length)
+const femaleCount = computed(() => entries.value.filter((e) => e.gender === 'female').length)
 
-const formattedDate = generatedAt
-  ? generatedAt.toLocaleDateString('zh-TW', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  : ''
+const formattedDate = computed(() => {
+  const d = generatedAt.value
+  return d
+    ? d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
+    : ''
+})
+
+// Reset gender filter when switching lists so the new active filter is
+// guaranteed to have results (e.g. waitlist may have no female entries).
+watch(activeList, () => {
+  activeFilter.value = '全部'
+})
 </script>
 
 <template>
@@ -69,18 +93,54 @@ const formattedDate = generatedAt
 
       <div class="container-custom relative z-10">
         <!-- Heading -->
-        <div class="text-center mb-12 md:mb-16">
+        <div class="text-center mb-10 md:mb-14">
           <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight relative inline-block">
             錄取名單
             <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-primary rounded-full"></div>
           </h2>
           <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mt-8">
-            恭喜以下入選的同學！您可以在下方搜尋自己的全名找到自己。
+            {{ currentList.description }}
           </p>
           <p class="text-sm text-gray-400 mt-3">
             共 {{ totalCount }} 位
             <span v-if="formattedDate"> · 公告於 {{ formattedDate }}</span>
           </p>
+        </div>
+
+        <!-- List type switcher (正取 / 備取) -->
+        <div class="flex justify-center mb-8 md:mb-10">
+          <div
+            class="inline-flex p-1.5 rounded-2xl bg-white/70 backdrop-blur-sm border border-primary/15 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+            role="tablist"
+            aria-label="名單類別"
+          >
+            <button
+              v-for="key in listKeys"
+              :key="key"
+              type="button"
+              role="tab"
+              :aria-selected="activeList === key"
+              @click="activeList = key"
+              :class="[
+                'inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300',
+                activeList === key
+                  ? 'bg-primary text-white shadow-md shadow-primary/30'
+                  : 'text-gray-600 hover:text-primary',
+              ]"
+            >
+              {{ lists[key].label }}
+              <span
+                :class="[
+                  'inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded-full text-xs font-bold',
+                  activeList === key
+                    ? 'bg-white/25 text-white'
+                    : 'bg-primary/10 text-primary',
+                ]"
+              >
+                {{ lists[key].entries.length }}
+              </span>
+            </button>
+          </div>
         </div>
 
         <!-- Search + filters -->
@@ -148,7 +208,7 @@ const formattedDate = generatedAt
         >
           <article
             v-for="(person, idx) in filteredEntries"
-            :key="`${person.name}-${person.school}-${idx}`"
+            :key="`${activeList}-${person.name}-${person.school}-${idx}`"
             :class="[
               'rounded-2xl border px-3 py-3 md:px-4 md:py-4 backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-center',
               person.gender === 'female'
