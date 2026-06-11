@@ -53,9 +53,7 @@
       "name": "徐O樂",
       "school": "CTSKL",
       "gender": "male"
-    }
-  ],
-  "pendingEntries": [
+    },
     {
       "name": "陳O軒",
       "school": "西松高中",
@@ -65,7 +63,9 @@
       "name": "吳O翰",
       "school": "奎山中學",
       "gender": "male"
-    },
+    }
+  ],
+  "pendingEntries": [
     {
       "name": "謝O呈",
       "school": "建功高中",
