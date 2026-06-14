@@ -63,13 +63,14 @@
       "name": "吳O翰",
       "school": "奎山中學",
       "gender": "male"
-    }
-  ],
-  "pendingEntries": [
+    },
     {
       "name": "謝O呈",
       "school": "建功高中",
       "gender": "male"
     }
+  ],
+  "pendingEntries": [
+    
   ]
 }
