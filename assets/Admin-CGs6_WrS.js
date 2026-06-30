@@ -1,0 +1,1 @@
+import{_ as o}from"./TeamTemplate-YDGmfwN2.js";import{o as r,x as t}from"./index-E2OkrXlJ.js";import"./Banner-WJ_NPbDp.js";import"./ImageSlider-Cj1sTalJ.js";import"./pagination-VBlZ98aH.js";const s={__name:"Admin",setup(m){return(a,e)=>(r(),t(o,{teamId:"admin"}))}};export{s as default};
