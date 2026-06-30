@@ -24,7 +24,7 @@ const navLinks = [
   { name: '活動介紹', path: '/activity' },
   { name: '課程介紹', path: '/courses' },
   { name: '各組介紹', path: '/team', hasDropdown: true },
-  { name: '錄取名單', path: '/admitted' },
+  { name: '小隊員名單', path: '/admitted' },
   { name: '常見 QA', path: '/faq' },
 ]
 
